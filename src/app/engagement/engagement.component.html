@@ -1,0 +1,273 @@
+
+<div class="main-wrapper main-wrapper-02">
+
+    <!-- Login Header Start -->
+    <div class="section login-header">
+        <!-- Login Header Wrapper Start -->
+        <div class="login-header-wrapper navbar navbar-expand">
+
+            <!-- Header Logo Start -->
+            <div class="login-header-logo">
+                <a routerLink="home">
+                    <img src="../assets/final logo 1.png" alt="Logo" width="50px" height="44px"></a>
+            </div>
+            <!-- Header Logo End -->
+
+            <!-- Header Search Start -->
+            <div class="login-header-search dropdown">
+                <button class="search-toggle" data-bs-toggle="dropdown"><i class="flaticon-loupe"></i></button>
+
+                <div class="search-input dropdown-menu">
+                    <form action="#">
+                        <input type="text" placeholder="Search here" style="background-color: white; color: black;">
+                    </form>
+                </div>
+
+            </div>
+            <!-- Header Search End -->
+
+            <!-- Header Action Start -->
+            <div class="login-header-action ml-auto">
+                <div class="dropdown">
+                    <button class="action notification" data-bs-toggle="dropdown">
+                        <i class="flaticon-notification"></i>
+                        <span class="active"></span>
+                    </button>
+                    <div class="dropdown-menu dropdown-notification">
+                        <ul class="notification-items-list">
+                            <li class="notification-item">
+                                <span class="notify-icon bg-success text-white"><i class="icofont-ui-user"></i></span>
+                                <div class="dropdown-body">
+                                    <a href="#">
+                                        <p><strong>Martin</strong> has added a <strong>customer</strong>
+                                            Successfully
+                                        </p>
+                                    </a>
+                                </div>
+                                <span class="notify-time">3:20 am</span>
+                            </li>
+                            <li class="notification-item">
+                                <span class="notify-icon bg-success text-white"><i
+                                        class="icofont-shopping-cart"></i></span>
+                                <div class="dropdown-body">
+                                    <a href="#">
+                                        <p><strong>Jennifer</strong> purchased Light Dashboard 2.0.</p>
+                                    </a>
+                                </div>
+                                <span class="notify-time">3:20 am</span>
+                            </li>
+                            <li class="notification-item">
+                                <span class="notify-icon bg-danger text-white"><i class="icofont-book-mark"></i></span>
+                                <div class="dropdown-body">
+                                    <a href="#">
+                                        <p><strong>Robin</strong> marked a <strong>ticket</strong> as unsolved.
+                                        </p>
+                                    </a>
+                                </div>
+                                <span class="notify-time">3:20 am</span>
+                            </li>
+                            <li class="notification-item">
+                                <span class="notify-icon bg-success text-white"><i class="icofont-heart-alt"></i></span>
+                                <div class="dropdown-body">
+                                    <a href="#">
+                                        <p><strong>David</strong> purchased Light Dashboard 1.0.</p>
+                                    </a>
+                                </div>
+                                <span class="notify-time">3:20 am</span>
+                            </li>
+                            <li class="notification-item">
+                                <span class="notify-icon bg-success text-white"><i class="icofont-image"></i></span>
+                                <div class="dropdown-body">
+                                    <a href="#">
+                                        <p><strong> James.</strong> has added a<strong>customer</strong>
+                                            Successfully
+                                        </p>
+                                    </a>
+                                </div>
+                                <span class="notify-time">3:20 am</span>
+                            </li>
+                        </ul>
+                        <a class="all-notification" href="#">See all notifications <i
+                                class="icofont-simple-right"></i></a>
+                    </div>
+                </div>
+
+                <a class="action author" href="#">
+                    <img src="../assets/profile.jpg" alt="Author">
+                </a>
+
+                <div class="dropdown">
+                    <button class="action more" data-bs-toggle="dropdown">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="" href="profile.html"><i class="icofont-user"></i> Profile</a></li>
+                        <li><a class="" href="chatbot.html"><i class="icofont-inbox"></i> Inbox</a>
+                        </li>
+                        <li><a class="" href="logOut.html"><i class="icofont-logout"></i> Log Out</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Header Action End -->
+
+        </div>
+        <!-- Login Header Wrapper End -->
+    </div>
+    <!-- Login Header End -->
+
+    <!-- Courses Admin Start -->
+    <div class="section overflow-hidden position-relative" id="wrapper">
+
+        <!-- Sidebar Wrapper Start -->
+        <div class="sidebar-wrapper">
+            <div class="menu-list">
+                <a class="active" routerLink="/courses-admin"><img src="../assets/images/menu-icon/icon-1.png"
+                        alt="Icon"></a>
+                <a routerLink="/message"><img src="../assets/images/menu-icon/icon-2.png" alt="Icon"></a>
+                <a routerLink="/overview"><img src="../assets/images/menu-icon/icon-3.png" alt="Icon"></a>
+                <a routerLink="/engagement"><img src="../assets/images/menu-icon/icon-4.png" alt="Icon"></a>
+                <a routerLink="/traffic-conversion"><img src="../assets/images/menu-icon/icon-5.png" alt="Icon"></a>
+            </div>
+        </div>
+        <!-- Sidebar Wrapper End -->
+
+        <div class="page-content-wrapper py-0">
+
+            <!-- Admin Tab Menu Start -->
+            <div class="nav flex-column nav-pills admin-tab-menu">
+                <a routerLink="/overview">Overview</a>
+                <a routerLink="/students">Student’s</a>
+                <a routerLink="/reviews">Review’s</a>
+                <a routerLink="/engagement" class="active">Course Engagement</a>
+                <a routerLink="/traffic-conversion">Traffic & Conversion</a>
+            </div>
+            <!-- Admin Tab Menu End -->
+
+            <!-- Page Content Wrapper Start -->
+            <div class="main-content-wrapper">
+                <div class="container-fluid">
+
+                    <!-- Engagement Top Start -->
+                    <div class="admin-top-bar">
+                        <div class="courses-select">
+                            <select>
+                                <option data-display="All Courses">All Courses</option>
+                                <option value="1">option</option>
+                                <option value="2">option</option>
+                                <option value="3">option</option>
+
+                            </select>
+                        </div>
+
+                        <div class="engagement-meta">
+                            <p class="meta"><img src="../assets/images/icon/icon-1.png" alt="Icon"> 11,001 Minutes
+                                Taught</p>
+                            <p class="meta"><img src="../assets/images/icon/icon-2.png" alt="Icon"> 520 Active Students
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Engagement Top End -->
+
+                    <!-- Graph Top Start -->
+                    <div class="graph">
+                        <div class="graph-title">
+                            <h4 class="title">Minutes Taught</h4>
+
+                            <div class="months-select">
+                                <select>
+                                    <option data-display="Last 12 months">Last 12 months</option>
+                                    <option value="1">Last 6 months</option>
+                                    <option value="1">Last 3 months</option>
+                                    <option value="1">Last 2 months</option>
+                                    <option value="1">Last 1 months</option>
+                                    <option value="1">Last 1 week</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="graph-content">
+                            <div id="uniqueVisits"></div>
+                        </div>
+                    </div>
+                    <!-- Graph Top End -->
+
+                    <!-- Engagement Courses Start -->
+                    <div class="engagement-courses">
+
+                        <div class="courses-top">
+                            <ul>
+                                <li>All Course’s</li>
+                                <li>Minutes Taught</li>
+                                <li>Active Student’s</li>
+                            </ul>
+                        </div>
+
+                        <div class="courses-list">
+                            <ul>
+                                <li>
+                                    <div class="courses">
+                                        <div class="thumb">
+                                            <img src="../assets/images/courses/admin-courses-01.jpg" alt="Courses">
+                                        </div>
+                                        <div class="content">
+                                            <h4 class="title"><a href="#">Build An eCommerce Site With WooCommerce
+                                                    and WooLentor</a></h4>
+                                        </div>
+                                    </div>
+                                    <div class="taught">
+                                        <span>11,001</span>
+                                    </div>
+                                    <div class="student">
+                                        <span>520</span>
+                                    </div>
+                                    <div class="button">
+                                        <a class="btn" href="#">View Details</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="courses">
+                                        <div class="thumb">
+                                            <img src="../assets/images/courses/admin-courses-01.jpg" alt="Courses">
+                                        </div>
+                                        <div class="content">
+                                            <h4 class="title"><a href="#">Build An WholeSale WooCommerce Store using
+                                                    Whols Plugin</a></h4>
+                                        </div>
+                                    </div>
+                                    <div class="taught">
+                                        <span>11,001</span>
+                                    </div>
+                                    <div class="student">
+                                        <span>520</span>
+                                    </div>
+                                    <div class="button">
+                                        <a class="btn" href="#">View Details</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                    <!-- Engagement Courses End -->
+
+                </div>
+            </div>
+            <!-- Page Content Wrapper End -->
+
+        </div>
+
+    </div>
+    <!-- Courses Admin End -->
+
+    <!--Back To Start-->
+    <a href="#" class="back-to-top">
+        <i class="icofont-simple-up"></i>
+    </a>
+    <!--Back To End-->
+
+</div>
+
+
+<app-footer></app-footer>
