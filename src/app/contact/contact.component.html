@@ -17,7 +17,7 @@
             <!-- Page Banner Start -->
             <div class="page-banner-content">
                 <ul class="breadcrumb">
-                    <li><a routerLink="home">Home</a></li>
+                    <li><a routerLink="/home">Home</a></li>
                     <li class="active">Contact Us</li>
                 </ul>
                 <h2 class="title">Contact <span>Us</span></h2>
@@ -141,7 +141,7 @@
                             <h3 class="title">Get in Touch <span>With Us</span></h3>
 
                             <div class="form-wrapper">
-                                <form id="contact-form" (ngSubmit)="onSubmit()"
+                                <form id="contact-form" 
                                     action="https://htmlmail.hasthemes.com/humayun/edule-contact.php" method="POST">
 
 
@@ -176,13 +176,14 @@
                                     </div>
                                     <!-- Single Form End -->
 
-                                    <p class="form-message"></p>
+
                                     
 
+                                    <p class="form-message"></p>
                                     <!-- Single Form Start -->
                                     <div class="single-form">
-                                        <button class="btn btn-primary btn-hover-dark w-100" type="submit">Send Message <i
-                                                class="flaticon-right"></i></button>
+                                        <button class="btn btn-primary btn-hover-dark w-100" type="submit" (click)="onSubmit()">Send Message
+                                            <i class="flaticon-right"></i></button>
 
                                     </div>
                                     <!-- Single Form End -->
@@ -227,8 +228,8 @@
                 <!-- Download App Button End -->
                 <div class="download-app-btn">
                     <ul class="app-btn">
-                        <li><a href="#"><img src="../assets/images/google-play.png" alt="Google Play"></a></li>
-                        <li><a href="#"><img src="../assets/images/app-store.png" alt="App Store"></a></li>
+                        <li><a><img src="../assets/images/google-play.png" alt="Google Play"></a></li>
+                        <li><a><img src="../assets/images/app-store.png" alt="App Store"></a></li>
                     </ul>
                 </div>
                 <!-- Download App Button End -->
@@ -241,7 +242,7 @@
     <!-- Download App End -->
 
     <!--Back To Start-->
-    <a href="#" class="back-to-top">
+    <a class="back-to-top">
         <i class="icofont-simple-up"></i>
     </a>
     <!--Back To End-->

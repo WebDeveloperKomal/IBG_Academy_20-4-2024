@@ -1,0 +1,20 @@
+@media only screen and (max-width: 2560px) {
+    .footer-widget-link {
+        margin-left: 58px;
+    }
+}
+
+@media only screen and (max-width: 978px) {
+    #Category {
+        margin-left: -56px;
+    }
+
+    #Category1 {
+        margin-left: -56px;
+    }
+
+}
+
+.copyright-link {
+    color: white;
+}

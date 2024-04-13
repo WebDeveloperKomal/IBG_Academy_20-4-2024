@@ -5,11 +5,14 @@
         <!-- Login Header Wrapper Start -->
         <div class="login-header-wrapper navbar navbar-expand">
 
+
             <!-- Header Logo Start -->
             <div class="login-header-logo">
                 <a routerLink="/home"><img src="../assets/final logo 1.png" alt="Logo" width="50px" height="44px"></a>
             </div>
             <!-- Header Logo End -->
+
+
 
             <!-- Header Search Start -->
             <div class="login-header-search dropdown">
@@ -20,23 +23,30 @@
                         <input type="text" placeholder="Search here" style="background-color: white; color: black;">
                     </form>
                 </div>
-
             </div>
             <!-- Header Search End -->
 
+
+
             <!-- Header Action Start -->
             <div class="login-header-action ml-auto">
-                <div class="dropdown">
-                    <button class="action notification" data-bs-toggle="dropdown">
+
+                <div class="dropdown" dropdown>
+
+                    <button class="action notification" data-bs-toggle="dropdown" dropdownToggle>
                         <i class="flaticon-notification"></i>
                         <span class="active"></span>
                     </button>
-                    <div class="dropdown-menu dropdown-notification">
+
+
+                    <div class="dropdown-menu dropdown-notification" *dropdownMenu id="drop1">
+
                         <ul class="notification-items-list">
+
                             <li class="notification-item">
                                 <span class="notify-icon bg-success text-white"><i class="icofont-ui-user"></i></span>
                                 <div class="dropdown-body">
-                                    <a href="#">
+                                    <a>
                                         <p><strong>Martin</strong> has added a <strong>customer</strong>
                                             Successfully
                                         </p>
@@ -44,39 +54,47 @@
                                 </div>
                                 <span class="notify-time">3:20 am</span>
                             </li>
+
+
                             <li class="notification-item">
                                 <span class="notify-icon bg-success text-white"><i
                                         class="icofont-shopping-cart"></i></span>
                                 <div class="dropdown-body">
-                                    <a href="#">
+                                    <a>
                                         <p><strong>Jennifer</strong> purchased Light Dashboard 2.0.</p>
                                     </a>
                                 </div>
                                 <span class="notify-time">3:20 am</span>
                             </li>
+
+
                             <li class="notification-item">
                                 <span class="notify-icon bg-danger text-white"><i class="icofont-book-mark"></i></span>
                                 <div class="dropdown-body">
-                                    <a href="#">
+                                    <a>
                                         <p><strong>Robin</strong> marked a <strong>ticket</strong> as unsolved.
                                         </p>
                                     </a>
                                 </div>
                                 <span class="notify-time">3:20 am</span>
                             </li>
+
+
                             <li class="notification-item">
                                 <span class="notify-icon bg-success text-white"><i class="icofont-heart-alt"></i></span>
                                 <div class="dropdown-body">
-                                    <a href="#">
+                                    <a>
                                         <p><strong>David</strong> purchased Light Dashboard 1.0.</p>
                                     </a>
                                 </div>
                                 <span class="notify-time">3:20 am</span>
                             </li>
+
+
                             <li class="notification-item">
                                 <span class="notify-icon bg-success text-white"><i class="icofont-image"></i></span>
                                 <div class="dropdown-body">
-                                    <a href="#">
+                                    <a>
                                         <p><strong> James.</strong> has added a<strong>customer</strong>
                                             Successfully
                                         </p>
@@ -84,29 +102,38 @@
                                 </div>
                                 <span class="notify-time">3:20 am</span>
                             </li>
+
+
                         </ul>
-                        <a class="all-notification" href="#">See all notifications <i
-                                class="icofont-simple-right"></i></a>
+                        <a class="all-notification">See all notifications <i class="icofont-simple-right"></i></a>
                     </div>
                 </div>
 
-                <a class="action author" href="#">
+
+
+                <a class="action author">
                     <img src="../assets/profile.jpg" alt="Author">
                 </a>
 
-                <div class="dropdown">
-                    <button class="action more" data-bs-toggle="dropdown">
+
+
+                <div class="dropdown" dropdown>
+
+                    <button class="action more" data-bs-toggle="dropdown" dropdownToggle>
                         <span></span>
                         <span></span>
                         <span></span>
                     </button>
-                    <ul class="dropdown-menu">
+
+                    <ul class="dropdown-menu" *dropdownMenu id="drop2">
                         <li><a class="" routerLink="/profile"><i class="icofont-user"></i> Profile</a></li>
-                        <li><a class="" href="chatbot.html"><i class="icofont-inbox"></i> Inbox</a>
+                        <li><a class="" routerLink="/chatbot"><i class="icofont-inbox"></i> Inbox</a>
                         </li>
                         <li><a class="" routerLink="/logout"><i class="icofont-logout"></i> Log Out</a></li>
                     </ul>
                 </div>
+
+
             </div>
             <!-- Header Action End -->
 
@@ -142,7 +169,7 @@
             <div class="nav flex-column admin-tab-menu">
                 <a routerLink="/overview">Overview</a>
                 <a routerLink="/students" class="active">Student’s</a>
-                <a routerLink="/reviews">Review’s</a>
+                <!-- <a routerLink="/reviews">Review’s</a> -->
                 <a routerLink="/engagement">Course Engagement</a>
                 <a routerLink="/traffic-conversion">Traffic & Conversion</a>
             </div>
@@ -158,56 +185,60 @@
                     <!-- Student Top Start -->
                     <div class="admin-top-bar students-top">
                         <div class="courses-select">
-                            <select>
+
+                            <!-- <select>
                                 <option data-display="All Courses">All Courses</option>
                                 <option value="1">option</option>
                                 <option value="2">option</option>
                                 <option value="3">option</option>
-
-                            </select>
+                            </select> -->
 
                             <h4 class="title">Meet people taking your courses</h4>
                         </div>
 
-                        <div class="student-box">
+                        <!-- <div class="student-box">
                             <h5 class="title">Total Revenue</h5>
                             <div class="count">2,698</div>
-                        </div>
+                        </div> -->
                     </div>
                     <!-- Student Top End -->
-
 
 
 
                     <!-- Student's Wrapper Start -->
                     <div class="students-wrapper students-active">
                         <div class="swiper-container">
+
                             <div class="swiper-wrapper">
+
+                                <!-- <div class="swiper-slide">Slide 1</div>
+                                <div class="swiper-slide">Slide 2</div> -->
+
+
                                 <div class="swiper-slide">
 
 
-
                                     <!-- Single Student Start -->
-                                    <div class="single-student">
+                                    <div class="single-student" *ngFor="let stud of joinfrom">
 
-                                        <div class="student-images">
+                                        <!-- <div class="student-images">
                                             <img src="../assets/images/author/author-01.jpg" alt="Author">
-                                        </div>
+                                        </div> -->
 
-                                        <div class="student-content">
-                                            <h5 class="name">Pranita Wani</h5>
+                                        <div class="student-content" *ngFor="let st of stud[1]">
+                                            <h5 class="name">{{st[0]}}</h5>
                                             <span class="country">
 
-                                                <img src="../assets/map-02.png" alt="Flog"> India</span>
+                                                <img src="../assets/map-02.png" alt="Flog"> {{st[1]}}</span>
 
+                                                <span class="date"><i class="icofont-ui-calendar"></i> {{stud[0]["date_time "]}}</span>
 
-                                            <p>Data Science and Machine learning</p>
-                                            <span class="date"><i class="icofont-ui-calendar"></i> 28.03.2021</span>
+                                            <!-- <p>Data Science and Machine learning</p> -->
                                         </div>
+                                        <!-- <span class="date"><i class="icofont-ui-calendar"></i> {{ stud[0][0]["date_time "] }}</span> -->
                                     </div>
                                     <!-- Single Student End -->
                                 </div>
-
 
 
 
@@ -233,7 +264,6 @@
 
 
 
-
                                 <div class="swiper-slide">
                                     <!-- Single Student Start -->
                                     <div class="single-student">
@@ -253,7 +283,6 @@
                                     </div>
                                     <!-- Single Student End -->
                                 </div>
-
 
 
 
@@ -279,7 +308,6 @@
 
 
 
-
                                 <div class="swiper-slide">
                                     <!-- Single Student Start -->
                                     <div class="single-student">
@@ -299,6 +327,8 @@
                                     </div>
                                     <!-- Single Student End -->
                                 </div>
+
+
                             </div>
 
 
@@ -688,7 +718,7 @@
                                         <!-- Single Item End -->
 
 
-                                        
+
                                         <!-- Single Item Start -->
                                         <div class="single-item">
                                             <div class="title">6. UX Design</div>
@@ -731,7 +761,7 @@
                         </div>
                         <img class="shape d-none d-xl-block" src="../assets/images/shape/shape-27.png" alt="Shape">
                         <div class="new-courses-btn">
-                            <a href="#" class="btn">Create New Course <i class="icofont-rounded-right"></i></a>
+                            <a class="btn">Create New Course <i class="icofont-rounded-right"></i></a>
                         </div>
                     </div>
                     <!-- New Courses End -->
@@ -749,7 +779,7 @@
     <!-- Courses Admin End -->
 
     <!--Back To Start-->
-    <a href="#" class="back-to-top">
+    <a class="back-to-top">
         <i class="icofont-simple-up"></i>
     </a>
     <!--Back To End-->

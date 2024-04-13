@@ -6,18 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./courses-details.component.css']
 })
 
-
 export class CoursesDetailsComponent {
   activeTab: string = 'tab1';
   showdescription: boolean = true;
   showinstructors: boolean = false;
   showreviews: boolean = false;
 
-
   showdes() {
-    // this.showdescription=!this.showdescription;
-    // this.showinstructors=!this.showinstructors;
-    // this.showreviews=!this.showreviews;
     this.showdescription = true;
     this.showinstructors = false;
     this.showreviews = false;
@@ -27,7 +22,6 @@ export class CoursesDetailsComponent {
     this.showdescription = false;
     this.showinstructors = true;
     this.showreviews = false;
-
   }
 
   showrev() {
@@ -37,8 +31,8 @@ export class CoursesDetailsComponent {
 
   }
 
-
   changeTab(tabId: string) {
     this.activeTab = tabId;
   }
+
 }

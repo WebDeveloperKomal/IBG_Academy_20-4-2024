@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @charset "UTF-8";
+@import '~bootstrap/dist/css/bootstrap.min.css';
 
 /*-----------------------------------------------------------------------------------
 
@@ -58,6 +59,7 @@
  * Copyright 2011-2022 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+
 :root {
   --bs-blue: #0d6efd;
   --bs-dark-blue: #004a80;
@@ -462,9 +464,9 @@ select:disabled {
 button,
 [type=button],
 [type=reset],
-[type=submit] {
+/* [type=submit] {
   -webkit-appearance: button;
-}
+} */
 
 button:not(:disabled),
 [type=button]:not(:disabled),
@@ -7098,19 +7100,21 @@ fieldset:disabled .btn {
 
 .carousel-indicators [data-bs-target] {
   box-sizing: content-box;
+  border-radius: 50%;
   flex: 0 1 auto;
-  width: 30px;
-  height: 3px;
+  width: 8px;
+  height: 7px;
   padding: 0;
   margin-right: 3px;
   margin-left: 3px;
   text-indent: -999px;
   cursor: pointer;
-  background-color: #fff;
+  background-color: green;
   background-clip: padding-box;
   border: 0;
   border-top: 10px solid transparent;
   border-bottom: 10px solid transparent;
+  
   opacity: 0.5;
   transition: opacity 0.6s ease;
 }
@@ -16793,7 +16797,7 @@ only screen and (max-width: 575px) {
 .section-title.shape-01 .main-title span::before {
   position: absolute;
   content: "";
-  background-image: url('../images/shape/shape-11.png');
+  /* background-image: url('../images/shape/shape-11.png'); */
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -16823,7 +16827,7 @@ only screen and (max-width: 575px) {
 .section-title.shape-02 .main-title span::before {
   position: absolute;
   content: "";
-  background-image: url('../images/shape/shape-4.png');
+  /* background-image: url('../images/shape/shape-4.png'); */
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -16860,7 +16864,7 @@ only screen and (max-width: 575px) {
 .section-title.shape-03 .main-title span::before {
   position: absolute;
   content: "";
-  background-image: url('../images/shape/shape-4.png');
+  /* background-image: url('../images/shape/shape-4.png'); */
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -17384,7 +17388,8 @@ only screen and (max-width: 575px) {
 } */
 
 .single-form {
-  margin-top: 20px;
+  /* margin-top: 20px; */
+  margin-top: 10px;
 }
 
 .single-form input:not([type=checkbox]):not([type=radio]),
@@ -17774,7 +17779,7 @@ only screen and (max-width: 575px) {
   content: "";
   width: 41px;
   height: 14px;
-  background-image: url('../images/shape/shape-1.png');
+  /* background-image: url('../images/shape/shape-1.png'); */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -17796,7 +17801,7 @@ only screen and (max-width: 575px) {
   content: "";
   width: 41px;
   height: 14px;
-  background-image: url('../images/shape/shape-2.png');
+  /* background-image: url('../images/shape/shape-2.png'); */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -17969,7 +17974,7 @@ only screen and (max-width: 767px) {
 .header-menu ul li a::before {
   position: absolute;
   content: "";
-  background-image: url('../images/shape/shape-3.png');
+  /* background-image: url('../images/shape/shape-3.png'); */
   width: 70px;
   height: 5px;
   background-position: center center;
@@ -19133,7 +19138,7 @@ only screen and (max-width: 767px) {
 .slider-content .main-title span::before {
   position: absolute;
   content: "";
-  background-image: url('../images/shape/shape-4.png');
+  /* background-image: url('../images/shape/shape-4.png'); */
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -20653,7 +20658,7 @@ only screen and (max-width: 767px) {
 .single-testimonial::before {
   position: absolute;
   content: "";
-  background-image: url('../images/shape/shape-18.png');
+  /* background-image: url('../images/shape/shape-18.png'); */
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -21109,6 +21114,7 @@ only screen and (min-width: 768px) and (max-width: 991px) {
   .page-banner .shape-author {
     width: 150px;
     top: 52%;
+    height: 144px;
   }
 }
 
@@ -21125,6 +21131,7 @@ only screen and (min-width: 768px) and (max-width: 991px) {
   .page-banner .shape-author {
     bottom: 6%;
     width: 80px;
+    height: 109px;
   }
 }
 
@@ -21210,7 +21217,7 @@ only screen and (max-width: 767px) {
 .page-banner-content .title span::before {
   position: absolute;
   content: "";
-  background-image: url('../images/shape/shape-4.png');
+  /* background-image: url('../images/shape/shape-4.png'); */
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -21360,6 +21367,7 @@ only screen and (max-width: 767px) {
   position: absolute;
   top: 50px;
   right: 30px;
+  left: 30px;
 }
 
 .about-images .about-years .years-icon {
@@ -21449,7 +21457,7 @@ only screen and (max-width: 767px) {
 .about-content .main-title span::before {
   position: absolute;
   content: "";
-  background-image: url('../images/shape/shape-4.png');
+  /* background-image: url('../images/shape/shape-4.png'); */
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -22035,7 +22043,7 @@ only screen and (min-width: 768px) and (max-width: 991px) {
 .courses-details-tab .details-tab-content .tab-reviews .single-review::before {
   position: absolute;
   content: "";
-  background-image: url('../images/shape/shape-18.png');
+  /* background-image: url('../images/shape/shape-18.png'); */
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -22523,7 +22531,7 @@ only screen and (max-width: 575px) {
   content: "";
   width: 51px;
   height: 84px;
-  background-image: url('../images/shape/shape-25.png');
+  /* background-image: url('../images/shape/shape-25.png'); */
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -22673,7 +22681,10 @@ only screen and (max-width: 575px) {
 /*  4.15 - Registration & Login Form CSS
 /*----------------------------------------*/
 .register-login-wrapper {
-  padding: 70px;
+  /* padding: 70px; */
+  padding-left: 70px;
+  padding-right: 70px;
+  padding-bottom: 70px;
   padding-top: 20px;
   border: 1px solid rgba(48, 146, 85, 0.2);
   border-radius: 10px;
@@ -22785,7 +22796,7 @@ only screen and (max-width: 767px) {
 .register-login-form .title span::before {
   position: absolute;
   content: "";
-  background-image: url('../images/shape/shape-4.png');
+  /* background-image: url('../images/shape/shape-4.png'); */
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -22802,18 +22813,19 @@ only screen and (max-width: 767px) {
   }
 }
 
-.register-login-form .form-wrapper {
+/* .register-login-form .form-wrapper {
   padding-top: 30px;
-}
+} */
 
 @media only screen and (max-width: 575px) {
-  .register-login-form .form-wrapper {
+  /* .register-login-form .form-wrapper {
     padding-top: 10px;
-  }
+  } */
 }
 
 .register-login-form .single-form .btn {
-  margin-top: 20px;
+  /* margin-top: 20px; */
+  margin-top: 10px;
   transition: all 0.3s ease 0s;
 }
 
@@ -23041,7 +23053,7 @@ only screen and (max-width: 767px) {
 .error-content .main-title span::before {
   position: absolute;
   content: "";
-  background-image: url('../images/shape/shape-4.png');
+  /* background-image: url('../images/shape/shape-4.png'); */
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -23319,7 +23331,7 @@ only screen and (max-width: 767px) {
 .contact-form .title span::before {
   position: absolute;
   content: "";
-  background-image: url('../images/shape/shape-4.png');
+  /* background-image: url('../images/shape/shape-4.png'); */
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -23336,14 +23348,14 @@ only screen and (max-width: 767px) {
   }
 }
 
-.contact-form .form-wrapper {
+/* .contact-form .form-wrapper {
   padding-top: 30px;
-}
+} */
 
 @media only screen and (max-width: 575px) {
-  .contact-form .form-wrapper {
+  /* .contact-form .form-wrapper {
     padding-top: 10px;
-  }
+  } */
 }
 
 .contact-form .single-form .btn {
@@ -28281,7 +28293,64 @@ only screen and (max-width: 767px) {
 }
 
 /* ------------------------------------------------------------------------------------------ */
+@media only screen and (max-width: 1024px) {
+  .about-images .about-years {
+    width: 125px;
+    background-color: #309255;
+    padding: 10px 20px;
+    text-align: center;
+    border-radius: 10px;
+    position: absolute;
+    top: 50px;
+    right: 14px;
+    left: 10px;
+  }
+}
 
+@media only screen and (max-width: 500px) {
+  .about-images .about-years {
+    left: 10px;
+  }
+}
+
+@media only screen and (max-width: 527px) {
+  .about-images .about-years {
+    left: 5px;
+  }
+}
+
+@media only screen and (max-width: 460px) {
+  .about-images .about-years {
+    display: none;
+  }
+}
+
+
+@media only screen and (max-width: 425px) {
+  .about-images .about-years {
+    width: 125px;
+    background-color: #309255;
+    padding: 10px 20px;
+    text-align: center;
+    border-radius: 10px;
+    position: absolute;
+    top: 50px;
+    right: 30px;
+    left: 5px;
+    display: none;
+  }
+
+}
+
+
+@media only screen and (max-width: 320px) {
+  .about-images .about-years {
+    display: none;
+  }
+}
+
+
+/* ----------------------------------------------------------------------- */
 
 @media only screen and (max-width: 575px) {
   .footer-widget .widget-link {
@@ -28295,4 +28364,10 @@ only screen and (max-width: 767px) {
   #sub {
     margin-left: 3px;
   }
+}
+
+
+&.open {
+  display: block;
+
 }

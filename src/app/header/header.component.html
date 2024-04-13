@@ -7,20 +7,24 @@
             <!-- Header Top Wrapper Start -->
             <div class="header-top-wrapper">
 
+
                 <!-- Header Top Left Start -->
                 <div class="header-top-left">
-                    <p>All course 28% off for <a href="#" style="color: white;">Passionate Candidate</a></p>
+                    <p>All course 28% off for <a style="color: white;">Passionate Candidate</a></p>
                 </div>
                 <!-- Header Top Left End -->
 
 
+
                 <!-- Header Top Medal Start -->
                 <div class="header-top-medal">
+
                     <div class="top-info">
                         <p><i class="flaticon-phone-call"></i> <a href="tel:8956555109">+918956555109</a></p>
                         <p><i class="flaticon-email"></i> <a href="mailto:info@ibgacademy.in">info&#64;ibgacademy.in</a>
                         </p>
                     </div>
+
                 </div>
                 <!-- Header Top Medal End -->
 
@@ -29,10 +33,10 @@
                 <!-- Header Top Right Start -->
                 <div class="header-top-right">
                     <ul class="social">
-                        <li><a href="#" target="_blank"><i class="flaticon-facebook"></i></a></li>
-                        <li><a href="#" target="_blank"><i class="flaticon-twitter"></i></a></li>
-                        <li><a href="#" target="_blank"><i class="flaticon-instagram"></i></a></li>
-                        <li><a href="#" target="_blank"><i class="flaticon-linkedin"></i></a></li>
+                        <li><a target="_blank"><i class="flaticon-facebook"></i></a></li>
+                        <li><a target="_blank"><i class="flaticon-twitter"></i></a></li>
+                        <li><a target="_blank"><i class="flaticon-instagram"></i></a></li>
+                        <li><a target="_blank"><i class="flaticon-linkedin"></i></a></li>
                     </ul>
                 </div>
                 <!-- Header Top Right End -->
@@ -65,18 +69,17 @@
                 <div class="header-menu d-none d-lg-block">
                     <ul class="nav-menu">
 
-                        <li><a routerLink="">Home</a>
+                        <li><a routerLink="/home">Home</a>
                         </li>
 
 
-
-                        <li>
+                        <!-- <li>
                             <a href="#">All Course</a>
                             <ul class="sub-menu">
                                 <li><a routerLink="/courses">Courses</a></li>
                                 <li><a routerLink="/courses-details">Courses Details</a></li>
                             </ul>
-                        </li>
+                        </li> -->
 
 
 
@@ -89,9 +92,8 @@
                             <a href="#">Blog</a>
                             <ul class="sub-menu">
                                 <li>
-                                    <a href="#">Blog</a>
+                                    <a routerLink="/blog-grid">Blog</a>
                                     <ul class="sub-menu">
-                                        <li><a routerLink="/blog-grid">Blog</a></li>
                                         <li><a routerLink="/blog-left-sidebar">Blog Left Sidebar</a></li>
                                         <li><a routerLink="/blog-right-sidebar">Blog Right Sidebar</a></li>
                                     </ul>
@@ -99,7 +101,7 @@
 
 
                                 <li>
-                                    <a href="#">Blog Details</a>
+                                    <a>Blog Details</a>
                                     <ul class="sub-menu">
                                         <li><a routerLink="/blog-details-left-sidebar">Blog Details Left
                                                 Sidebar</a></li>
@@ -111,13 +113,13 @@
                         </li>
 
 
-
                         <li><a routerLink="/contact">Contact</a></li>
                     </ul>
 
 
                 </div>
                 <!-- Header Menu End -->
+
 
                 <!-- Header Sing In & Up Start -->
                 <div class="header-sign-in-up d-none d-lg-block">
@@ -128,9 +130,10 @@
                 </div>
                 <!-- Header Sing In & Up End -->
 
+
                 <!-- Header Mobile Toggle Start -->
                 <div class="header-toggle d-lg-none">
-                    <a class="menu-toggle" href="javascript:void(0)">
+                    <a class="menu-toggle" href="javascript:void(0)" (click)="toggleMenu()">
                         <span></span>
                         <span></span>
                         <span></span>
@@ -149,8 +152,9 @@
 
 
 
+
 <!-- Mobile Menu Start -->
-<div class="mobile-menu">
+<div class="mobile-menu" [ngClass]="{ 'open': isMenuOpen }">
 
     <!-- Menu Close Start -->
     <a class="menu-close" href="javascript:void(0)">
@@ -158,12 +162,14 @@
     </a>
     <!-- Menu Close End -->
 
+
     <!-- Mobile Top Medal Start -->
     <div class="mobile-top">
         <p><i class="flaticon-phone-call"></i> <a href="tel:8956555109">+918956555109</a></p>
         <p><i class="flaticon-email"></i> <a href="mailto:info@ibgacademy.in">info&#64;ibgacademy.in</a></p>
     </div>
     <!-- Mobile Top Medal End -->
+
 
     <!-- Mobile Sing In & Up Start -->
     <div class="mobile-sign-in-up">
@@ -175,62 +181,91 @@
     <!-- Mobile Sing In & Up End -->
 
 
+
     <!-- Mobile Menu Start -->
     <div class="mobile-menu-items">
         <ul class="nav-menu">
+
             <li><a routerLink="/home">Home</a></li>
 
 
-            <li>
-                <a href="#">All Course</a>
-                <ul class="sub-menu">
+            <li class="menu-item-has-children" dropdown>
+                <span class="mobile-menu-expand" dropdownToggle></span>
+
+                <a href="#">All Courses</a>
+                <ul class="sub-menu" *dropdownMenu>
                     <li><a routerLink="/courses">Courses</a></li>
                     <li><a routerLink="/courses-details">Courses Details</a></li>
                 </ul>
             </li>
 
 
+            <!-- <li class="menu-item-has-children" [class.active-expand]="isCoursesActive || isCoursesDetailsActive">
+                <span class="mobile-menu-expand"></span>
+                <a>All Course</a>
+                <ul class="sub-menu">
+                    <li><a routerLink="/courses" [class.active]="isCoursesActive">Courses</a></li>
+                    <li><a routerLink="/courses-details" [class.active]="isCoursesDetailsActive">Courses Details</a>
+                    </li>
+                </ul>
+            </li> -->
+
+
+
             <li>
                 <a routerLink="/about-us">About Us</a>
             </li>
 
-            <li>
+
+
+            <li class="menu-item-has-children" dropdown>
+                <span class="mobile-menu-expand" dropdownToggle></span>
+
                 <a href="#">Blog</a>
-                <ul class="sub-menu">
-                    <li>
-                        <a href="#">Blog</a>
-                        <ul class="sub-menu">
-                            <li><a routerLink="/blog-grid">Blog</a></li>
+                <ul class="sub-menu" *dropdownMenu>
+
+                    <li class="menu-item-has-children" dropdown>
+                        <span class="mobile-menu-expand" dropdownToggle></span>
+
+                        <a routerLink="/blog-grid">Blog</a>
+                        <ul class="sub-menu" *dropdownMenu>
                             <li><a routerLink="/blog-left-sidebar">Blog Left Sidebar</a></li>
                             <li><a routerLink="/blog-right-sidebar">Blog Right Sidebar</a></li>
                         </ul>
                     </li>
 
 
-                    <li>
+                    <li class="menu-item-has-children" dropdown>
+                        <span class="mobile-menu-expand" dropdownToggle></span>
+
                         <a href="#">Blog Details</a>
-                        <ul class="sub-menu">
+                        <ul class="sub-menu" *dropdownMenu>
                             <li><a routerLink="/blog-details-left-sidebar">Blog Details Left Sidebar</a></li>
                             <li><a routerLink="/blog-details-right-sidebar">Blog Details Right Sidebar</a></li>
                         </ul>
                     </li>
-
-
                 </ul>
             </li>
-            <li><a routerLink="/contact">Contact</a></li>
-        </ul>
 
+
+
+            <li>
+                <a routerLink="/contact">Contact</a>
+            </li>
+
+
+        </ul>
     </div>
     <!-- Mobile Menu End -->
+
 
     <!-- Mobile Menu End -->
     <div class="mobile-social">
         <ul class="social">
-            <li><a href="#" target="_blank"><i class="flaticon-facebook"></i></a></li>
-            <li><a href="#" target="_blank"><i class="flaticon-twitter"></i></a></li>
-            <li><a href="#" target="_blank"><i class="flaticon-instagram"></i></a></li>
-            <li><a href="#" target="_blank"><i class="flaticon-linkedin"></i></a></li>
+            <li><a target="_blank"><i class="flaticon-facebook"></i></a></li>
+            <li><a target="_blank"><i class="flaticon-twitter"></i></a></li>
+            <li><a target="_blank"><i class="flaticon-instagram"></i></a></li>
+            <li><a target="_blank"><i class="flaticon-linkedin"></i></a></li>
         </ul>
     </div>
     <!-- Mobile Menu End -->

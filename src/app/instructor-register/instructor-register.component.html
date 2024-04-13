@@ -55,7 +55,7 @@
 
 
     <!-- Register & Login Start -->
-    <div class="section section-padding">
+    <div class="section section-padding ">
         <div class="container">
 
             <!-- Register & Login Wrapper Start -->
@@ -90,69 +90,151 @@
 
                             <div class="form-wrapper">
                                 <form action="#">
+                                    <!-- (ngSubmit)="onSubmitRegister()" -->
 
                                     <!-- Single Form Start -->
                                     <div class="single-form">
-                                        <input type="text" placeholder="userName" id="name">
+                                        <!-- [(ngModel)]="register.name" -->
+                                        <input type="text" placeholder="userName" id="name"
+                                            [(ngModel)]="register.userName" [ngModelOptions]="{standalone: true}"
+                                            required>
                                     </div>
                                     <!-- Single Form End -->
 
 
                                     <!-- Single Form Start -->
                                     <div class="single-form">
-                                        <input type="email" placeholder="Email" id="email">
+                                        <input type="email" placeholder="Email" id="email" [(ngModel)]="register.email"
+                                            [ngModelOptions]="{standalone: true}" required>
                                     </div>
                                     <!-- Single Form End -->
-
 
 
                                     <!-- Single Form Start -->
                                     <div class="single-form">
-                                        <input type="password" placeholder="Password" id="password">
+                                        <input type="password" placeholder="Password" id="password"
+                                            [(ngModel)]="register.password" [ngModelOptions]="{standalone: true}"
+                                            required>
                                     </div>
                                     <!-- Single Form End -->
 
 
 
                                     <!-- Single Form Start -->
-                                    <div class="single-form">
-                                        <input type="password" placeholder="Confirm Password" id="confirmPassword">
-                                    </div>
+                                    <!-- <div class="single-form">
+                                        <input type="password" placeholder="Confirm Password" id="confirmPassword"
+                                            [(ngModel)]="register.confirmPassword" [ngModelOptions]="{standalone: true}"
+                                            required>
+                                    </div> -->
                                     <!-- Single Form End -->
 
 
 
                                     <!-- Single Form Start -->
-
                                     <div class="single-form">
                                         <div class="dropdown">
+                                            <!-- [(ngModel)]="register.userRoles" -->
+                                            <!-- (change)="onUserRoleChange($event)" -->
                                             <select class="userRoles" name="userRoles" id="userRoles"
-                                                (change)="onUserRoleChange($event)">
-                                                <option value="User Roles" selected disabled>User Roles</option>
+                                                [(ngModel)]="register.user_Roles[0].roleName"
+                                                (change)="onUserRoleChange()" required>
+                                                <option value="" selected disabled>User Roles</option>
                                                 <option value="INSTRUCTOR">INSTRUCTOR</option>
                                                 <option value="STUDENT">STUDENT</option>
                                             </select>
                                         </div>
                                     </div>
-
-
                                     <!-- Single Form Start -->
+                                    <!-- *ngIf="showcountry" -->
+                                    <div class="single-form" *ngIf="showcountry">
+                                        <input type="text" placeholder="country Name" id="countryName"
+                                            [(ngModel)]="register.country" [ngModelOptions]="{standalone: true}"
+                                            required>
+                                    </div>
+
+                                    <div class="single-form">
+                                        <!-- <label for="securityQuestion">Security Question:</label> -->
+                                        <select class="userRoles" name="userRoles" id="userRoles"
+                                        [(ngModel)]="register.securityQuestion" [ngModelOptions]="{standalone: true}"
+                                            required>
+                                            <option value="" selected disabled>Security Questions
+                                            </option>
+                                            <option value="Animal" selected disabled>Which is Your favourite animal ?
+                                            </option>
+                                            <option value="Color">Which is Your favourite Color ?</option>
+                                            <option value="DOB">What is Your Date of Birth ?</option>
+                                        </select>
+                                        <!-- <input type="text" placeholder="Question" id="name" [(ngModel)]="register.securityQuestion"
+                                            [ngModelOptions]="{standalone: true}" required> -->
+                                    </div>
                                     <div class="single-form">
 
-                                        <a button routerLink="/login" class="btn btn-primary btn-hover-dark w-100">
-                                            Create an account
+                                        <input type="text" placeholder="Answer" id="name"
+                                            [(ngModel)]="register.securityAnswer" [ngModelOptions]="{standalone: true}"
+                                            required>
+                                    </div>
+
+
+
+
+                                    <div class="single-form" *ngIf="showcountry">
+                                        <input type="text" placeholder="Interest" id="interest"
+                                            [(ngModel)]="register.additionalIntrest"
+                                            [ngModelOptions]="{standalone: true}" required>
+                                    </div>
+
+
+                                    <!-- <div class="single-form">
+                                        
+                                        <input type="text" placeholder="Question" id="name" [(ngModel)]="register.question"
+                                            [ngModelOptions]="{standalone: true}" required>
+                                    </div>
+                                    <div class="single-form">
+                                      
+                                        <input type="text" placeholder="Answer" id="name" [(ngModel)]="register.answers"
+                                            [ngModelOptions]="{standalone: true}" required>
+                                    </div> -->
+                                    <div class="single-form" *ngIf="showcountry">
+
+                                        <input type="file" class="filestyle" (change)="onFileSelected($event)"
+                                            data-buttontext="Upload photo" data-buttonbefore="true" required="required"
+                                            file-model="sigOnePhoto" id="filestyle-1" tabindex="-1">
+                                    </div>
+
+
+
+
+
+                                    <div class="single-form" *ngIf="showforinstructor">
+
+                                        <input type="file" class="filestyle" (change)="onFileSelected1($event)"
+                                            data-buttontext="Upload photo" data-buttonbefore="true" required="required"
+                                            file-model="sigOnePhoto" id="filestyle-1" tabindex="-1">
+                                    </div>
+
+
+                                    
+                                    <!-- *ngIf="showcountry" -->
+                                    <div class="single-form" >
+                                        <a routerLink="/login" button (click)="onsubmitregisterStudent()"
+                                            class="btn btn-primary btn-hover-dark w-100">
+                                            Create an account for student
                                         </a>
+                                    </div>
+                                    <!-- *ngIf="showforinstructor" -->
+                                    <div class="single-form" >
+                                        <a routerLink="/login" button (click)="onsubmitregisterInstructor()"
+                                            class="btn btn-primary btn-hover-dark w-100">
+                                            Create an account for instructor
+                                        </a>
+                                    </div>
 
 
-
-                                        <!-- <a class="btn btn-secondary btn-outline w-100"
+                                    <!-- <a class="btn btn-secondary btn-outline w-100"
                                                 href="https://accounts.google.com/signup/v2/createaccount?theme=glif&flowName=GlifWebSignIn&flowEntry=SignUp"
                                                 target="_blank">Sign
                                                 up with
                                                 Google</a> -->
-
-
-                                    </div>
                                     <!-- Single Form End -->
 
 
@@ -198,8 +280,8 @@
                 <!-- Download App Button End -->
                 <div class="download-app-btn">
                     <ul class="app-btn">
-                        <li><a href="#"><img src="../assets/images/google-play.png" alt="Google Play"></a></li>
-                        <li><a href="#"><img src="../assets/images/app-store.png" alt="App Store"></a></li>
+                        <li><a><img src="../assets/images/google-play.png" alt="Google Play"></a></li>
+                        <li><a><img src="../assets/images/app-store.png" alt="App Store"></a></li>
                     </ul>
                 </div>
                 <!-- Download App Button End -->
@@ -213,7 +295,7 @@
     <!-- Download App End -->
 
     <!--Back To Start-->
-    <a href="#" class="back-to-top">
+    <a class="back-to-top">
         <i class="icofont-simple-up"></i>
     </a>
     <!--Back To End-->

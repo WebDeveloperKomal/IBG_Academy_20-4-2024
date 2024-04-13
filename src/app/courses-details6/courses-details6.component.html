@@ -14,15 +14,17 @@
         <img class="shape-2" src="../assets/images/shape/shape-23.png" alt="Shape">
 
         <div class="container">
+
             <!-- Page Banner Start -->
             <div class="page-banner-content">
                 <ul class="breadcrumb">
-                    <li><a routerLink="home">Home</a></li>
+                    <li><a routerLink="/home">Home</a></li>
                     <li class="active">Courses Details</li>
                 </ul>
                 <h2 class="title">Courses <span> Details</span></h2>
             </div>
             <!-- Page Banner End -->
+
         </div>
 
         <!-- Shape Icon Box Start -->
@@ -48,10 +50,6 @@
     </div>
     <!-- Page Banner End -->
 
-
-
-
-
     <!-- Courses Start -->
     <div class="section section-padding mt-n10">
         <div class="container">
@@ -62,8 +60,8 @@
                     <div class="courses-details">
 
                         <div class="courses-details-images">
-                            <img src="../assets/Courses_MANAGERIAL SKILLS 2.jpg" alt="Courses Details">
-                            <span class="tags">Finance</span>
+                            <img src="../assets/Courses_Audit2.jpg" alt="Courses Details">
+                            <span class="tags"> {{courses.contentType}}</span>
 
                             <div class="courses-play">
                                 <img src="../assets/images/courses/circle-shape.png" alt="Play">
@@ -72,8 +70,9 @@
                             </div>
                         </div>
 
-                        <h2 class="title">MANAGERIAL SKILLS BUILDING PROGRAMME
-                        </h2>
+                        <h2 class="title">{{courses.name}}:</h2>
+
+
 
                         <div class="courses-details-admin">
                             <div class="admin-author">
@@ -84,21 +83,25 @@
                                         <a class="name" href="#">Pamela Foster</a>
                                         <span class="Enroll">286 Enrolled Students</span>
                                     </div> -->
+                                  <b>Course Type :</b>  {{courses.tag}}
                             </div>
                             <div class="admin-rating">
                                 <span class="rating-count">4.9</span>
                                 <span class="rating-star">
                                     <span class="rating-bar" style="width: 80%;"></span>
                                 </span>
-                                <span class="rating-text">(5,764 Rating)</span>
+                                <!-- <span class="rating-text"> {{courses.courseRatings[0]}} Rating</span> -->
                             </div>
                         </div>
 
 
 
 
+
+
                         <!-- Courses Details Tab Start -->
                         <div class="courses-details-tab">
+
 
                             <!-- Details Tab Menu Start -->
                             <div class="details-tab-menu">
@@ -116,6 +119,9 @@
                                     <li [class.active]="activeTab === 'tab3'"><button data-bs-toggle="tab"
                                             data-bs-target="#reviews" (click)="changeTab('tab3')">Reviews</button>
                                     </li>
+                                    <li><button 
+                                (click)="getquestion(id)">Question</button>
+                            </li>
                                 </ul>
                             </div>
                             <!-- Details Tab Menu End -->
@@ -123,7 +129,9 @@
 
 
 
-
+                    <!-- <button 
+                                (click)="getquestion(id)">Question</button> -->
+                        
 
                             <!-- Details Tab Content Start -->
                             <div class="details-tab-content">
@@ -135,79 +143,76 @@
                                         <div class="tab-description">
 
 
-
                                             <div class="description-wrapper">
                                                 <h3 class="tab-title">Description:</h3>
-                                                <p>Start your transformative journey to enhance your leadership
-                                                    capabilities with our Managerial Skills Building Programme. This
-                                                    dynamic course is designed to hone your decision-making, team
-                                                    management, and strategic planning skills. Immerse yourself in
-                                                    practical learning experiences, fostering effective
-                                                    communication and problem-solving abilities crucial for
-                                                    successful managerial roles.</p>
+                                                <!-- <p>Delve into the dynamic field of audit with our Audit Professional
+                                                    course. This program offers a comprehensive exploration of
+                                                    auditing, risk assessment, and compliance, providing practical
+                                                    insights to navigate real-world scenarios. Gain a deep
+                                                    understanding of audit procedures and effective communication of
+                                                    findings, preparing you for a successful career in this critical
+                                                    domain.</p> -->
+                                                    <p>{{courses.description}}</p>
+
                                             </div>
 
 
 
 
-                                            <div class="description-wrapper">
+                                            <!-- <div class="description-wrapper">
                                                 <h3 class="tab-title">Curriculum:</h3>
-                                                <p>The Managerial Skills Building Programme curriculum encompasses
-                                                    leadership essentials, decision-making strategies, effective
-                                                    team management, and strategic planning. Engage in hands-on
-                                                    exercises and real-world case studies, providing you with the
-                                                    skills needed to excel as a successful manager.</p>
-                                            </div>
+                                                <p>The Audit Professional curriculum spans foundational audit
+                                                    methodologies, advanced risk analysis techniques, and an
+                                                    in-depth examination of compliance standards. Engage in hands-on
+                                                    exercises that mirror actual audit scenarios, ensuring practical
+                                                    readiness for the challenges of the audit profession.</p>
+                                            </div> -->
 
 
 
-
-
-                                            <div class="description-wrapper">
+                                            <!-- <div class="description-wrapper">
                                                 <h3 class="tab-title">Selection Process:</h3>
-                                                <p>Our selection process for the Managerial Skills Building
-                                                    Programme is open to all individuals aspiring to enhance their
-                                                    managerial abilities. No prior managerial experience is
-                                                    required. We welcome applicants with a passion for leadership,
-                                                    effective communication, and strategic thinking. Join us on this
-                                                    educational journey where you will develop the skills to
-                                                    navigate the complexities of managerial roles.</p>
-                                            </div>
+                                                <p>Our selection process for the Audit Professional course is open
+                                                    to all, irrespective of prior auditing experience. We invite
+                                                    individuals passionate about understanding risk management,
+                                                    compliance, and effective audit practices. If you are eager to
+                                                    explore the dynamic field of auditing, your curiosity is the key
+                                                    qualification. Join us on this educational journey where
+                                                    professional growth meets your enthusiasm.</p>
+                                            </div> -->
 
 
 
-                                            <div class="description-wrapper">
+                                            <!-- <div class="description-wrapper">
+
                                                 <h3 class="tab-title">Key Learning:</h3>
-                                                <p>• Leadership Essentials<br>
-                                                    • Effective Decision-Making Strategies<br>
-                                                    • Team Management and Collaboration<br>
-                                                    • Strategic Planning for Success<br>
-                                                    • Communication Skills for Managers</p>
-                                            </div>
+                                                <p>• Understanding Audit Procedures<br>
+                                                    • Risk Assessment and Management<br>
+                                                    • Compliance with Regulatory Standards<br>
+                                                    • Practical Application of Audit Techniques<br>
+                                                    • Effective Communication of Audit Findings</p>
+                                            </div> -->
 
 
 
 
-                                            <div class="description-wrapper">
+                                            <!-- <div class="description-wrapper">
                                                 <h3 class="tab-title">Certification:</h3>
-                                                <p>Upon successful completion of the Managerial Skills Building
-                                                    Programme, you will receive a recognized certification. This
-                                                    certification not only validates your proficiency in managerial
-                                                    skills but also signifies your readiness to take on leadership
-                                                    roles. It is a mark of distinction that enhances your
-                                                    credibility in the realm of management.
-                                                </p>
-                                            </div>
+                                                <p>Upon completing the Audit Professional course, you will receive a
+                                                    certification, validating your proficiency in audit procedures,
+                                                    risk assessment, and compliance. This recognized credential
+                                                    enhances your credibility in the auditing field, signaling your
+                                                    readiness to address complex challenges.</p>
+                                            </div> -->
                                         </div>
                                         <!-- Tab Description End -->
 
+
+
                                     </div>
-
-
-
-
-
                                     <div class="tab-pane fade" id="instructors" [class.active]="activeTab === 'tab2'">
+
+
 
 
                                         <!-- Tab Instructors Start -->
@@ -215,11 +220,12 @@
                                             <h3 class="tab-title">Course Instructor:</h3>
 
                                             <div class="row">
+
                                                 <div class="col-md-3 col-6">
                                                     <!-- Single Team Start -->
                                                     <div class="single-team">
                                                         <div class="team-thumb">
-                                                            <img src="../assets/Courses-19.jpg" alt="Author">
+                                                            <img src="../assets/Courses-19.png" alt="Author">
                                                         </div>
                                                         <div class="team-content">
                                                             <div class="rating">
@@ -234,6 +240,7 @@
                                                     <!-- Single Team End -->
                                                 </div>
 
+
                                             </div>
 
 
@@ -241,28 +248,25 @@
 
 
                                             <div class="row gx-10">
+
+
                                                 <div class="col-lg-6">
                                                     <div class="tab-rating-content">
                                                         <h3 class="tab-title">Who Can Apply:</h3>
-                                                        <p>The Managerial Skills Building Programme is open to
-                                                            individuals with diverse backgrounds and career
-                                                            aspirations. Whether you are a recent graduate aspiring
-                                                            to enter management roles or a professional aiming to
-                                                            refine your managerial skills, this course is tailored
-                                                            to meet your needs.
-                                                        </p>
-                                                        <p> Applications are encouraged from
-                                                            those intrigued by leadership roles and the essential
-                                                            skills needed for managerial success. Your journey to
-                                                            becoming a skilled and effective manager starts here,
-                                                            where your enthusiasm for leadership meets practical
-                                                            skill development.
-                                                        </p>
+                                                        <p>The Audit Professional course welcomes individuals with
+                                                            diverse backgrounds and interests. Whether you are a
+                                                            recent graduate specializing in auditing or a
+                                                            professional expanding your skill set, this course
+                                                            caters to your aspirations. </p>
+                                                        <p>Applications are encouraged
+                                                            from those intrigued by risk management, compliance, and
+                                                            the meticulous world of auditing. Your journey to
+                                                            becoming a proficient audit professional begins here,
+                                                            where your enthusiasm for learning aligns with the
+                                                            dynamic landscape of audit practices.</p>
 
                                                     </div>
                                                 </div>
-
-
 
 
 
@@ -271,7 +275,6 @@
                                                     <div class="tab-rating-box">
                                                         <span class="count">4.8 <i class="icofont-star"></i></span>
                                                         <p>Rating (86K+)</p>
-
 
                                                         <div class="rating-box-wrapper">
                                                             <div class="single-rating">
@@ -285,8 +288,6 @@
                                                                 </div>
                                                             </div>
 
-
-
                                                             <div class="single-rating">
                                                                 <span class="rating-star">
                                                                     <span class="rating-bar" style="width: 80%;"></span>
@@ -296,8 +297,6 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
-
-
 
                                                             <div class="single-rating">
                                                                 <span class="rating-star">
@@ -309,8 +308,6 @@
                                                                 </div>
                                                             </div>
 
-
-
                                                             <div class="single-rating">
                                                                 <span class="rating-star">
                                                                     <span class="rating-bar" style="width: 40%;"></span>
@@ -321,8 +318,6 @@
                                                                 </div>
                                                             </div>
 
-
-
                                                             <div class="single-rating">
                                                                 <span class="rating-star">
                                                                     <span class="rating-bar" style="width: 20%;"></span>
@@ -332,9 +327,6 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
-
-
-
                                                         </div>
                                                     </div>
                                                 </div>
@@ -343,6 +335,8 @@
                                         <!-- Tab Instructors End -->
 
                                     </div>
+
+
 
 
 
@@ -362,28 +356,33 @@
 
 
                                                         <!-- Single Reviews Start -->
-                                                        <div class="single-review swiper-slide">
+                                                        <!-- *ngFor="let review of courses.reviews" -->
+                                                        <div class="single-review swiper-slide mt-5" *ngFor="let review of alldatareview">
                                                             <div class="review-author">
                                                                 <div class="author-thumb">
-                                                                    <img src="../assets/Courses_S1.jpg" alt="Author">
+                                                                    <img src="http://localhost:8080/AcademyBackend/getImage/{{review.image}}"  alt="Author">
                                                                     <i class="icofont-quote-left"></i>
                                                                 </div>
                                                                 <div class="author-content">
-                                                                    <h4 class="name">Aisha Khan</h4>
+                                                                    <h4 class="name">{{review.name}}</h4>
+                                                                    <p> {{ review.review }}</p>
                                                                     <!-- <span class="designation">Product Designer,
                                                                             USA</span> -->
-                                                                    <span class="rating-star">
+                                                                    <!-- <span class="rating-star">
                                                                         <span class="rating-bar"
                                                                             style="width: 100%;"></span>
-                                                                    </span>
+                                                                    </span> -->
                                                                 </div>
                                                             </div>
-                                                            <p>The Managerial Skills Building Programme was a
-                                                                transformative experience. The leadership essentials
-                                                                and effective decision-making strategies were
-                                                                particularly impactful. The program provided a
-                                                                well-rounded approach to managerial success. Highly
-                                                                recommended!</p>
+                                                            <!-- <p>The Audit Professional course was an enlightening
+                                                                experience! The practical exercises allowed me to
+                                                                apply audit techniques in real-world scenarios, and
+                                                                the emphasis on effective communication of findings
+                                                                was crucial. The comprehensive curriculum and
+                                                                supportive instructors made it stand out. -->
+                                                            <!-- </p> -->
+                                                            <!-- {{courses.reviews[0].review}} -->
+                                                           
                                                         </div>
                                                         <!-- Single Reviews End -->
 
@@ -391,30 +390,30 @@
 
 
 
+
                                                         <!-- Single Reviews Start -->
-                                                        <div class="single-review swiper-slide">
+                                                        <!-- <div class="single-review swiper-slide">
                                                             <div class="review-author">
                                                                 <div class="author-thumb">
-                                                                    <img src="../assets/Courses_S2.jpg" alt="Author">
+                                                                    <img src="../assets/Courses_S3.jpg" alt="Author">
                                                                     <i class="icofont-quote-left"></i>
                                                                 </div>
                                                                 <div class="author-content">
                                                                     <h4 class="name">Arjun Patel</h4>
-                                                                    <!-- <span class="designation">Product Designer,
-                                                                            USA</span> -->
+                                                                 
                                                                     <span class="rating-star">
                                                                         <span class="rating-bar"
                                                                             style="width: 100%;"></span>
                                                                     </span>
                                                                 </div>
                                                             </div>
-                                                            <p>As a mid-level manager, the Managerial Skills
-                                                                Building Programme added significant value to my
-                                                                skill set. The emphasis on team management and
-                                                                strategic planning was exactly what I needed. The
-                                                                certification is a testament to my enhanced
-                                                                managerial capabilities.</p>
-                                                        </div>
+                                                            <p>Coming from a compliance background, the Audit
+                                                                Professional course provided the perfect transition.
+                                                                The risk assessment modules were particularly
+                                                                insightful, and the hands-on approach to compliance
+                                                                standards enhanced my practical skills. I feel
+                                                                well-prepared for a career in auditing.</p>
+                                                        </div> -->
                                                         <!-- Single Reviews End -->
 
 
@@ -423,7 +422,7 @@
 
 
                                                         <!-- Single Reviews Start -->
-                                                        <div class="single-review swiper-slide">
+                                                        <!-- <div class="single-review swiper-slide">
                                                             <div class="review-author">
                                                                 <div class="author-thumb">
                                                                     <img src="../assets/Courses_S4.jpg" alt="Author">
@@ -431,22 +430,23 @@
                                                                 </div>
                                                                 <div class="author-content">
                                                                     <h4 class="name">Priya Rajput</h4>
-                                                                    <!-- <span class="designation">Product Designer,
-                                                                            USA</span> -->
+                                                                   
                                                                     <span class="rating-star">
                                                                         <span class="rating-bar"
                                                                             style="width: 100%;"></span>
                                                                     </span>
                                                                 </div>
                                                             </div>
-                                                            <p>The Managerial Skills Building Programme provided
-                                                                actionable insights into effective management. The
-                                                                communication skills for managers were particularly
-                                                                beneficial, and the real-world case studies enriched
-                                                                the learning experience. A valuable investment in my
-                                                                career.</p>
-                                                        </div>
+                                                            <p>The Audit Professional course is a game-changer. The
+                                                                selection process was inclusive, and the course
+                                                                content was thorough. I appreciated the focus on
+                                                                ethical audit practices. The certification is a
+                                                                badge of honor, and I am now confident in my
+                                                                abilities as an audit professional.</p>
+                                                        </div> -->
                                                         <!-- Single Reviews End -->
+
+
 
 
 
@@ -459,49 +459,47 @@
 
 
 
-
-                                            <div class="reviews-btn">
+                                            <!-- <div class="reviews-btn">
                                                 <button type="button" class="btn btn-primary btn-hover-dark"
                                                     data-bs-toggle="modal" data-bs-target="#reviewsModal">Write A
                                                     Review</button>
-                                            </div>
-
+                                            </div> -->
 
 
 
 
                                             <!-- Reviews Form Modal Start -->
-                                            <div class="modal fade" id="reviewsModal">
+                                            <!-- <div class="modal fade" id="reviewsModal">
                                                 <div class="modal-dialog modal-dialog-centered">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
+                                                    <div class="modal-content"> -->
+                                                        <!-- <div class="modal-header">
                                                             <h5 class="modal-title">Add a Review</h5>
                                                             <button type="button" class="btn-close"
                                                                 data-bs-dismiss="modal" aria-label="Close"></button>
-                                                        </div>
+                                                        </div> -->
 
                                                         <!-- Reviews Form Start -->
-                                                        <div class="modal-body reviews-form">
+                                                        <!-- <div class="modal-body reviews-form">
                                                             <form action="#">
-                                                                <div class="row">
-                                                                    <div class="col-md-6">
-                                                                        <!-- Single Form Start -->
+                                                                <div class="row"> -->
+                                                                    <!-- <div class="col-md-6">
+                                                                        
                                                                         <div class="single-form">
                                                                             <input type="text"
                                                                                 placeholder="Enter your name">
                                                                         </div>
-                                                                        <!-- Single Form End -->
-                                                                    </div>
-                                                                    <div class="col-md-6">
-                                                                        <!-- Single Form Start -->
+                                                                       
+                                                                    </div> -->
+                                                                    <!-- <div class="col-md-6">
+                                                                       
                                                                         <div class="single-form">
                                                                             <input type="text"
                                                                                 placeholder="Enter your Email">
                                                                         </div>
-                                                                        <!-- Single Form End -->
-                                                                    </div>
-                                                                    <div class="col-md-12">
-                                                                        <!-- Single Form Start -->
+                                                                       
+                                                                    </div> -->
+                                                                    <!-- <div class="col-md-12">
+                                                                       
                                                                         <div class="reviews-rating">
                                                                             <label>Rating</label>
                                                                             <ul id="rating" class="rating">
@@ -527,32 +525,30 @@
                                                                                 </li>
                                                                             </ul>
                                                                         </div>
-                                                                        <!-- Single Form End -->
-                                                                    </div>
-                                                                    <div class="col-md-12">
-                                                                        <!-- Single Form Start -->
-                                                                        <div class="single-form">
-                                                                            <textarea
+                                                                       
+                                                                    </div> -->
+                                                                    <!-- <div class="col-md-12">
+                                                                    <div class="single-form">
+                                                                            <textarea  [(ngModel)]="review.review" [ngModelOptions]="{standalone: true}"
                                                                                 placeholder="Write your comments here"></textarea>
                                                                         </div>
-                                                                        <!-- Single Form End -->
                                                                     </div>
-                                                                    <div class="col-md-12">
+                                                                    <div class="col-md-12"> -->
                                                                         <!-- Single Form Start -->
-                                                                        <div class="single-form">
-                                                                            <button
+                                                                        <!-- <div class="single-form">
+                                                                            <button (click)="addreview()"
                                                                                 class="btn btn-primary btn-hover-dark">Submit
                                                                                 Review</button>
-                                                                        </div>
+                                                                        </div> -->
                                                                         <!-- Single Form End -->
-                                                                    </div>
+                                                                    <!-- </div>
                                                                 </div>
                                                             </form>
-                                                        </div>
+                                                        </div> -->
                                                         <!-- Reviews Form End -->
-                                                    </div>
+                                                    <!-- </div>
                                                 </div>
-                                            </div>
+                                            </div> -->
                                             <!-- Reviews Form Modal End -->
 
                                         </div>
@@ -570,38 +566,63 @@
                     <!-- Courses Details End -->
 
                 </div>
+                
                 <div class="col-lg-4">
                     <!-- Courses Details Sidebar Start -->
                     <div class="sidebar">
 
                         <!-- Sidebar Widget Information Start -->
                         <div class="sidebar-widget widget-information">
-                            <div class="info-price">
-                                <span class="price">₹420.38</span>
-                            </div>
+                            <!-- <div class="info-price"> -->
+                                
+                                <span class="price">₹{{ courses.course_Purchased[0].price}}</span>
+                            <!-- </div> -->
                             <div class="info-list">
+                            <ul>
+                            <li><i class="icofont-man-in-glasses"></i> <strong>Instructor</strong>
+                                <span>Mr. Vikramraj Acharya</span>
+                            </li>
+                            
+                            <li><i class="icofont-clock-time"></i> <strong>Duration</strong> <span>{{ courses.duration }} days</span></li>
+                            <li><i class="icofont-ui-video-play"></i> <strong>Lectures</strong>
+                                <span>{{courses.noOfLectures}}</span>
+                            </li>
+                            <li><i class="icofont-bars"></i> <strong>Level</strong> <span>{{courses.level}}</span>
+                            </li>
+                            <li><i class="icofont-book-alt"></i> <strong>Language</strong>
+                                <span>{{courses.language}}</span>
+                            </li>
+                            <li><i class="icofont-certificate-alt-1"></i> <strong>Certificate</strong>
+                                <span>{{courses.language}}</span>
+                            </li>
+                        </ul>
+                        </div>
+                           
+                            
+                            
+                            <!-- <div class="info-list">
                                 <ul>
                                     <li><i class="icofont-man-in-glasses"></i> <strong>Instructor</strong>
                                         <span>Mr. Vikramraj Acharya</span>
                                     </li>
-                                    <li><i class="icofont-clock-time"></i> <strong>Duration</strong> <span>08 hr 15
-                                            mins</span></li>
+                                    
+                                    <li><i class="icofont-clock-time"></i> <strong>Duration</strong> <span>{{ courses.duration }} days</span></li>
                                     <li><i class="icofont-ui-video-play"></i> <strong>Lectures</strong>
                                         <span>29</span>
                                     </li>
-                                    <li><i class="icofont-bars"></i> <strong>Level</strong> <span>Secondary</span>
+                                    <li><i class="icofont-bars"></i> <strong>Level</strong> <span>{{courses.level}}</span>
                                     </li>
                                     <li><i class="icofont-book-alt"></i> <strong>Language</strong>
-                                        <span>English</span>
+                                        <span>{{courses.language}}</span>
                                     </li>
                                     <li><i class="icofont-certificate-alt-1"></i> <strong>Certificate</strong>
-                                        <span>Yes</span>
+                                        <span>{{courses.language}}</span>
                                     </li>
                                 </ul>
-                            </div>
-                            <div class="info-btn">
-                                <a href="#" class="btn btn-primary btn-hover-dark">Enroll Now</a>
-                            </div>
+                            </div> -->
+                            <!-- <div class="info-btn">
+                                <a class="btn btn-primary btn-hover-dark" routerLink="/instructor-register">Enroll Now</a>
+                            </div> -->
                         </div>
                         <!-- Sidebar Widget Information End -->
 
@@ -610,11 +631,11 @@
                             <h4 class="widget-title">Share Course:</h4>
 
                             <ul class="social">
-                                <li><a href="#"><i class="flaticon-facebook"></i></a></li>
-                                <li><a href="#"><i class="flaticon-linkedin"></i></a></li>
-                                <li><a href="#"><i class="flaticon-twitter"></i></a></li>
-                                <li><a href="#"><i class="flaticon-skype"></i></a></li>
-                                <li><a href="#"><i class="flaticon-instagram"></i></a></li>
+                                <li><a><i class="flaticon-facebook"></i></a></li>
+                                <li><a><i class="flaticon-linkedin"></i></a></li>
+                                <li><a><i class="flaticon-twitter"></i></a></li>
+                                <li><a><i class="flaticon-skype"></i></a></li>
+                                <li><a><i class="flaticon-instagram"></i></a></li>
                             </ul>
                         </div>
                         <!-- Sidebar Widget Share End -->
@@ -626,6 +647,9 @@
         </div>
     </div>
     <!-- Courses End -->
+
+
+
 
     <!-- Download App Start -->
     <div class="section section-padding download-section">
@@ -652,8 +676,8 @@
                 <!-- Download App Button End -->
                 <div class="download-app-btn">
                     <ul class="app-btn">
-                        <li><a href="#"><img src="../assets/images/google-play.png" alt="Google Play"></a></li>
-                        <li><a href="#"><img src="../assets/images/app-store.png" alt="App Store"></a></li>
+                        <li><a><img src="../assets/images/google-play.png" alt="Google Play"></a></li>
+                        <li><a><img src="../assets/images/app-store.png" alt="App Store"></a></li>
                     </ul>
                 </div>
                 <!-- Download App Button End -->
@@ -667,7 +691,7 @@
 
 
     <!--Back To Start-->
-    <a href="#" class="back-to-top">
+    <a class="back-to-top">
         <i class="icofont-simple-up"></i>
     </a>
     <!--Back To End-->

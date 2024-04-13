@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+
 import { HomeComponent } from './home/home.component';
 import { CoursesComponent } from './courses/courses.component';
 import { CoursesDetailsComponent } from './courses-details/courses-details.component';
@@ -38,8 +39,7 @@ import { OverviewComponent } from './overview/overview.component';
 import { ReviewsComponent } from './reviews/reviews.component';
 import { ProfileComponent } from './profile/profile.component';
 import { LogoutComponent } from './logout/logout.component';
-
-
+import { ChatbotComponent } from './chatbot/chatbot.component';
 
 
 const routes: Routes = [
@@ -56,7 +56,9 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'instructor-register', component: InstructorRegisterComponent },
   { path: 'forget-password', component: ForgetPasswordComponent },
-  { path: 'after-enroll', component: AfterEnrollComponent },
+
+  { path: 'all-courses-student-login', component: CoursesDetails7Component },
+  { path: 'after-enroll/:id', component: AfterEnrollComponent },
   { path: 'courses-admin', component: CoursesAdminComponent },
   { path: 'student-register', component: StudentRegisterComponent },
   { path: 'financial', component: ReviewsComponent },
@@ -65,27 +67,26 @@ const routes: Routes = [
   { path: 'students', component: StudentsComponent },
   { path: 'traffic-conversion', component: TrafficConversionComponent },
   { path: 'courses-form', component: CoursesFormComponent },
-  { path: 'courses-details1', component: CoursesDetails1Component },
+  { path: 'courses-details1/:id', component: CoursesDetails1Component },
   { path: 'courses-details2', component: CoursesDetails2Component },
   { path: 'courses-details3', component: CoursesDetails3Component },
-  { path: 'courses-details4', component: CoursesDetails4Component },
-  { path: 'courses-details5', component: CoursesDetails5Component },
-  { path: 'courses-details6', component: CoursesDetails6Component },
-  { path: 'courses-details7', component: CoursesDetails7Component },
-  { path: 'courses-details8', component: CoursesDetails8Component },
-  { path: 'courses-details9', component: CoursesDetails9Component },
-  { path: 'courses-details10', component: CoursesDetails10Component },
+  { path: 'module-form/:id', component: CoursesDetails4Component },
+  { path: 'lesson-form/:id', component: CoursesDetails5Component },
+  { path: 'instructor-courses-details/:id', component: CoursesDetails6Component},
+ 
+  // { path: 'courses-details8', component: CoursesDetails8Component },
+  // { path: 'courses-details9', component: CoursesDetails9Component },
+  // { path: 'courses-details10', component: CoursesDetails10Component },
   { path: 'engagement', component: EngagementComponent },
   { path: 'faq', component: FaqComponent },
-  { path: 'message', component: MessageComponent },
+  { path: 'message/:id', component: MessageComponent },
   { path: 'overview', component: OverviewComponent },
   { path: 'reviews', component: ReviewsComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'logout', component: LogoutComponent },
+  // { path: 'chatbot', component: ChatbotComponent },
 
-  
 ];
-
 
 
 @NgModule({

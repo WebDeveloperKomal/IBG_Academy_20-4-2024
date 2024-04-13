@@ -61,7 +61,7 @@
 
                         <div class="courses-details-images">
                             <img src="../assets/Courses_Audit2.jpg" alt="Courses Details">
-                            <span class="tags">Finance</span>
+                            <span class="tags"> {{courses.contentType}}</span>
 
                             <div class="courses-play">
                                 <img src="../assets/images/courses/circle-shape.png" alt="Play">
@@ -70,8 +70,7 @@
                             </div>
                         </div>
 
-                        <h2 class="title">AUDIT PROFESSIONAL:
-                        </h2>
+                        <h2 class="title">{{courses.name}}:</h2>
 
 
 
@@ -84,13 +83,14 @@
                                         <a class="name" href="#">Pamela Foster</a>
                                         <span class="Enroll">286 Enrolled Students</span>
                                     </div> -->
+                                  <b>Course Type :</b>  {{courses.tag}}
                             </div>
                             <div class="admin-rating">
                                 <span class="rating-count">4.9</span>
                                 <span class="rating-star">
                                     <span class="rating-bar" style="width: 80%;"></span>
                                 </span>
-                                <span class="rating-text">(5,764 Rating)</span>
+                                <span class="rating-text"> {{courses.courseRatings[0].rating}} Rating</span>
                             </div>
                         </div>
 
@@ -140,31 +140,32 @@
 
                                             <div class="description-wrapper">
                                                 <h3 class="tab-title">Description:</h3>
-                                                <p>Delve into the dynamic field of audit with our Audit Professional
+                                                <!-- <p>Delve into the dynamic field of audit with our Audit Professional
                                                     course. This program offers a comprehensive exploration of
                                                     auditing, risk assessment, and compliance, providing practical
                                                     insights to navigate real-world scenarios. Gain a deep
                                                     understanding of audit procedures and effective communication of
                                                     findings, preparing you for a successful career in this critical
-                                                    domain.</p>
+                                                    domain.</p> -->
+                                                    <p>{{courses.description}}</p>
 
                                             </div>
 
 
 
 
-                                            <div class="description-wrapper">
+                                            <!-- <div class="description-wrapper">
                                                 <h3 class="tab-title">Curriculum:</h3>
                                                 <p>The Audit Professional curriculum spans foundational audit
                                                     methodologies, advanced risk analysis techniques, and an
                                                     in-depth examination of compliance standards. Engage in hands-on
                                                     exercises that mirror actual audit scenarios, ensuring practical
                                                     readiness for the challenges of the audit profession.</p>
-                                            </div>
+                                            </div> -->
 
 
 
-                                            <div class="description-wrapper">
+                                            <!-- <div class="description-wrapper">
                                                 <h3 class="tab-title">Selection Process:</h3>
                                                 <p>Our selection process for the Audit Professional course is open
                                                     to all, irrespective of prior auditing experience. We invite
@@ -173,11 +174,11 @@
                                                     explore the dynamic field of auditing, your curiosity is the key
                                                     qualification. Join us on this educational journey where
                                                     professional growth meets your enthusiasm.</p>
-                                            </div>
+                                            </div> -->
 
 
 
-                                            <div class="description-wrapper">
+                                            <!-- <div class="description-wrapper">
 
                                                 <h3 class="tab-title">Key Learning:</h3>
                                                 <p>• Understanding Audit Procedures<br>
@@ -185,19 +186,19 @@
                                                     • Compliance with Regulatory Standards<br>
                                                     • Practical Application of Audit Techniques<br>
                                                     • Effective Communication of Audit Findings</p>
-                                            </div>
+                                            </div> -->
 
 
 
 
-                                            <div class="description-wrapper">
+                                            <!-- <div class="description-wrapper">
                                                 <h3 class="tab-title">Certification:</h3>
                                                 <p>Upon completing the Audit Professional course, you will receive a
                                                     certification, validating your proficiency in audit procedures,
                                                     risk assessment, and compliance. This recognized credential
                                                     enhances your credibility in the auditing field, signaling your
                                                     readiness to address complex challenges.</p>
-                                            </div>
+                                            </div> -->
                                         </div>
                                         <!-- Tab Description End -->
 
@@ -350,28 +351,30 @@
 
 
                                                         <!-- Single Reviews Start -->
-                                                        <div class="single-review swiper-slide">
-                                                            <div class="review-author">
-                                                                <div class="author-thumb">
+                                                        <div class="single-review swiper-slide mt-3" *ngFor="let review of courses.reviews"> 
+                                                            <!-- <div class="review-author"> -->
+                                                                <!-- <div class="author-thumb">
                                                                     <img src="../assets/Courses_S1.jpg" alt="Author">
                                                                     <i class="icofont-quote-left"></i>
-                                                                </div>
-                                                                <div class="author-content">
-                                                                    <h4 class="name">Aisha Khan</h4>
+                                                                </div> -->
+                                                                <!-- <div class="author-content"> -->
+                                                                    <!-- <h4 class="name">Aisha Khan</h4> -->
                                                                     <!-- <span class="designation">Product Designer,
                                                                             USA</span> -->
-                                                                    <span class="rating-star">
+                                                                    <!-- <span class="rating-star">
                                                                         <span class="rating-bar"
                                                                             style="width: 100%;"></span>
-                                                                    </span>
-                                                                </div>
-                                                            </div>
-                                                            <p>The Audit Professional course was an enlightening
+                                                                    </span> -->
+                                                                <!-- </div> -->
+                                                            <!-- </div> -->
+                                                            <!-- <p>The Audit Professional course was an enlightening
                                                                 experience! The practical exercises allowed me to
                                                                 apply audit techniques in real-world scenarios, and
                                                                 the emphasis on effective communication of findings
                                                                 was crucial. The comprehensive curriculum and
-                                                                supportive instructors made it stand out.</p>
+                                                                supportive instructors made it stand out. -->
+                                                            <!-- </p> -->
+                                                            {{review.review}}
                                                         </div>
                                                         <!-- Single Reviews End -->
 
@@ -381,7 +384,7 @@
 
 
                                                         <!-- Single Reviews Start -->
-                                                        <div class="single-review swiper-slide">
+                                                        <!-- <div class="single-review swiper-slide">
                                                             <div class="review-author">
                                                                 <div class="author-thumb">
                                                                     <img src="../assets/Courses_S3.jpg" alt="Author">
@@ -389,8 +392,7 @@
                                                                 </div>
                                                                 <div class="author-content">
                                                                     <h4 class="name">Arjun Patel</h4>
-                                                                    <!-- <span class="designation">Product Designer,
-                                                                            USA</span> -->
+                                                                 
                                                                     <span class="rating-star">
                                                                         <span class="rating-bar"
                                                                             style="width: 100%;"></span>
@@ -403,7 +405,7 @@
                                                                 insightful, and the hands-on approach to compliance
                                                                 standards enhanced my practical skills. I feel
                                                                 well-prepared for a career in auditing.</p>
-                                                        </div>
+                                                        </div> -->
                                                         <!-- Single Reviews End -->
 
 
@@ -412,7 +414,7 @@
 
 
                                                         <!-- Single Reviews Start -->
-                                                        <div class="single-review swiper-slide">
+                                                        <!-- <div class="single-review swiper-slide">
                                                             <div class="review-author">
                                                                 <div class="author-thumb">
                                                                     <img src="../assets/Courses_S4.jpg" alt="Author">
@@ -420,8 +422,7 @@
                                                                 </div>
                                                                 <div class="author-content">
                                                                     <h4 class="name">Priya Rajput</h4>
-                                                                    <!-- <span class="designation">Product Designer,
-                                                                            USA</span> -->
+                                                                   
                                                                     <span class="rating-star">
                                                                         <span class="rating-bar"
                                                                             style="width: 100%;"></span>
@@ -434,7 +435,7 @@
                                                                 ethical audit practices. The certification is a
                                                                 badge of honor, and I am now confident in my
                                                                 abilities as an audit professional.</p>
-                                                        </div>
+                                                        </div> -->
                                                         <!-- Single Reviews End -->
 
 
@@ -450,47 +451,47 @@
 
 
 
-                                            <div class="reviews-btn">
+                                            <!-- <div class="reviews-btn">
                                                 <button type="button" class="btn btn-primary btn-hover-dark"
                                                     data-bs-toggle="modal" data-bs-target="#reviewsModal">Write A
                                                     Review</button>
-                                            </div>
+                                            </div> -->
 
 
 
 
                                             <!-- Reviews Form Modal Start -->
-                                            <div class="modal fade" id="reviewsModal">
+                                            <!-- <div class="modal fade" id="reviewsModal">
                                                 <div class="modal-dialog modal-dialog-centered">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
+                                                    <div class="modal-content"> -->
+                                                        <!-- <div class="modal-header">
                                                             <h5 class="modal-title">Add a Review</h5>
                                                             <button type="button" class="btn-close"
                                                                 data-bs-dismiss="modal" aria-label="Close"></button>
-                                                        </div>
+                                                        </div> -->
 
                                                         <!-- Reviews Form Start -->
-                                                        <div class="modal-body reviews-form">
+                                                        <!-- <div class="modal-body reviews-form">
                                                             <form action="#">
-                                                                <div class="row">
-                                                                    <div class="col-md-6">
-                                                                        <!-- Single Form Start -->
+                                                                <div class="row"> -->
+                                                                    <!-- <div class="col-md-6">
+                                                                        
                                                                         <div class="single-form">
                                                                             <input type="text"
                                                                                 placeholder="Enter your name">
                                                                         </div>
-                                                                        <!-- Single Form End -->
-                                                                    </div>
-                                                                    <div class="col-md-6">
-                                                                        <!-- Single Form Start -->
+                                                                       
+                                                                    </div> -->
+                                                                    <!-- <div class="col-md-6">
+                                                                       
                                                                         <div class="single-form">
                                                                             <input type="text"
                                                                                 placeholder="Enter your Email">
                                                                         </div>
-                                                                        <!-- Single Form End -->
-                                                                    </div>
-                                                                    <div class="col-md-12">
-                                                                        <!-- Single Form Start -->
+                                                                       
+                                                                    </div> -->
+                                                                    <!-- <div class="col-md-12">
+                                                                       
                                                                         <div class="reviews-rating">
                                                                             <label>Rating</label>
                                                                             <ul id="rating" class="rating">
@@ -516,32 +517,30 @@
                                                                                 </li>
                                                                             </ul>
                                                                         </div>
-                                                                        <!-- Single Form End -->
-                                                                    </div>
-                                                                    <div class="col-md-12">
-                                                                        <!-- Single Form Start -->
-                                                                        <div class="single-form">
-                                                                            <textarea
+                                                                       
+                                                                    </div> -->
+                                                                    <!-- <div class="col-md-12">
+                                                                    <div class="single-form">
+                                                                            <textarea  [(ngModel)]="review.review" [ngModelOptions]="{standalone: true}"
                                                                                 placeholder="Write your comments here"></textarea>
                                                                         </div>
-                                                                        <!-- Single Form End -->
                                                                     </div>
-                                                                    <div class="col-md-12">
+                                                                    <div class="col-md-12"> -->
                                                                         <!-- Single Form Start -->
-                                                                        <div class="single-form">
-                                                                            <button
+                                                                        <!-- <div class="single-form">
+                                                                            <button (click)="addreview()"
                                                                                 class="btn btn-primary btn-hover-dark">Submit
                                                                                 Review</button>
-                                                                        </div>
+                                                                        </div> -->
                                                                         <!-- Single Form End -->
-                                                                    </div>
+                                                                    <!-- </div>
                                                                 </div>
                                                             </form>
-                                                        </div>
+                                                        </div> -->
                                                         <!-- Reviews Form End -->
-                                                    </div>
+                                                    <!-- </div>
                                                 </div>
-                                            </div>
+                                            </div> -->
                                             <!-- Reviews Form Modal End -->
 
                                         </div>
@@ -559,37 +558,62 @@
                     <!-- Courses Details End -->
 
                 </div>
+                
                 <div class="col-lg-4">
                     <!-- Courses Details Sidebar Start -->
                     <div class="sidebar">
 
                         <!-- Sidebar Widget Information Start -->
                         <div class="sidebar-widget widget-information">
-                            <div class="info-price">
-                                <span class="price">₹420.38</span>
-                            </div>
+                            <!-- <div class="info-price"> -->
+                                
+                                <span class="price">₹{{ courses.course_Purchased[0].price}}</span>
+                            <!-- </div> -->
                             <div class="info-list">
+                            <ul>
+                            <li><i class="icofont-man-in-glasses"></i> <strong>Instructor</strong>
+                                <span>Mr. Vikramraj Acharya</span>
+                            </li>
+                            
+                            <li><i class="icofont-clock-time"></i> <strong>Duration</strong> <span>{{ courses.duration }} days</span></li>
+                            <li><i class="icofont-ui-video-play"></i> <strong>Lectures</strong>
+                                <span>{{courses.noOfLectures}}</span>
+                            </li>
+                            <li><i class="icofont-bars"></i> <strong>Level</strong> <span>{{courses.level}}</span>
+                            </li>
+                            <li><i class="icofont-book-alt"></i> <strong>Language</strong>
+                                <span>{{courses.language}}</span>
+                            </li>
+                            <li><i class="icofont-certificate-alt-1"></i> <strong>Certificate</strong>
+                                <span>{{courses.language}}</span>
+                            </li>
+                        </ul>
+                        </div>
+                           
+                            
+                            
+                            <!-- <div class="info-list">
                                 <ul>
                                     <li><i class="icofont-man-in-glasses"></i> <strong>Instructor</strong>
                                         <span>Mr. Vikramraj Acharya</span>
                                     </li>
-                                    <li><i class="icofont-clock-time"></i> <strong>Duration</strong> <span>08 hr 15
-                                            mins</span></li>
+                                    
+                                    <li><i class="icofont-clock-time"></i> <strong>Duration</strong> <span>{{ courses.duration }} days</span></li>
                                     <li><i class="icofont-ui-video-play"></i> <strong>Lectures</strong>
                                         <span>29</span>
                                     </li>
-                                    <li><i class="icofont-bars"></i> <strong>Level</strong> <span>Secondary</span>
+                                    <li><i class="icofont-bars"></i> <strong>Level</strong> <span>{{courses.level}}</span>
                                     </li>
                                     <li><i class="icofont-book-alt"></i> <strong>Language</strong>
-                                        <span>English</span>
+                                        <span>{{courses.language}}</span>
                                     </li>
                                     <li><i class="icofont-certificate-alt-1"></i> <strong>Certificate</strong>
-                                        <span>Yes</span>
+                                        <span>{{courses.language}}</span>
                                     </li>
                                 </ul>
-                            </div>
+                            </div> -->
                             <div class="info-btn">
-                                <a href="#" class="btn btn-primary btn-hover-dark">Enroll Now</a>
+                                <a class="btn btn-primary btn-hover-dark" routerLink="/instructor-register">Enroll Now</a>
                             </div>
                         </div>
                         <!-- Sidebar Widget Information End -->
@@ -599,11 +623,11 @@
                             <h4 class="widget-title">Share Course:</h4>
 
                             <ul class="social">
-                                <li><a href="#"><i class="flaticon-facebook"></i></a></li>
-                                <li><a href="#"><i class="flaticon-linkedin"></i></a></li>
-                                <li><a href="#"><i class="flaticon-twitter"></i></a></li>
-                                <li><a href="#"><i class="flaticon-skype"></i></a></li>
-                                <li><a href="#"><i class="flaticon-instagram"></i></a></li>
+                                <li><a><i class="flaticon-facebook"></i></a></li>
+                                <li><a><i class="flaticon-linkedin"></i></a></li>
+                                <li><a><i class="flaticon-twitter"></i></a></li>
+                                <li><a><i class="flaticon-skype"></i></a></li>
+                                <li><a><i class="flaticon-instagram"></i></a></li>
                             </ul>
                         </div>
                         <!-- Sidebar Widget Share End -->
@@ -615,6 +639,9 @@
         </div>
     </div>
     <!-- Courses End -->
+
+
+
 
     <!-- Download App Start -->
     <div class="section section-padding download-section">
@@ -641,8 +668,8 @@
                 <!-- Download App Button End -->
                 <div class="download-app-btn">
                     <ul class="app-btn">
-                        <li><a href="#"><img src="../assets/images/google-play.png" alt="Google Play"></a></li>
-                        <li><a href="#"><img src="../assets/images/app-store.png" alt="App Store"></a></li>
+                        <li><a><img src="../assets/images/google-play.png" alt="Google Play"></a></li>
+                        <li><a><img src="../assets/images/app-store.png" alt="App Store"></a></li>
                     </ul>
                 </div>
                 <!-- Download App Button End -->
@@ -656,7 +683,7 @@
 
 
     <!--Back To Start-->
-    <a href="#" class="back-to-top">
+    <a class="back-to-top">
         <i class="icofont-simple-up"></i>
     </a>
     <!--Back To End-->

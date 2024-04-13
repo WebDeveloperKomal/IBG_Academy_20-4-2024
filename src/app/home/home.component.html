@@ -107,12 +107,12 @@
                 <!-- Section Title End -->
 
                 <!-- Courses Search Start -->
-                <div class="courses-search">
+                <!-- <div class="courses-search">
                     <form action="#">
-                        <input type="text" placeholder="Search your course">
+                        <input type="text" placeholder="Search your course" [(ngModel)]="search" [ngModelOptions]="{standalone: true}" (keyup)="applyfilter()" >
                         <button><i class="flaticon-magnifying-glass"></i></button>
                     </form>
-                </div>
+                </div> -->
                 <!-- Courses Search End -->
 
             </div>
@@ -121,29 +121,82 @@
 
 
 
+            <div class="section section-padding">
+                <!-- <div class="container"> -->
+        
+        
+                    <!-- Courses Category Wrapper Start  -->
+                    <!-- <div class="courses-category-wrapper">
+                        <div class="courses-search search-2"> -->
+                            <!-- <input type="text" placeholder="Search here">
+                            <button><i class="icofont-search"></i></button> -->
+                        <!-- </div> -->
+        
+        
+                        <!-- <ul class="category-menu">
+                              <li><a routerLinkActive="active" >All Courses</a></li> -->
+
+                            <!-- <li><a routerLink="/courses" routerLinkActive="active" >Financial</a></li>
+                            <li><a routerLink="/business">Business</a></li>
+                            <li><a routerLink="/marketing">Marketing</a></li> -->
+                        <!-- </ul>
+                    </div> -->
+                    <!-- Courses Category Wrapper End  -->
+        
+        
+        
+                <!-- </div> -->
+            <!-- </div> -->
+
 
             <!-- All Courses Tabs Menu Start -->
-            <div class="courses-tabs-menu courses-active">
+            <!-- <div class="courses-tabs-menu courses-active">
 
                 <div class="swiper-container">
                     <ul class="swiper-wrapper nav">
 
-                        <li class="swiper-slide" [class.active]="activeTab === 'tab1'"><button class="active"
+                        <li class="swiper-slide" [class.active]="activeTab === 'tab1'"><button class="active" id="tab1"
                                 data-bs-toggle="tab" data-bs-target="#tabs1"
                                 (click)="changeTab('tab1')">Financial</button>
                         </li>
 
+
                         <li class="swiper-slide" [class.active]="activeTab === 'tab2'"><button data-bs-toggle="tab"
-                                data-bs-target="#tabs2" (click)="changeTab('tab2')">Business</button>
+                                id="tab2" data-bs-target="#tabs2" (click)="changeTab('tab2')">Business</button>
                         </li>
 
 
                         <li class="swiper-slide" [class.active]="activeTab === 'tab3'"><button data-bs-toggle="tab"
-                                data-bs-target="#tabs3" (click)="changeTab('tab3')">Marketing</button>
+                                id="tab3" data-bs-target="#tabs3" (click)="changeTab('tab3')">Marketing</button>
                         </li>
+
 
                     </ul>
                 </div>
+            </div> -->
+
+            <div class="courses-category-wrapper">
+                <!-- <div class="courses-search search-2">
+                    <input type="text" placeholder="Search here" [(ngModel)]="search" [ngModelOptions]="{standalone: true}" (keyup)="applyfilter()" >
+                    <button><i class="icofont-search"></i></button>
+                </div> -->
+                <div class="courses-search search-2">
+                    <input type="text" placeholder="Search here" [(ngModel)]="search" [ngModelOptions]="{standalone: true}" (keyup)="applyfilter()" >
+                    <button><i class="icofont-search"></i></button>
+                </div>
+
+                <ul class="category-menu">
+
+                    <li><a  (click)="filterCourses('financial')">Financial</a></li>
+                    <li><a  (click)="filterCourses('business')">Business</a></li>
+                    <li><a  (click)="filterCourses('marketing')">Marketing</a></li>
+                   
+                    <!-- <li><a routerLink="/courses" routerLinkActive="active">Financial</a></li>
+                    <li><a routerLink="/business">Business</a></li>
+                    <li><a routerLink="/marketing">Marketing</a></li> -->
+                    <!-- <li><a href="#">Wishlist</a></li>
+                    <li><a href="#">Archived</a></li> -->
+                </ul>
             </div>
             <!-- All Courses Tabs Menu End -->
 
@@ -154,101 +207,137 @@
 
 
                 <div class="tab-pane fade show active" [class.active]="activeTab === 'tab1'" id="tabs1">
-
-                    <!-- --------------------------------------------------------------------------------------------------- -->
-
-                    <!-- All Courses Wrapper Start -->
                     <div class="courses-wrapper">
-                        <div class="row">
-                            <div class="col-lg-4 col-md-6">
-                                <!-- Single Courses Start -->
-                                <div class="single-courses">
-                                    <div class="courses-images">
-                                        <a routerLink="/courses-details">
-                                            <img src="../assets/Courses_Account Professional.jpg" alt="Courses"></a>
-                                    </div>
-                                    <div class="courses-content">
-                                        <div class="courses-author">
-                                            <div class="author">
-                                                <div class="author-thumb">
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <h4 class="title"><a routerLink="/courses-details">Accounts Professional</a>
-                                        </h4>
-
-                                        <div class="courses-meta">
-                                            <span> <i class="icofont-clock-time"></i> 08 hr 15 mins</span>
-                                            <span> <i class="icofont-read-book"></i> 29 Lectures </span>
-                                        </div>
-                                        <div class="courses-price-review">
-                                            <div class="courses-price">
-                                                <span class="sale-parice">₹385.00</span>
-                                                <!-- <span class="old-parice">₹440.00</span> -->
-                                            </div>
-                                            <div class="courses-review">
-                                                <span class="rating-count">4.9</span>
-                                                <span class="rating-star">
-                                                    <span class="rating-bar" style="width: 80%;"></span>
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Single Courses End -->
-                            </div>
-
-
-                            <!-- ----------------------------------------------------------------------------------------------- -->
-
-
-
-                            <div class="col-lg-4 col-md-6">
-                                <!-- Single Courses Start -->
-                                <div class="single-courses">
+                        <div class="row"  *ngIf="selectedCategory === 'financial'">
+                            <!-- <h1>hi</h1> -->
+                          <div class="col-lg-4 col-md-6" *ngFor="let course of filteredCourses" (click)="Saveid(course[0].courseId)">
+                              <div class="single-courses">
                                     <div class="courses-images">
                                         <a routerLink="/courses-details1">
-                                            <img src="../assets/Courses_Audit 1.jpg" alt="Courses"></a>
+                                            <img src="http://localhost:8080/AcademyBackend/getImage/{{course[0].fileName}}" alt="Courses"></a>
+                                            
                                     </div>
+                                   <div class="courses-content">
+                                        <!-- <div class="courses-author">
+                                        </div> -->
 
-
-                                    <div class="courses-content">
-                                        <div class="courses-author">
-                                            <div class="author">
-                                                <div class="author-thumb">
-                                                </div>
-                                            </div>
-                                        </div>
-
-
-                                        <h4 class="title"><a routerLink="/courses-details1">Audit Professional
-                                            </a></h4>
-                                        <div class="courses-meta">
-                                            <span> <i class="icofont-clock-time"></i> 08 hr 15 mins</span>
-                                            <span> <i class="icofont-read-book"></i> 29 Lectures </span>
-                                        </div>
-                                        <div class="courses-price-review">
+                                        <h4 class="title"><a routerLink="/courses-details1">{{ course[0].name }}
+                                        </a></h4>
+                                    <div class="courses-meta">
+                                        <span> <i class="icofont-clock-time"></i> {{ course[0].duration}}hrs</span>
+                                        <span> <i class="icofont-read-book"></i> {{ course[0].noOfLectures}} Lectures  </span>
+                                    </div>
+                                 <div class="courses-price-review">
                                             <div class="courses-price">
-                                                <span class="sale-parice">₹420.00</span>
+                                                <span class="sale-price" *ngIf="course.course_Purchased && course.course_Purchased.length > 0">₹{{ course.course_Purchased[0].price }}</span>
                                             </div>
                                             <div class="courses-review">
-                                                <span class="rating-count">4.9</span>
+                                                <!-- <span class="rating-count">4.9</span> -->
                                                 <span class="rating-star">
-                                                    <span class="rating-bar" style="width: 80%;"></span>
+                                                    <span class="rating-bar" [style.width.%]="course[0].courseRatings.rating
+                                                    "></span>
                                                 </span>
                                             </div>
                                         </div>
-                                    </div>
+                                      </div>
+                                      
+                                    
                                 </div>
-                                <!-- Single Courses End -->
+                                
                             </div>
-
-                            <!-- ------------------------------------------------------------------------------------ -->
-
+                     
                         </div>
+
+
+
+                        <div class="row"  *ngIf="selectedCategory === 'business'">
+                            <!-- <h1>buss</h1> -->
+                            <div class="col-lg-4 col-md-6" *ngFor="let course of businessCourses" (click)="Saveid(course[0].courseId)">
+                               
+                                <div class="single-courses">
+                                      <div class="courses-images">
+                                          <a routerLink="/courses-details1">
+                                              <img src="http://localhost:8080/AcademyBackend/getImage/{{course[0].fileName}}" alt="Courses"></a>
+                                              
+                                      </div>
+                                     <div class="courses-content">
+                                          <!-- <div class="courses-author">
+                                          </div> -->
+  
+                                          <h4 class="title"><a routerLink="/courses-details1">{{ course[0].name }}
+                                          </a></h4>
+                                      <div class="courses-meta">
+                                          <span> <i class="icofont-clock-time"></i> {{ course[0].duration}}hrs</span>
+                                          <span> <i class="icofont-read-book"></i> {{ course[0].noOfLectures}} Lectures  </span>
+                                      </div>
+                                   <div class="courses-price-review">
+                                              <div class="courses-price">
+                                                  <span class="sale-price" *ngIf="course.course_Purchased && course.course_Purchased.length > 0">₹{{ course.course_Purchased[0].price }}</span>
+                                              </div>
+                                              <div class="courses-review">
+                                                  <!-- <span class="rating-count">4.9</span> -->
+                                                  <span class="rating-star">
+                                                      <span class="rating-bar" [style.width.%]="course[0].courseRatings.rating
+                                                      "></span>
+                                                  </span>
+                                              </div>
+                                          </div>
+                                        </div>
+                                        
+                                      
+                                  </div>
+                                  
+                              </div>
+                       
+                          </div>
+
+
+                          <div class="row"  *ngIf="selectedCategory === 'marketing'">
+                            <!-- <h1>mark</h1> -->
+                            <div class="col-lg-4 col-md-6" *ngFor="let course of marketingCourses" (click)="Saveid(course[0].courseId)">
+                              
+                                <div class="single-courses">
+                                      <div class="courses-images">
+                                          <a routerLink="/courses-details1">
+                                              <img src="http://localhost:8080/AcademyBackend/getImage/{{course[0].fileName}}" alt="Courses"></a>
+                                              
+                                      </div>
+                                     <div class="courses-content">
+                                          <!-- <div class="courses-author">
+                                          </div> -->
+  
+                                          <h4 class="title"><a routerLink="/courses-details1">{{ course[0].name }}
+                                          </a></h4>
+                                      <div class="courses-meta">
+                                          <span> <i class="icofont-clock-time"></i> {{ course[0].duration}}hrs</span>
+                                          <span> <i class="icofont-read-book"></i> {{ course[0].noOfLectures}} Lectures  </span>
+                                      </div>
+                                   <div class="courses-price-review">
+                                              <div class="courses-price">
+                                                  <span class="sale-price" *ngIf="course.course_Purchased && course.course_Purchased.length > 0">₹{{ course.course_Purchased[0].price }}</span>
+                                              </div>
+                                              <div class="courses-review">
+                                                  <!-- <span class="rating-count">4.9</span> -->
+                                                  <span class="rating-star">
+                                                      <span class="rating-bar" [style.width.%]="course[0].courseRatings.rating
+                                                      "></span>
+                                                  </span>
+                                              </div>
+                                          </div>
+                                        </div>
+                                        
+                                      
+                                  </div>
+                                  
+                              </div>
+                       
+                          </div>
+
+
+
+
+
                     </div>
-                    <!-- All Courses Wrapper End -->
 
                 </div>
 
@@ -256,7 +345,7 @@
 
 
                 <div class="tab-pane fade" [class.active]="activeTab === 'tab2'" id="tabs2">
-                    
+
 
                     <!-- All Courses Wrapper Start -->
                     <div class="courses-wrapper">
@@ -545,6 +634,7 @@
                                             <span> <i class="icofont-clock-time"></i> 08 hr 15 mins</span>
                                             <span> <i class="icofont-read-book"></i> 29 Lectures </span>
                                         </div>
+
                                         <div class="courses-price-review">
                                             <div class="courses-price">
                                                 <span class="sale-parice">₹237.00</span>
@@ -556,6 +646,7 @@
                                                 </span>
                                             </div>
                                         </div>
+
                                     </div>
                                 </div>
                                 <!-- Single Courses End -->
@@ -675,7 +766,7 @@
 
 
                             <div class="col-lg-4 col-md-6">
-                                <!-- Single Courses Start -->
+                                
                                 <div class="single-courses">
                                     <div class="courses-images">
                                         <a routerLink="/courses-details10"><img
@@ -685,16 +776,11 @@
                                         <div class="courses-author">
                                             <div class="author">
                                                 <div class="author-thumb">
-                                                    <!-- <a href="#"><img src="assets/images/author/author-02.jpg"
-                                                            alt="Author"></a> -->
+                                             
                                                 </div>
-                                                <!-- <div class="author-name">
-                                                    <a class="name" href="#">Pamela Foster</a>
-                                                </div> -->
+                                               
                                             </div>
-                                            <!-- <div class="tag">
-                                                <a href="#">Science</a>
-                                            </div> -->
+                                            
                                         </div>
 
                                         <h4 class="title"><a routerLink="/courses-details10">Digital Marketing</a>
@@ -716,28 +802,25 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- Single Courses End -->
+                                
                             </div>
 
-                            <!-- ------------------------------------------------------------------------------------------- -->
 
                         </div>
                     </div>
-                    <!-- All Courses Wrapper End -->
 
                 </div>
 
 
 
             </div>
-            <!-- All Courses tab content End -->
 
 
             <!-- All Courses BUtton Start -->
-            <div class="courses-btn text-center">
+            <!-- <div class="courses-btn text-center">
                 <a routerLink="/courses" class="btn btn-secondary btn-hover-primary">Other
                     Course</a>
-            </div>
+            </div> -->
             <!-- All Courses BUtton End -->
 
 
@@ -874,12 +957,8 @@
                             completion, validating your newfound expertise and accomplishments.</p>
                     </div>
 
-
                 </div>
                 <!-- Single Work End -->
-
-
-
             </div>
 
         </div>
@@ -916,8 +995,8 @@
                 <!-- Download App Button End -->
                 <div class="download-app-btn">
                     <ul class="app-btn">
-                        <li><a href="#"><img src="../assets/images/google-play.png" alt="Google Play"></a></li>
-                        <li><a href="#"><img src="../assets/images/app-store.png" alt="App Store"></a></li>
+                        <li><a><img src="../assets/images/google-play.png" alt="Google Play"></a></li>
+                        <li><a><img src="../assets/images/app-store.png" alt="App Store"></a></li>
                     </ul>
                 </div>
                 <!-- Download App Button End -->
@@ -934,8 +1013,8 @@
 
 
     <!-- Testimonial End -->
-    <div class="section section-padding-02 mt-n1">
-        <div class="container">
+    <div class="section section-padding-02 mt-n1" >
+        <div class="container " >
 
             <!-- Section Title Start -->
             <div class="section-title shape-03 text-center">
@@ -946,12 +1025,10 @@
 
 
             <!-- Testimonial Wrapper End -->
-            <div class="testimonial-wrapper testimonial-active">
+            <!-- <div class="testimonial-wrapper testimonial-active">
+
                 <div class="swiper-container">
                     <div class="swiper-wrapper">
-
-
-                        <!-- Single Testimonial Start -->
                         <div class="single-testimonial swiper-slide">
                             <div class="testimonial-author">
                                 <div class="author-thumb">
@@ -970,19 +1047,11 @@
                                     transition to the professional world. The curriculum was well-structured,
                                     covering everything from bookkeeping to financial As a recent graduate, the
                                     Accounts Professional course provided a smooth transition.
-                                    <!-- to the professional
-                                    world. The curriculum was well-structured, covering everything from bookkeeping
-                                    to financial </p> -->
                                 <h4 class="name">Neha Kapoor</h4>
-                                <!-- <span class="designation">Product Designer, USA</span> -->
+                                
                             </div>
                         </div>
-                        <!-- Single Testimonial End -->
-
-
-
-
-                        <!-- Single Testimonial Start -->
+                       
                         <div class="single-testimonial swiper-slide">
                             <div class="testimonial-author">
                                 <div class="author-thumb">
@@ -1002,15 +1071,161 @@
                                     I feel well-prepared for a career in auditing.
                                 </p>
                                 <h4 class="name">Arjun Patel</h4>
-                                <!-- <span class="designation">Product Designer, USA</span> -->
                             </div>
                         </div>
-                        <!-- Single Testimonial End -->
 
-
-
-                        <!-- Single Testimonial Start -->
                         <div class="single-testimonial swiper-slide">
+                            <div class="testimonial-author">
+                                <div class="author-thumb">
+                                    <img src="../assets/p3.jpg" alt="Author">
+
+                                    <i class="icofont-quote-left"></i>
+                                </div>
+
+                                <span class="rating-star">
+                                    <span class="rating-bar" style="width: 80%;"></span>
+                                </span>
+                            </div>
+
+                            <div class="testimonial-content">
+                                <p>Transitioning from a technical role to office management was made seamless by the
+                                    Office Administration Management course. The leadership and team collaboration
+                                    modules were exceptional. I now feel equipped to lead and streamline operations
+                                    effectively. Highly recommended!</p>
+                                <h4 class="name">Vikram Desai</h4>
+                            </div>
+                        </div>
+
+                        <div class="single-testimonial swiper-slide">
+                            <div class="testimonial-author">
+                                <div class="author-thumb">
+                                    <img src="../assets/Courses_S4.jpg" alt="Author">
+
+                                    <i class="icofont-quote-left"></i>
+                                </div>
+
+                                <span class="rating-star">
+                                    <span class="rating-bar" style="width: 80%;"></span>
+                                </span>
+                            </div>
+                            <div class="testimonial-content">
+                                <p>Navigating the legal aspects of business was made accessible by the Business
+                                    Compliance Management course. The curriculum covered compliance standards
+                                    thoroughly, and the real-world applications were insightful. The certification
+                                    is a valuable asset in my career.</p>
+                                <h4 class="name">Shreya Gupta</h4>
+                            </div>
+                        </div>
+
+                        <div class="single-testimonial swiper-slide">
+                            <div class="testimonial-author">
+                                <div class="author-thumb">
+                                    <img src="../assets/Courses_S3.jpg" alt="Author">
+
+                                    <i class="icofont-quote-left"></i>
+                                </div>
+
+                                <span class="rating-star">
+                                    <span class="rating-bar" style="width: 80%;"></span>
+                                </span>
+
+                            </div>
+
+                            <div class="testimonial-content">
+                                <p>The Customer Relationship Management course is a must for anyone in
+                                    customer-facing roles. The emphasis on handling customer feedback and driving
+                                    business success through satisfaction is spot on. The course offers practical
+                                    skills applicable across industries.</p>
+                                <h4 class="name">Riya Nair</h4>
+                            </div>
+
+                        </div>
+
+                        <div class="single-testimonial swiper-slide">
+                            <div class="testimonial-author">
+                                <div class="author-thumb">
+                                    <img src="../assets/Courses_S2.jpg" alt="Author">
+
+                                    <i class="icofont-quote-left"></i>
+                                </div>
+
+                                <span class="rating-star">
+                                    <span class="rating-bar" style="width: 80%;"></span>
+                                </span>
+                            </div>
+                            <div class="testimonial-content">
+                                <p>The Managerial Skills Building Programme provided actionable insights into
+                                    effective management. The communication skills for managers were particularly
+                                    beneficial, and the real-world case studies enriched the learning experience. A
+                                    valuable investment in my career.</p>
+                                <h4 class="name">Priya Rajput</h4>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <div class="swiper-pagination"></div>
+                 </div>
+            </div> -->
+            <!-- <div class="container d-flex justify-content-center"> -->
+              <carousel autoplay="false"  >
+                <slide class="col-12">
+                    <div class="row d-flex justify-content-center">
+                    <div class="single-testimonial swiper-slide col-5 m-5">
+                    <div class="testimonial-author ">
+                        <div class="author-thumb">
+                            <img src="../assets/Courses_S1.jpg" alt="Author">
+
+                            <i class="icofont-quote-left"></i>
+                        </div>
+
+                        <span class="rating-star">
+                            <span class="rating-bar" style="width: 80%;"></span>
+                        </span>
+                    </div>
+
+                    <div class="testimonial-content">
+                        <p>As a recent graduate, the Accounts Professional course provided a smooth
+                            transition to the professional world. 
+                            </p>
+                            <!-- to the professional
+                            world. The curriculum was well-structured, covering everything from bookkeeping
+                            to financial </p> -->
+                        <h4 class="name">Neha Kapoor</h4>
+                        <!-- <span class="designation">Product Designer, USA</span> -->
+                    </div>
+                    </div>
+               
+                <!-- </slide> -->
+
+                <!-- <slide> -->
+                    <div class="single-testimonial swiper-slide col-5 m-5 ">
+                        <div class="testimonial-author">
+                            <div class="author-thumb">
+                                <img src="../assets/p2.jpg" alt="Author">
+
+                                <i class="icofont-quote-left"></i>
+                            </div>
+
+                            <span class="rating-star">
+                                <span class="rating-bar" style="width: 80%;"></span>
+                            </span>
+                        </div>
+                        <div class="testimonial-content">
+                            <p>Coming from a compliance background, the Audit Professional course provided the
+                                perfect transition. 
+                            </p>
+                            <h4 class="name">Arjun Patel</h4>
+                            <!-- <span class="designation">Product Designer, USA</span> -->
+                        </div>
+                    </div>
+                </div>
+            </slide>
+
+                    <slide class="col-12">
+                        <div class="row d-flex justify-content-center">
+                        <div class="single-testimonial swiper-slide col-5 m-5">
                             <div class="testimonial-author">
                                 <div class="author-thumb">
                                     <img src="../assets/p3.jpg" alt="Author">
@@ -1032,12 +1247,13 @@
                                 <!-- <span class="designation">Product Designer, USA</span> -->
                             </div>
                         </div>
+                        
                         <!-- Single T estimonial End -->
 
-
-
+                    <!-- </slide> -->
+                       <!-- <slide> -->
                         <!-- Single Testimonial Start -->
-                        <div class="single-testimonial swiper-slide">
+                        <div class="single-testimonial swiper-slide col-5 m-5">
                             <div class="testimonial-author">
                                 <div class="author-thumb">
                                     <img src="../assets/Courses_S4.jpg" alt="Author">
@@ -1059,11 +1275,11 @@
                             </div>
                         </div>
                         <!-- Single T estimonial End -->
-
-
-
-                        <!-- Single Testimonial Start -->
-                        <div class="single-testimonial swiper-slide">
+</div>
+                    </slide>
+<slide class="col-12">
+                      <div class="row d-flex justify-content-center">  <!-- Single Testimonial Start -->
+                        <div class="single-testimonial swiper-slide col-5 m-5">
                             <div class="testimonial-author">
                                 <div class="author-thumb">
                                     <img src="../assets/Courses_S3.jpg" alt="Author">
@@ -1087,12 +1303,13 @@
                             </div>
 
                         </div>
+                    
                         <!-- Single Testimonial End -->
 
-
-
+                    <!-- </slide>
+<slide> -->
                         <!-- Single Testimonial Start -->
-                        <div class="single-testimonial swiper-slide">
+                        <div class="single-testimonial swiper-slide col-5 m-5">
                             <div class="testimonial-author">
                                 <div class="author-thumb">
                                     <img src="../assets/Courses_S2.jpg" alt="Author">
@@ -1113,25 +1330,29 @@
                                 <!-- <span class="designation">Product Designer, USA</span> -->
                             </div>
                         </div>
-                        <!-- Single T estimonial End -->
-
-
-
-
-
                     </div>
+                    </slide>
+                    <ol class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel" data-slide-to="1"></li>
+                        <li data-target="#myCarousel" data-slide-to="2"></li>
+                      </ol>
+                      <!-- <ol class="carousel-indicators">
+                        <li *ngFor="let image of images; let i = index" [class.active]="i === activeSlide">
+                            <button class="indicator-button" (click)="selectSlide(i)"></button>
+                        </li>
+                    </ol> -->
+ </carousel>
 
-                    <!-- Add Pagination -->
-                    <div class="swiper-pagination"></div>
-                </div>
-            </div>
-            <!-- Testimonial Wrapper End -->
+
+
+ 
+              
+<!-- </div> -->
 
         </div>
     </div>
     <!-- Testimonial End -->
-
-
 
 
 
@@ -1152,54 +1373,57 @@
                 </div>
                 <!-- Section Title End -->
 
+
                 <!-- Brand Logo Start -->
-                <div class="brand-logo brand-active">
-                    <div class="swiper-container">
-                        <div class="swiper-wrapper">
+                <div class="row">
+                    <div class="brand-logo brand-active">
+                        <div class="swiper-container">
+                            <div class="swiper-wrapper">
 
 
-                            <!-- Single Brand Start -->
-                            <div class="single-brand swiper-slide">
-                                <img src="../assets/images/brand/brand-01.png" alt="Brand">
-                            </div>
-                            <!-- Single Brand End -->
+                                <!-- Single Brand Start -->
+                                <div class="single-brand swiper-slide d-inline-flex">
+                                    <img src="../assets/images/brand/brand-01.png" alt="Brand">
+                                </div>
+                                <!-- Single Brand End -->
 
 
-                            <!-- Single Brand Start -->
-                            <div class="single-brand swiper-slide">
-                                <img src="../assets/images/brand/brand-02.png" alt="Brand">
-                            </div>
-                            <!-- Single Brand End -->
+                                <!-- Single Brand Start -->
+                                <div class="single-brand swiper-slide d-inline-flex" id="brand1">
+                                    <img src="../assets/images/brand/brand-02.png" alt="Brand">
+                                </div>
+                                <!-- Single Brand End -->
 
 
-                            <!-- Single Brand Start -->
-                            <div class="single-brand swiper-slide">
-                                <img src="../assets/images/brand/brand-03.png" alt="Brand">
-                            </div>
-                            <!-- Single Brand End -->
+                                <!-- Single Brand Start -->
+                                <div class="single-brand swiper-slide d-inline-flex" id="brand2">
+                                    <img src="../assets/images/brand/brand-03.png" alt="Brand">
+                                </div>
+                                <!-- Single Brand End -->
 
 
-                            <!-- Single Brand Start -->
-                            <div class="single-brand swiper-slide">
-                                <img src="../assets/images/brand/brand-04.png" alt="Brand">
-                            </div>
-                            <!-- Single Brand End -->
+                                <!-- Single Brand Start -->
+                                <div class="single-brand swiper-slide d-inline-flex" id="brand3">
+                                    <img src="../assets/images/brand/brand-04.png" alt="Brand">
+                                </div>
+                                <!-- Single Brand End -->
 
 
-                            <!-- Single Brand Start -->
-                            <div class="single-brand swiper-slide">
-                                <img src="../assets/images/brand/brand-05.png" alt="Brand">
-                            </div>
-                            <!-- Single Brand End -->
+                                <!-- Single Brand Start -->
+                                <div class="single-brand swiper-slide d-inline-flex" id="brand4">
+                                    <img src="../assets/images/brand/brand-05.png" alt="Brand">
+                                </div>
+                                <!-- Single Brand End -->
 
 
-                            <!-- Single Brand Start -->
-                            <div class="single-brand swiper-slide">
+                                <!-- Single Brand Start -->
+                                <!-- <div class="single-brand swiper-slide d-inline-flex">
                                 <img src="../assets/images/brand/brand-06.png" alt="Brand">
+                            </div> -->
+                                <!-- Single Brand End -->
+
+
                             </div>
-                            <!-- Single Brand End -->
-
-
                         </div>
                     </div>
                 </div>
@@ -1383,7 +1607,7 @@
 
 
     <!--Back To Start-->
-    <a href="#" class="back-to-top">
+    <a class="back-to-top">
         <i class="icofont-simple-up"></i>
     </a>
     <!--Back To End-->

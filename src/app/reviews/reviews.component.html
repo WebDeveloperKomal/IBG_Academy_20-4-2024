@@ -5,6 +5,7 @@
         <!-- Login Header Wrapper Start -->
         <div class="login-header-wrapper navbar navbar-expand">
 
+
             <!-- Header Logo Start -->
             <div class="login-header-logo">
                 <a routerLink="/home"><img src="../assets/final logo 1.png" alt="Logo" width="50px" height="44px"></a>
@@ -28,16 +29,20 @@
 
             <!-- Header Action Start -->
             <div class="login-header-action ml-auto">
-                <div class="dropdown">
 
-                    <button class="action notification" data-bs-toggle="dropdown">
+                <div class="dropdown" dropdown>
+
+                    <button class="action notification" data-bs-toggle="dropdown" dropdownToggle>
+
                         <i class="flaticon-notification"></i>
                         <span class="active"></span>
                     </button>
 
 
-                    <div class="dropdown-menu dropdown-notification">
+                    <div class="dropdown-menu dropdown-notification" *dropdownMenu id="drop1">
+
                         <ul class="notification-items-list">
+
                             <li class="notification-item">
                                 <span class="notify-icon bg-success text-white"><i class="icofont-ui-user"></i></span>
                                 <div class="dropdown-body">
@@ -49,6 +54,8 @@
                                 </div>
                                 <span class="notify-time">3:20 am</span>
                             </li>
+
+
                             <li class="notification-item">
                                 <span class="notify-icon bg-success text-white"><i
                                         class="icofont-shopping-cart"></i></span>
@@ -59,6 +66,8 @@
                                 </div>
                                 <span class="notify-time">3:20 am</span>
                             </li>
+
+
                             <li class="notification-item">
                                 <span class="notify-icon bg-danger text-white"><i class="icofont-book-mark"></i></span>
                                 <div class="dropdown-body">
@@ -69,6 +78,8 @@
                                 </div>
                                 <span class="notify-time">3:20 am</span>
                             </li>
+
+
                             <li class="notification-item">
                                 <span class="notify-icon bg-success text-white"><i class="icofont-heart-alt"></i></span>
                                 <div class="dropdown-body">
@@ -78,6 +89,8 @@
                                 </div>
                                 <span class="notify-time">3:20 am</span>
                             </li>
+
+
                             <li class="notification-item">
                                 <span class="notify-icon bg-success text-white"><i class="icofont-image"></i></span>
                                 <div class="dropdown-body">
@@ -89,32 +102,37 @@
                                 </div>
                                 <span class="notify-time">3:20 am</span>
                             </li>
+
+
                         </ul>
                         <a class="all-notification" href="#">See all notifications <i
                                 class="icofont-simple-right"></i></a>
                     </div>
-
-
-
                 </div>
+
 
                 <a class="action author" href="#">
                     <img src="../assets/profile.jpg" alt="Author">
                 </a>
 
-                <div class="dropdown">
-                    <button class="action more" data-bs-toggle="dropdown">
+
+
+                <div class="dropdown" dropdown>
+
+                    <button class="action more" data-bs-toggle="dropdown" dropdownToggle>
                         <span></span>
                         <span></span>
                         <span></span>
                     </button>
-                    <ul class="dropdown-menu">
-                        <li><a class="" href="profile.html"><i class="icofont-user"></i> Profile</a></li>
-                        <li><a class="" href="chatbot.html"><i class="icofont-inbox"></i> Inbox</a>
+
+                    <ul class="dropdown-menu" *dropdownMenu id="drop2">
+                        <li><a class="" routerLink="/profile"><i class="icofont-user"></i> Profile</a></li>
+                        <li><a class="" routerLink="/chatbot"><i class="icofont-inbox"></i> Inbox</a>
                         </li>
-                        <li><a class="" href="logOut.html"><i class="icofont-logout"></i> Log Out</a></li>
+                        <li><a class="" routerLink="/logout"><i class="icofont-logout"></i> Log Out</a></li>
                     </ul>
                 </div>
+
             </div>
             <!-- Header Action End -->
 
@@ -262,11 +280,10 @@
                             <!-- Courses Start -->
                             <div class="courses">
                                 <div class="courses-thumb">
-                                    <a href="#"><img src="../assets/images/courses/admin-courses-01.jpg"
-                                            alt="Courses"></a>
+                                    <a><img src="../assets/images/courses/admin-courses-01.jpg" alt="Courses"></a>
                                 </div>
                                 <div class="courses-content">
-                                    <h4 class="title"><a href="#">Build An eCommerce Site With WooCommerce and
+                                    <h4 class="title"><a>Build An eCommerce Site With WooCommerce and
                                             WooLentor.</a></h4>
                                     <div class="average-rating">
                                         <span class="label">Course Rating:</span>
@@ -282,7 +299,7 @@
                                 </div>
 
                                 <div class="courses-btn">
-                                    <a class="btn" href="#">View Summary</a>
+                                    <a class="btn">View Summary</a>
                                 </div>
                             </div>
                             <!-- Courses End -->
@@ -305,9 +322,9 @@
                                         </span>
                                     </div>
 
-                                    <a href="#" class="btn">Respond</a>
+                                    <a class="btn">Respond</a>
                                 </div>
-                                <a class="waving" href="#"><i class="flaticon-waving-flag"></i></a>
+                                <a class="waving"><i class="flaticon-waving-flag"></i></a>
                             </div>
                             <!-- Rating End -->
 
@@ -322,11 +339,10 @@
                             <!-- Courses Start -->
                             <div class="courses">
                                 <div class="courses-thumb">
-                                    <a href="#"><img src="../assets/images/courses/admin-courses-01.jpg"
-                                            alt="Courses"></a>
+                                    <a><img src="../assets/images/courses/admin-courses-01.jpg" alt="Courses"></a>
                                 </div>
                                 <div class="courses-content">
-                                    <h4 class="title"><a href="#">Build An WholeSale WooCommerce Store using Whols
+                                    <h4 class="title"><a>Build An WholeSale WooCommerce Store using Whols
                                             Plugin</a></h4>
                                     <div class="average-rating">
                                         <span class="label">Course Rating:</span>
@@ -340,7 +356,7 @@
                                     </div>
                                 </div>
                                 <div class="courses-btn">
-                                    <a class="btn" href="#">View Summary</a>
+                                    <a class="btn">View Summary</a>
                                 </div>
                             </div>
                             <!-- Courses End -->
@@ -362,9 +378,9 @@
                                         </span>
                                     </div>
 
-                                    <a href="#" class="btn">Respond</a>
+                                    <a class="btn">Respond</a>
                                 </div>
-                                <a class="waving" href="#"><i class="flaticon-waving-flag"></i></a>
+                                <a class="waving"><i class="flaticon-waving-flag"></i></a>
                             </div>
                             <!-- Rating End -->
 
@@ -379,11 +395,10 @@
                             <!-- Courses Start -->
                             <div class="courses">
                                 <div class="courses-thumb">
-                                    <a href="#"><img src="../assets/images/courses/admin-courses-01.jpg"
-                                            alt="Courses"></a>
+                                    <a><img src="../assets/images/courses/admin-courses-01.jpg" alt="Courses"></a>
                                 </div>
                                 <div class="courses-content">
-                                    <h4 class="title"><a href="#">Build An WholeSale WooCommerce Store using Whols
+                                    <h4 class="title"><a>Build An WholeSale WooCommerce Store using Whols
                                             Plugin</a></h4>
                                     <div class="average-rating">
                                         <span class="label">Course Rating:</span>
@@ -397,7 +412,7 @@
                                     </div>
                                 </div>
                                 <div class="courses-btn">
-                                    <a class="btn" href="#">View Summary</a>
+                                    <a class="btn">View Summary</a>
                                 </div>
                             </div>
                             <!-- Courses End -->
@@ -417,9 +432,9 @@
                                         </span>
                                     </div>
 
-                                    <a href="#" class="btn">Respond</a>
+                                    <a class="btn">Respond</a>
                                 </div>
-                                <a class="waving" href="#"><i class="flaticon-waving-flag"></i></a>
+                                <a class="waving"><i class="flaticon-waving-flag"></i></a>
                             </div>
                             <!-- Rating End -->
 
@@ -434,11 +449,10 @@
                             <!-- Courses Start -->
                             <div class="courses">
                                 <div class="courses-thumb">
-                                    <a href="#"><img src="../assets/images/courses/admin-courses-01.jpg"
-                                            alt="Courses"></a>
+                                    <a><img src="../assets/images/courses/admin-courses-01.jpg" alt="Courses"></a>
                                 </div>
                                 <div class="courses-content">
-                                    <h4 class="title"><a href="#">Build An eCommerce Site With WooCommerce and
+                                    <h4 class="title"><a>Build An eCommerce Site With WooCommerce and
                                             WooLentor.</a></h4>
                                     <div class="average-rating">
                                         <span class="label">Course Rating:</span>
@@ -452,7 +466,7 @@
                                     </div>
                                 </div>
                                 <div class="courses-btn">
-                                    <a class="btn" href="#">View Summary</a>
+                                    <a class="btn">View Summary</a>
                                 </div>
                             </div>
                             <!-- Courses End -->
@@ -474,9 +488,9 @@
                                         </span>
                                     </div>
 
-                                    <a href="#" class="btn">Respond</a>
+                                    <a class="btn">Respond</a>
                                 </div>
-                                <a class="waving" href="#"><i class="flaticon-waving-flag"></i></a>
+                                <a class="waving"><i class="flaticon-waving-flag"></i></a>
                             </div>
                             <!-- Rating End -->
 
@@ -497,7 +511,7 @@
 
 
     <!--Back To Start-->
-    <a href="#" class="back-to-top">
+    <a class="back-to-top">
         <i class="icofont-simple-up"></i>
     </a>
     <!--Back To End-->

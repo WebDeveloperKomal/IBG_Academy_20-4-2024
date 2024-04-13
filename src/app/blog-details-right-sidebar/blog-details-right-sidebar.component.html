@@ -150,26 +150,30 @@
                         <div class="blog-details-label">
                             <h4 class="label">Tags:</h4>
                             <ul class="tag-list">
-                                <li><a href="#">Design</a></li>
-                                <li><a href="#">Education</a></li>
-                                <li><a href="#">Education</a></li>
-                                <li><a href="#">Design</a></li>
+                                <li><a>Design</a></li>
+                                <li><a>Education</a></li>
+                                <li><a>Education</a></li>
+                                <li><a>Design</a></li>
                             </ul>
                         </div>
+
 
                         <div class="blog-details-label">
                             <h4 class="label">Share:</h4>
                             <ul class="social">
-                                <li><a href="#"><i class="flaticon-facebook"></i></a></li>
-                                <li><a href="#"><i class="flaticon-linkedin"></i></a></li>
-                                <li><a href="#"><i class="flaticon-twitter"></i></a></li>
-                                <li><a href="#"><i class="flaticon-skype"></i></a></li>
-                                <li><a href="#"><i class="flaticon-instagram"></i></a></li>
+                                <li><a><i class="flaticon-facebook"></i></a></li>
+                                <li><a><i class="flaticon-linkedin"></i></a></li>
+                                <li><a><i class="flaticon-twitter"></i></a></li>
+                                <li><a><i class="flaticon-skype"></i></a></li>
+                                <li><a><i class="flaticon-instagram"></i></a></li>
                             </ul>
                         </div>
 
+
                     </div>
                     <!-- Blog Details Wrapper End -->
+
+
 
                     <!-- Blog Details Comment End -->
                     <div class="blog-details-comment">
@@ -196,9 +200,11 @@
                                             when unknown printer took a galley type and scrambled to make type
                                             specimen’s book has survived not five centuries but also the leap into
                                             electronic type and book.</p>
-                                        <a href="#" class="reply"> <i class="icofont-reply"></i> Reply</a>
+                                        <a class="reply"> <i class="icofont-reply"></i> Reply</a>
                                     </div>
                                     <!-- Single Comment End -->
+
+
 
                                     <ul class="comment-reply">
                                         <li>
@@ -220,12 +226,15 @@
                                                     1500 when printer took a galley type and scrambled to make type
                                                     specimen book survived centuries but also the electronic type
                                                     and book.</p>
-                                                <a href="#" class="reply"> <i class="icofont-reply"></i> Reply</a>
+                                                <a class="reply"> <i class="icofont-reply"></i> Reply</a>
                                             </div>
                                             <!-- Single Comment End -->
                                         </li>
                                     </ul>
                                 </li>
+
+
+
                                 <li>
                                     <!-- Single Comment Start -->
                                     <div class="single-comment">
@@ -245,12 +254,15 @@
                                             when unknown printer took a galley type and scrambled to make type
                                             specimen’s book has survived not five centuries but also the leap into
                                             electronic type and book.</p>
-                                        <a href="#" class="reply"> <i class="icofont-reply"></i> Reply</a>
+                                        <a class="reply"> <i class="icofont-reply"></i> Reply</a>
                                     </div>
                                     <!-- Single Comment End -->
                                 </li>
                             </ul>
                         </div>
+
+
+
                         <div class="comment-form">
                             <h3 class="title">Leave a comment</h3>
 
@@ -264,7 +276,8 @@
 
                                             <!-- Form Wrapper Start -->
                                             <div class="single-form">
-                                                <input type="text" placeholder="Name" id="name">
+                                                <input type="text" placeholder="Name" id="name" [(ngModel)]="blog.name"
+                                                    [ngModelOptions]="{standalone: true}" required>
                                             </div>
                                             <!-- Form Wrapper End -->
                                         </div>
@@ -274,7 +287,9 @@
                                         <div class="col-md-6">
                                             <!-- Form Wrapper Start -->
                                             <div class="single-form">
-                                                <input type="email" placeholder="Email" id="email">
+                                                <input type="email" placeholder="Email" id="email"
+                                                    [(ngModel)]="blog.email" [ngModelOptions]="{standalone: true}"
+                                                    required>
                                             </div>
                                             <!-- Form Wrapper End -->
                                         </div>
@@ -284,30 +299,30 @@
                                         <div class="col-md-12">
                                             <!-- Form Wrapper Start -->
                                             <div class="single-form">
-                                                <textarea placeholder="Massage" id="message"></textarea>
+                                                <textarea placeholder="Massage" id="message" [(ngModel)]="blog.message"
+                                                    [ngModelOptions]="{standalone: true}" required>
+                                            </textarea>
                                             </div>
                                             <!-- Form Wrapper End -->
                                         </div>
+
 
 
                                         <div class="col-md-12">
                                             <!-- Form Wrapper Start -->
                                             <div class="single-form text-center">
-                                                <button class="btn btn-primary btn-hover-dark">Submit Now</button>
-                                                    
+                                                <button class="btn btn-primary btn-hover-dark"
+                                                    (click)="onSubmitBlogRight()">Submit Now</button>
+
                                             </div>
                                             <!-- Form Wrapper End -->
                                         </div>
-
 
 
                                     </div>
                                 </form>
                             </div>
                             <!-- Form Wrapper End -->
-
-
-
 
 
                         </div>
@@ -335,16 +350,18 @@
 
                             <div class="widget-category">
                                 <ul class="category-list">
-                                    <li><a href="#">UI/UX Design <span>(16)</span></a></li>
-                                    <li><a href="#">Creative Writing <span>(03)</span></a></li>
-                                    <li><a href="#">Graphic Design <span>(08)</span></a></li>
-                                    <li><a href="#">Fine Arts <span>(18)</span></a></li>
-                                    <li><a href="#">Business Analytics <span>(02)</span></a></li>
-                                    <li><a href="#">Marketing <span>(14)</span></a></li>
+                                    <li><a>UI/UX Design <span>(16)</span></a></li>
+                                    <li><a>Creative Writing <span>(03)</span></a></li>
+                                    <li><a>Graphic Design <span>(08)</span></a></li>
+                                    <li><a>Fine Arts <span>(18)</span></a></li>
+                                    <li><a>Business Analytics <span>(02)</span></a></li>
+                                    <li><a>Marketing <span>(14)</span></a></li>
                                 </ul>
                             </div>
                         </div>
                         <!-- Sidebar Widget Category End -->
+
+
 
                         <!-- Sidebar Widget Post Start -->
                         <div class="sidebar-widget">
@@ -352,6 +369,8 @@
 
                             <div class="widget-post">
                                 <ul class="post-items">
+
+
                                     <li>
                                         <!-- Sidebar Widget Post Start -->
                                         <div class="single-post">
@@ -368,6 +387,9 @@
                                         </div>
                                         <!-- Sidebar Widget Post End -->
                                     </li>
+
+
+
                                     <li>
                                         <!-- Sidebar Widget Post Start -->
                                         <div class="single-post">
@@ -384,6 +406,9 @@
                                         </div>
                                         <!-- Sidebar Widget Post End -->
                                     </li>
+
+
+
                                     <li>
                                         <!-- Sidebar Widget Post Start -->
                                         <div class="single-post">
@@ -403,7 +428,7 @@
                                         <!-- Sidebar Widget Post End -->
                                     </li>
 
-                                    
+
                                     <li>
                                         <!-- Sidebar Widget Post Start -->
                                         <div class="single-post">
@@ -422,10 +447,15 @@
                                         </div>
                                         <!-- Sidebar Widget Post End -->
                                     </li>
+
+
+
                                 </ul>
                             </div>
                         </div>
                         <!-- Sidebar Widget Post End -->
+
+
 
                         <!-- Sidebar Widget Tags Start -->
                         <div class="sidebar-widget">
@@ -433,29 +463,31 @@
 
                             <div class="widget-tags">
                                 <ul class="tags-list">
-                                    <li><a href="#">Design</a></li>
-                                    <li><a href="#">Education</a></li>
-                                    <li><a href="#">Education</a></li>
-                                    <li><a href="#">Design</a></li>
-                                    <li><a href="#">Design</a></li>
-                                    <li><a href="#">Education</a></li>
-                                    <li><a href="#">Education</a></li>
-                                    <li><a href="#">Design</a></li>
+                                    <li><a>Design</a></li>
+                                    <li><a>Education</a></li>
+                                    <li><a>Education</a></li>
+                                    <li><a>Design</a></li>
+                                    <li><a>Design</a></li>
+                                    <li><a>Education</a></li>
+                                    <li><a>Education</a></li>
+                                    <li><a>Design</a></li>
                                 </ul>
                             </div>
                         </div>
                         <!-- Sidebar Widget Tags End -->
+
+
 
                         <!-- Sidebar Widget Share Start -->
                         <div class="sidebar-widget">
                             <h4 class="widget-title">Share Course:</h4>
 
                             <ul class="social">
-                                <li><a href="#"><i class="flaticon-facebook"></i></a></li>
-                                <li><a href="#"><i class="flaticon-linkedin"></i></a></li>
-                                <li><a href="#"><i class="flaticon-twitter"></i></a></li>
-                                <li><a href="#"><i class="flaticon-skype"></i></a></li>
-                                <li><a href="#"><i class="flaticon-instagram"></i></a></li>
+                                <li><a><i class="flaticon-facebook"></i></a></li>
+                                <li><a><i class="flaticon-linkedin"></i></a></li>
+                                <li><a><i class="flaticon-twitter"></i></a></li>
+                                <li><a><i class="flaticon-skype"></i></a></li>
+                                <li><a><i class="flaticon-instagram"></i></a></li>
                             </ul>
                         </div>
                         <!-- Sidebar Widget Share End -->
@@ -469,6 +501,7 @@
         </div>
     </div>
     <!-- Blog Details End -->
+
 
     <!-- Download App Start -->
     <div class="section section-padding download-section">
@@ -495,8 +528,8 @@
                 <!-- Download App Button End -->
                 <div class="download-app-btn">
                     <ul class="app-btn">
-                        <li><a href="#"><img src="../assets/images/google-play.png" alt="Google Play"></a></li>
-                        <li><a href="#"><img src="../assets/images/app-store.png" alt="App Store"></a></li>
+                        <li><a><img src="../assets/images/google-play.png" alt="Google Play"></a></li>
+                        <li><a><img src="../assets/images/app-store.png" alt="App Store"></a></li>
                     </ul>
                 </div>
                 <!-- Download App Button End -->
@@ -509,7 +542,7 @@
     <!-- Download App End -->
 
     <!--Back To Start-->
-    <a href="#" class="back-to-top">
+    <a class="back-to-top">
         <i class="icofont-simple-up"></i>
     </a>
     <!--Back To End-->

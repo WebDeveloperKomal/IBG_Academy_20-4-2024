@@ -55,18 +55,22 @@
         <div class="container">
 
 
-
             <!-- FAQ Tab Menu Start -->
             <div class="faq-tab-menu">
                 <ul class="nav nav-justified">
-                    <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab"
-                            data-bs-target="#tab1">Financial</button></li>
 
-                    <li class="nav-item"><button class="nav-link" data-bs-toggle="tab"
-                            data-bs-target="#tab2">Business</button></li>
+                    <li class="nav-item" [class.active]="activeTab === 'tab1'"><button class="nav-link active"
+                            data-bs-toggle="tab" data-bs-target="#tab1" (click)="changeTab('tab1')">Financial</button>
+                    </li>
 
-                    <li class="nav-item"><button class="nav-link" data-bs-toggle="tab"
-                            data-bs-target="#tab3">Marketing</button></li>
+                    <li class="nav-item" [class.active]="activeTab === 'tab2'"><button class="nav-link"
+                            data-bs-toggle="tab" data-bs-target="#tab2" (click)="changeTab('tab2')">Business</button>
+                    </li>
+
+                    <li class="nav-item" [class.active]="activeTab === 'tab3'"><button class="nav-link"
+                            data-bs-toggle="tab" data-bs-target="#tab3" (click)="changeTab('tab3')">Marketing</button>
+                    </li>
+
                 </ul>
             </div>
             <!-- FAQ Tab Menu End -->
@@ -77,7 +81,7 @@
             <div class="tab-content">
 
 
-                <div class="tab-pane fade show active" id="tab1">
+                <div class="tab-pane fade show active" id="tab1" [class.active]="activeTab === 'tab1'">
                     <!-- FAQ Wrapper Start -->
                     <div class="faq-wrapper">
 
@@ -235,13 +239,10 @@
                     <!-- FAQ Wrapper End -->
                 </div>
 
-
-
                 <!-- ------------------------------------------------------------------------------------------------------------ -->
 
 
-
-                <div class="tab-pane fade" id="tab2">
+                <div class="tab-pane fade" id="tab2" [class.active]="activeTab === 'tab2'">
                     <!-- FAQ Wrapper Start -->
                     <div class="faq-wrapper">
 
@@ -409,12 +410,10 @@
                     <!-- FAQ Wrapper End -->
                 </div>
 
-
-
                 <!-- ---------------------------------------------------------------------------------------------------------- -->
 
 
-                <div class="tab-pane fade" id="tab3">
+                <div class="tab-pane fade" id="tab3" [class.active]="activeTab === 'tab3'">
                     <!-- FAQ Wrapper Start -->
                     <div class="faq-wrapper">
 
@@ -572,15 +571,17 @@
                     </div>
                     <!-- FAQ Wrapper End -->
                 </div>
+
             </div>
             <!-- FAQ Tab Content End -->
 
 
             <!-- FAQ Button End -->
             <div class="faq-btn text-center">
-                <a class="btn btn-primary btn-hover-dark" href="#">Other’s Question</a>
+                <a class="btn btn-primary btn-hover-dark">Other’s Question</a>
             </div>
             <!-- FAQ Button End -->
+
         </div>
     </div>
     <!-- FAQ End -->
@@ -610,8 +611,8 @@
                 <!-- Download App Button End -->
                 <div class="download-app-btn">
                     <ul class="app-btn">
-                        <li><a href="#"><img src="../assets/images/google-play.png" alt="Google Play"></a></li>
-                        <li><a href="#"><img src="../assets/images/app-store.png" alt="App Store"></a></li>
+                        <li><a><img src="../assets/images/google-play.png" alt="Google Play"></a></li>
+                        <li><a><img src="../assets/images/app-store.png" alt="App Store"></a></li>
                     </ul>
                 </div>
                 <!-- Download App Button End -->
@@ -625,7 +626,7 @@
 
 
     <!--Back To Start-->
-    <a href="#" class="back-to-top">
+    <a class="back-to-top">
         <i class="icofont-simple-up"></i>
     </a>
     <!--Back To End-->

@@ -20,7 +20,7 @@
             <!-- Page Banner Start -->
             <div class="page-banner-content">
                 <ul class="breadcrumb">
-                    <li><a routerLink="home">Home</a></li>
+                    <li><a routerLink="/home">Home</a></li>
                     <li class="active">Courses</li>
                 </ul>
                 <h2 class="title">My <span>Courses</span></h2>
@@ -58,13 +58,13 @@
         <div class="container">
 
 
-
             <!-- Courses Category Wrapper Start  -->
             <div class="courses-category-wrapper">
                 <div class="courses-search search-2">
-                    <input type="text" placeholder="Search here">
+                    <input type="text" placeholder="Search here" [(ngModel)]="search" [ngModelOptions]="{standalone: true}" (keyup)="applyfilter()" >
                     <button><i class="icofont-search"></i></button>
                 </div>
+
 
                 <ul class="category-menu">
                     <li><a routerLink="/courses" routerLinkActive="active">Financial</a></li>
@@ -77,62 +77,56 @@
             <!-- Courses Category Wrapper End  -->
 
 
-
-
             <!-- Courses Wrapper Start  -->
             <div class="courses-wrapper-02">
-                <div class="row">
+                <div class="row m-5">
 
 
-                    <div class="col-lg-4 col-md-6">
+                    <!-- <div class="col-lg-4 col-md-6"> -->
                         <!-- Single Courses Start -->
-                        <div class="single-courses">
+                        <!-- <div class="single-courses"> -->
 
-
+<!-- 
                             <div class="courses-images">
                                 <a routerLink="/courses-details">
                                     <img src="../assets/Courses_Account Professional.jpg" alt="Courses"></a>
 
 
-                                <div class="courses-option dropdown">
-                                    <button class="option-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                <div class="courses-option dropdown" dropdown>
+
+                                    <button class="option-toggle" data-bs-toggle="dropdown" aria-expanded="false"
+                                        dropdownToggle>
                                         <span></span>
                                         <span></span>
                                         <span></span>
                                     </button>
 
-                                    <ul class="dropdown-menu">
-                                        <li><a href="#"><i class="icofont-share-alt"></i> Share</a></li>
-                                        <li><a href="#"><i class="icofont-plus"></i> Create Collection</a></li>
-                                        <li><a href="#"><i class="icofont-star"></i> Favorite</a></li>
-                                        <li><a href="#"><i class="icofont-archive"></i> Archive</a></li>
+                                    <ul class="dropdown-menu" *dropdownMenu>
+                                        <li><a><i class="icofont-share-alt"></i> Share</a></li>
+                                        <li><a><i class="icofont-plus"></i> Create Collection</a></li>
+                                        <li><a><i class="icofont-star"></i> Favorite</a></li>
+                                        <li><a><i class="icofont-archive"></i> Archive</a></li>
                                     </ul>
-
-
                                 </div>
-
-
-                            </div>
-
+                            </div> -->
 
 
 
-
-                            <div class="courses-content">
-                                <div class="courses-author">
+                            <!-- <div class="courses-content"> -->
+                                <!-- <div class="courses-author">
                                     <div class="author">
-                                        <div class="author-thumb">
+                                        <div class="author-thumb"> -->
                                             <!-- <a href="#"><img src="assets/images/author/author-01.jpg"
                                                     alt="Author"></a> -->
-                                        </div>
+                                        <!-- </div> -->
                                         <!-- <div class="author-name">
                                             <a class="name" href="#">Jason Williams</a>
                                             <a class="name-2" href="#">Ohula Malsh</a>
                                         </div> -->
-                                    </div>
-                                </div>
+                                    <!-- </div>
+                                </div> -->
 
-                                <h4 class="title"><a routerLink="/courses-details">Accounts Professional</a></h4>
+                                <!-- <h4 class="title"><a routerLink="/courses-details">Accounts Professional</a></h4>
 
                                 <div class="courses-rating">
                                     <p>38% Complete</p>
@@ -146,83 +140,243 @@
                                             <span class="rating-bar" style="width: 80%;"></span>
                                         </span>
                                         <p>Your rating</p>
-                                    </div>
+                                    </div> -->
 
 
                                     <!-- <a href="#"
                                     class="btn btn-secondary btn-hover-primary">Read More</a> -->
 
 
-                                </div>
-                            </div>
+                                <!-- </div> -->
+                            <!-- </div> -->
+                        <!-- </div>
+                        
+                    </div> -->
+                    <!-- <div class="col-lg-4 col-md-6" *ngFor="let course of courses" >
+                        <div class="single-courses">
+                        <a routerLink="/after-enroll"> -->
+                            <!-- <div class="card"> -->
+
+                                <!-- <div class="courses-images" >
+                                    <img style="border-radius: 15px;" src="../assets/Courses_Audit 1.jpg" alt="Courses"> -->
+                                <!-- <img [src]="getCourseImageUrl(course.fileName)" class="card-img-top" alt="img erre" > -->
+                            <!-- </div>
+                                <div class="courses-content" >
+                                    <h4 class="card-title ">{{course.name}}</h4>
+                                    <div class="card-title " style="font-size: small;"><b>Duration:</b>{{course.duration}}</div>
+                                    <div class="card-text" style="font-size: small;"  *ngIf="course.course_Purchased && course.course_Purchased.length > 0">
+                                       <b> Price:</b> {{ course.course_Purchased[0].price }}
+                                    </div>
+                               
+                                </div> -->
+                            <!-- </div> -->
+                        <!-- </a>
                         </div>
-                        <!-- Single Courses End -->
-                    </div>
+</div> -->
 
 
+                    <!-- <div class="courses-wrapper-02">
+                        <div class="row"> -->
+                            <!-- (click)="Saveid(course.courseId)" -->
+                            <div class="col-lg-4 col-md-6" *ngFor="let course of filteredCourses" >
+                                <!-- Single Courses Start -->
+                                <div class="single-courses"> 
+                                    <div (click)="Saveid(course.courseId)" >
+                                    <!-- <a routerLink="/after-enroll">  -->
+                                    <div class="courses-images">
+                                        <!-- <a routerLink="/after-enroll"> -->
+                                            <img style="border-radius: 15px;" src="http://localhost:8080/AcademyBackend/getImage/{{course.fileName}}" alt="Courses">
+                                        <!-- </a> -->
+                                    </div>
+                    
+                                    <div class=" courses-content">
+                                        <!-- <h4 class="">{{ course.name }}</h4>
+                                        <div style="font-size: small;"><b>Duration:</b> {{ course.duration }}</div>
+                                        <div style="font-size: small;"><b>Price:</b> {{ course.course_Purchased[0].price }}</div> -->
+                                      
+                                        <h4 >{{course.name}}</h4>
+                                        <div style="font-size: small;"><b>Duration:</b>{{course.duration}}</div>
+                                        <div  style="font-size: small;"  *ngIf="course.course_Purchased && course.course_Purchased.length > 0">
+                                           <b> Price:</b> {{ course.course_Purchased[0].price }}
+                                        </div>
+                                        <div class="courses-rating">
+                                            <!-- <p>{{ course.completion }}% Complete</p>
+                    
+                                            <div class="rating-progress-bar">
+                                                <div class="rating-line" [style.width.%]="course.completion"></div>
+                                            </div> -->
+                    
+                                            <div class="rating-meta">
+                                                <span class="rating-star">
+                                                    <span class="rating-bar" [style.width.%]="course.courseRatings"></span>
+                                                </span>
+                                                <p><a>Leave a rating</a></p>
+                                            </div>
+
+                                            <!-- <div class="info-btn justify-content-center">
+                                                <a class="btn btn-primary btn-hover-dark" (click)="enroll()">Enroll Now</a>
+                                            </div> -->
+
+                                        </div>
+                                    </div>
+                                    <!-- </a> -->
+</div>
+<!-- <button type="button" class="col-5  btn-primary" style="background-color:  #309255; border-radius: 10px ;justify-content: center;text-align: center;font-size: small;font-weight: 400;margin-left: 10px;" data-bs-toggle="modal" data-bs-target="#exampleModal" >
+    View Course  </button> -->
+                                    
+                        <!-- <div class="row">                    
+<button type="button" class="col-5  btn-primary" style="background-color:  #309255; border-radius: 10px ;justify-content: center;text-align: center;font-size: small;font-weight: 400;margin-left: 10px;" data-bs-toggle="modal" data-bs-target="#exampleModal" >
+    Enroll Now  </button>
+    <button type="button" class="col-5 btn-primary" style="background-color:  #309255; border-radius: 10px ;justify-content: center;text-align: center;font-size: small;font-weight: 400;margin-left: 10px;
+    "  data-bs-toggle="modal" data-bs-target="#exampleModal1" >
+        Purchase Now  </button>
+    </div> -->
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Enroll Course</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="col-lg-8">
+                <div class="enroll-tab-content">
+                    <!-- Instructor Rating Form Start -->
+                    <form id="instructorRatingForm">
+
+                        <!-- <div class="single-form">
+                            <label for="studentID">Student ID:</label>
+                            <input type="text" id="studentID" name="studentID"
+                                placeholder="Enter Student ID">
+                        </div>
+
+                        <div class="single-form">
+                            <label for="courseID">Course ID:</label>
+                            <input type="text" id="courseID" name="courseID"
+                                placeholder="Enter Course ID">
+                        </div> -->
+
+                        <div class="single-form">
+                            <label for="instructorRating">Price</label>
+                            <input type="text" id="instructorRating" name="instructorRating" [(ngModel)] ="price.price"
+                                placeholder="Enter Instructor Rating">
+                        </div>
+
+                        <!-- <div class="single-form">
+                            <button type="button" (click)="instructorratings()"
+                                style="background-color: #309255; color: white; border: none;">Submit Instructor
+                                Rating</button>
+                        </div> -->
 
 
+                    </form>
+                    <!-- Student Rating Form End -->
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" (click)="enroll(course.courseId)">Save changes</button>
+        <!-- </div>(click)="Saveid(course.courseId)"  -->
+      </div>
+    </div>
+  </div>
+</div>
 
-                    <div class="col-lg-4 col-md-6">
-                        <!-- Single Courses Start -->
+
+<div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Purchase Course</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="col-lg-8">
+                <div class="enroll-tab-content">
+                    <!-- Instructor Rating Form Start -->
+                    <form id="instructorRatingForm">
+
+                        <!-- <div class="single-form">
+                            <label for="studentID">Student ID:</label>
+                            <input type="text" id="studentID" name="studentID"
+                                placeholder="Enter Student ID">
+                        </div>
+
+                        <div class="single-form">
+                            <label for="courseID">Course ID:</label>
+                            <input type="text" id="courseID" name="courseID"
+                                placeholder="Enter Course ID">
+                        </div> -->
+
+                        <div class="single-form">
+                            <label for="instructorRating">Price</label>
+                            <input type="text" id="instructorRating" name="instructorRating" [(ngModel)] ="price.price"
+                                placeholder="Enter Instructor Rating">
+                        </div>
+
+                        <!-- <div class="single-form">
+                            <button type="button" (click)="instructorratings()"
+                                style="background-color: #309255; color: white; border: none;">Submit Instructor
+                                Rating</button>
+                        </div> -->
+
+
+                    </form>
+                    <!-- Student Rating Form End -->
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" (click)="coursePurchase(course.courseId)">Save changes</button>
+        <!-- </div>(click)="Saveid(course.courseId)"  -->
+      </div>
+    </div>
+  </div>
+</div>
+
+
+                                <!-- Single Courses End -->
+                            </div>
+                        <!-- </div>
+                    </div> -->
+                    
+
+
+                    <!-- <div class="col-lg-4 col-md-6" *ngFor="let course of courses" (click)="Saveid(course.courseId)">
                         <div class="single-courses">
                             <div class="courses-images">
-                                <a routerLink="/courses-details1">
+                                <a routerLink="/after-enroll">
                                     <img src="../assets/Courses_Audit 1.jpg" alt="Courses"></a>
-
-                                <div class="courses-option dropdown">
-                                    <button class="option-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                                        <span></span>
-                                        <span></span>
-                                        <span></span>
-                                    </button>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="#"><i class="icofont-share-alt"></i> Share</a></li>
-                                        <li><a href="#"><i class="icofont-plus"></i> Create Collection</a></li>
-                                        <li><a href="#"><i class="icofont-star"></i> Favorite</a></li>
-                                        <li><a href="#"><i class="icofont-archive"></i> Archive</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-
-
-
-
-
+                             </div>
+                            
                             <div class="courses-content">
-                                <div class="courses-author">
-                                    <div class="author">
-                                        <div class="author-thumb">
-                                            <!-- <a href="#"><img src="assets/images/author/author-02.jpg"
-                                                    alt="Author"></a> -->
-                                        </div>
-                                        <!-- <div class="author-name">
-                                            <a class="name" href="#">Pamela Foster </a>
-                                            <a class="name-2" href="#">Ohula Malsh</a>
-                                        </div> -->
-                                    </div>
-                                </div>
-
-                                <h4 class="title"><a routerLink="/courses-details1">Audit Professional</a></h4>
-
+                               <h4 class=""><a routerLink="/after-enroll">{{ course.name }}</a></h4>
+                              <div style="font-size: small;"><b >Duration:</b> {{course.duration}}</div>
+                              <div style="font-size: small;"><b>Price:</b>  {{course.course_Purchased[0].price}}</div>
                                 <div class="courses-rating">
-                                    <p>80% Complete</p>
-
-                                    <div class="rating-progress-bar">
-                                        <div class="rating-line" style="width: 80%;"></div>
-                                    </div>
-
-                                    <div class="rating-meta">
-                                        <span class="rating-star">
-                                            <span class="rating-bar" style="width: 0%;"></span>
-                                        </span>
-                                        <p><a href="#">Leave a rating</a></p>
-                                    </div>
+                                  <p>{{ course.completion }}% Complete</p>
+                              
+                                  <div class="rating-progress-bar">
+                                    <div class="rating-line" [style.width.%]="course.completion"></div>
+                                  </div>
+                              
+                                  <div class="rating-meta">
+                                    <span class="rating-star">
+                                      <span class="rating-bar" [style.width.%]="course.courseRatings
+                                      ">
+                                      </span>
+                                    </span>
+                                    <p><a>Leave a rating</a></p>
+                                  </div>
                                 </div>
-                            </div>
+                              </div>
+                              
+                            
                         </div>
-                        <!-- Single Courses End -->
-                    </div>
+                    </div> -->
 
 
                 </div>
@@ -258,8 +412,8 @@
                 <!-- Download App Button End -->
                 <div class="download-app-btn">
                     <ul class="app-btn">
-                        <li><a href="#"><img src="../assets/images/google-play.png" alt="Google Play"></a></li>
-                        <li><a href="#"><img src="../assets/images/app-store.png" alt="App Store"></a></li>
+                        <li><a><img src="../assets/images/google-play.png" alt="Google Play"></a></li>
+                        <li><a><img src="../assets/images/app-store.png" alt="App Store"></a></li>
                     </ul>
                 </div>
                 <!-- Download App Button End -->
@@ -273,7 +427,7 @@
 
 
     <!--Back To Start-->
-    <a href="#" class="back-to-top">
+    <a class="back-to-top">
         <i class="icofont-simple-up"></i>
     </a>
     <!--Back To End-->

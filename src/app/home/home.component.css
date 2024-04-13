@@ -1,0 +1,245 @@
+/* #tab1 {
+    margin-left: -10px;
+    width: 170px;
+    height: 60px;
+}
+
+#tab2 {
+    margin-left: -130px;
+    width: 170px;
+    height: 60px;
+}
+
+#tab3 {
+    margin-left: -250px;
+    width: 170px;
+    height: 60px;
+} */
+
+#brand1 {
+    margin-left: 90px;
+}
+
+#brand2 {
+    margin-left: 100px;
+}
+
+#brand3 {
+    margin-left: 110px;
+}
+
+#brand4 {
+    margin-left: 110px;
+}
+
+
+/* @media only screen and (max-width: 1070px) {
+    #brand1 {
+        margin-left: 50px;
+    }
+
+    #brand2 {
+        margin-left: 50px;
+    }
+
+    #brand3 {
+        margin-left: 50px;
+    }
+
+    #brand4 {
+        margin-left: 50px;
+    }
+} */
+
+/* ------------------------------------------------------ */
+
+/* @media only screen and (min-width: 2560px) {
+    #homepage {
+        max-width: 60%;
+    }
+}
+
+@media only screen and (min-width: 2522px) {
+    #homepage {
+        max-width: 60%;
+    }
+} */
+
+/* ------------------------------------------------------- */
+
+
+/* @media only screen and (max-width: 1100px) {
+    #tab3 {
+        margin-left: -103px;
+        width: 170px;
+        height: 60px;
+    }
+
+    #tab2 {
+        margin-left: -55px;
+        width: 170px;
+        height: 60px;
+    }
+} */
+
+/* @media only screen and (max-width: 923px) {
+    #tab3 {
+        margin-left: 19px;
+    }
+
+    #tab2 {
+        margin-left: 21px;
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    #tab1 {
+        margin-left: -73px;
+        width: 128px;
+        height: 60px;
+    }
+
+    #tab2 {
+        margin-left: -73px;
+        width: 128px;
+        height: 60px;
+    }
+
+    #tab3 {
+        margin-left: -73px;
+        width: 128px;
+        height: 60px;
+    }
+} */
+
+
+
+
+/* ---------------------------------------------------------------------- */
+
+/* .courses-tabs-menu {
+    background-color: #eefbf3;
+    padding: 40px 100px;
+    border-radius: 10px;
+    margin-top: 50px;
+    position: relative;
+}
+
+@media only screen and (max-width: 575px) {
+    .courses-tabs-menu {
+        padding: 30px 60px;
+    }
+}
+
+/* .courses-tabs-menu .nav {
+    flex-wrap: nowrap;
+}
+
+.courses-tabs-menu .nav li button {
+    width: 100%;
+    height: 60px;
+    border: 1px solid rgba(48, 146, 85, 0.2);
+    border-radius: 10px;
+    background-color: #fff;
+    color: #212832;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 0.3s ease 0s;
+    padding: 0 15px;
+    white-space: nowrap;
+}
+
+.courses-tabs-menu .nav li button.active,
+.courses-tabs-menu .nav li button:hover {
+    border-color: #309255;
+    color: #309255;
+}
+
+.courses-active .swiper-button-next,
+.courses-active .swiper-button-prev {
+    opacity: 1;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 0px 0px 20px 0px rgba(48, 146, 85, 0.05);
+    color: #212832;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease 0s;
+}
+
+@media only screen and (max-width: 575px) {
+
+    .courses-active .swiper-button-next,
+    .courses-active .swiper-button-prev {
+        width: 35px;
+        height: 35px;
+        line-height: 35px;
+    }
+}
+
+.courses-active .swiper-button-next::after,
+.courses-active .swiper-button-prev::after {
+    display: none;
+}
+
+.courses-active .swiper-button-next:hover,
+.courses-active .swiper-button-prev:hover {
+    background-color: #309255;
+    color: #fff;
+}
+
+.courses-active .swiper-button-prev {
+    left: 30px;
+}
+
+@media only screen and (max-width: 575px) {
+    .courses-active .swiper-button-prev {
+        left: 15px;
+    }
+}
+
+.courses-active .swiper-button-next {
+    right: 30px;
+}
+
+@media only screen and (max-width: 575px) {
+    .courses-active .swiper-button-next {
+        right: 15px;
+    }
+}  */
+/* 
+carousel {
+    height: 100%;
+      min-height: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  } */
+
+  
+carousel {
+    height: 100%;
+      min-height: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  .carousel-control-prev,
+.carousel-control-next {
+    display: none;
+}
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    color: white; /* Change to the desired color */
+    font-size: 24px; /* Adjust the size */
+}
+/* .carousel-indicators [data-bs-target] {
+background-color: blue;
+width: 10px;
+height: 30px;
+border-radius: 30px;
+} */
+

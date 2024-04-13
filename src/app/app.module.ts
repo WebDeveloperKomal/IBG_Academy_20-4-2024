@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-
+import { RouterModule } from '@angular/router';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -48,9 +49,16 @@ import { ReviewsComponent } from './reviews/reviews.component';
 import { ProfileComponent } from './profile/profile.component';
 import { LogoutComponent } from './logout/logout.component';
 
-
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+// import { CarouselModule } from 'primeng/carousel';
+// import { AppCarouselComponent } from 'path/to/app-carousel.component';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
 @NgModule({
   declarations: [
+    // AppCarouselComponent  ,
     AppComponent,
     HeaderComponent,
     HomeComponent,
@@ -92,7 +100,7 @@ import { LogoutComponent } from './logout/logout.component';
     ReviewsComponent,
     ProfileComponent,
     LogoutComponent,
-
+    
   ],
   imports: [
     BrowserModule,
@@ -100,6 +108,13 @@ import { LogoutComponent } from './logout/logout.component';
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    RouterModule.forRoot([]),
+    BrowserAnimationsModule,
+    BsDropdownModule.forRoot(),
+    NgbModule,
+    CarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]

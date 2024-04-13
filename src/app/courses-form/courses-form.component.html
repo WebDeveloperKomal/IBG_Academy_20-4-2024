@@ -92,66 +92,142 @@
                         <div class="register-login-form">
                             <h3 class="title">Course <span>Now</span></h3>
 
+
                             <div class="form-wrapper">
                                 <form action="#">
 
-
                                     <!-- Single Form Start -->
                                     <div class="single-form">
-                                        <input type="text" placeholder="Enter course name" id="courseName">
-                                    </div>
-                                    <!-- Single Form End -->
-
-
-
-                                    <!-- Single Form Start -->
-                                    <div class="single-form">
-                                        <input type="text" placeholder="Enter module name" id="moduleName">
+                                        <input type="text" placeholder="Enter course name" id="courseName"
+                                            [(ngModel)]="addcourses.name" [ngModelOptions]="{standalone: true}"
+                                            required>
                                     </div>
                                     <!-- Single Form End -->
 
 
                                     <!-- Single Form Start -->
                                     <div class="single-form">
-                                        <input type="text" placeholder="Enter lesson 1" id="lesson1">
+                                        <input type="text" placeholder="description" id="moduleName"
+                                            [(ngModel)]="addcourses.description" [ngModelOptions]="{standalone: true}"
+                                            required>
+                                    </div>
+                                    <!-- Single Form End -->
+
+
+                                    <!-- Single Form Start -->
+                                    <!-- <div class="single-form">
+                                        <input type="text" placeholder="Enter lesson 1" id="lesson1"
+                                            [(ngModel)]="addcourses.certificate" [ngModelOptions]="{standalone: true}"
+                                            required>
+                                    </div> -->
+                                    <div class="single-form">
+                                    <div class="dropdown">
+                                        <select class="tag" name="tag" id="tags" onchange="navigateToPage()"
+                                            [(ngModel)]="addcourses.certificate" [ngModelOptions]="{standalone: true}"
+                                            required>
+                                            <option value="" selected disabled>Certificate</option>
+                                            <option value="Yes">Yes</option>
+                                            <option value="No">No</option>
+                                            <!-- <option value="LIVE">LIVE</option> -->
+                                        </select>
+                                    </div>
                                     </div>
                                     <!-- Single Form End -->
 
 
                                     <!-- Single Form Start -->
                                     <div class="single-form">
-                                        <input type="text" placeholder="Enter lesson 2" id="lesson2">
+                                        <input type="text" placeholder="Enter duration in hrs" id="lesson2"
+                                            [(ngModel)]="addcourses.duration" [ngModelOptions]="{standalone: true}"
+                                            required>
                                     </div>
+                                    
                                     <!-- Single Form End -->
 
 
 
                                     <!-- Single Form Start -->
+                                    <!-- <div class="single-form">
+                                        <input type="text" placeholder="Enter level" id="lesson3"
+                                            [(ngModel)]="addcourses.level" [ngModelOptions]="{standalone: true}"
+                                            required>
+                                    </div> -->
                                     <div class="single-form">
-                                        <input type="text" placeholder="Enter lesson 3" id="lesson3">
+                                    <div class="dropdown">
+                                        <select class="tag" name="tag" id="tags" onchange="navigateToPage()"
+                                            [(ngModel)]="addcourses.level" [ngModelOptions]="{standalone: true}"
+                                            required>
+                                            <option value="" selected disabled>Level</option>
+                                            <option value="Beginner">Beginner</option>
+                                            <option value="Intermediate">Intermediate</option>
+                                            <option value="Advanced">Advanced</option>
+                                            <!-- <option value="LIVE">LIVE</option> -->
+                                        </select>
                                     </div>
+                                    </div>
+                                    <div class="single-form">
+                                        <input type="text" placeholder="Enter language" id="lesson3"
+                                            [(ngModel)]="addcourses.language" [ngModelOptions]="{standalone: true}"
+                                            required>
+                                    </div>
+                                    <!-- <div class="single-form">
+                                        <input type="text" placeholder="Enter lesson 3" id="lesson3"
+                                            [(ngModel)]="addcourses.contentType" [ngModelOptions]="{standalone: true}"
+                                            required>
+                                    </div> -->
+                                    <div class="single-form">
+                                    <div class="dropdown">
+                                        <select class="tag" name="tag" id="tags" onchange="navigateToPage()"
+                                            [(ngModel)]="addcourses.contentType" [ngModelOptions]="{standalone: true}"
+                                            required>
+                                            <option value="" selected disabled>ContentType</option>
+                                            <option value="Financial">Financial</option>
+                                            <option value="Business">Business</option>
+                                            <option value="Marketing">Marketing</option>
+                                            <!-- <option value="LIVE">LIVE</option> -->
+                                        </select>
+                                    </div>
+</div>
+                                    <div class="single-form" >
+
+                                        <input type="file" class="filestyle" (change)="onFileSelected($event)"
+                                            data-buttontext="Upload photo" data-buttonbefore="true" required="required"
+                                            file-model="sigOnePhoto" id="filestyle-1" tabindex="-1">
+                                    </div>
+                                    <!-- <div class="single-form">
+                                        <input type="file" placeholder="Enter lesson 3" id="lesson3"
+                                            [(ngModel)]="addcourses.contentType" [ngModelOptions]="{standalone: true}"
+                                            required>
+                                    </div> -->
+
                                     <!-- Single Form End -->
 
 
-
+                                    <!-- Single Form Start -->
                                     <div class="single-form">
                                         <div class="dropdown">
-                                            <select class="tag" name="tag" id="tags" onchange="navigateToPage()">
-                                                <option value="Tag" selected disabled>Tag</option>
+                                            <select class="tag" name="tag" id="tags" onchange="navigateToPage()"
+                                                [(ngModel)]="addcourses.tag" [ngModelOptions]="{standalone: true}"
+                                                required>
+                                                <option value="" selected disabled>Tag</option>
                                                 <option value="FREE">FREE</option>
                                                 <option value="PUBLIC">PUBLIC</option>
                                                 <option value="LIVE">LIVE</option>
                                             </select>
                                         </div>
                                     </div>
+                                    <!-- Single Form End -->
+                                   
 
-
-
+                                    <!-- <div class="single-form">
+                                        <input type="text" placeholder="Enter Module" id="lesson3"
+                                            [(ngModel)]="addcourses.module" [ngModelOptions]="{standalone: true}"
+                                            required>
+                                    </div> -->
                                     <!-- Single Form Start -->
                                     <div class="single-form">
                                         <button class="btn btn-primary btn-hover-dark w-100"
-                                            onclick="saveCourses(); reset; return false;">+ Add More
-                                            Module</button>
+                                            (click)="addcourse()"> Add Course</button>
                                     </div>
                                     <!-- Single Form End -->
 
@@ -198,8 +274,8 @@
                 <!-- Download App Button End -->
                 <div class="download-app-btn">
                     <ul class="app-btn">
-                        <li><a href="#"><img src="../assets/images/google-play.png" alt="Google Play"></a></li>
-                        <li><a href="#"><img src="../assets/images/app-store.png" alt="App Store"></a></li>
+                        <li><a><img src="../assets/images/google-play.png" alt="Google Play"></a></li>
+                        <li><a><img src="../assets/images/app-store.png" alt="App Store"></a></li>
                     </ul>
                 </div>
                 <!-- Download App Button End -->
@@ -213,7 +289,7 @@
 
 
     <!--Back To Start-->
-    <a href="#" class="back-to-top">
+    <a class="back-to-top">
         <i class="icofont-simple-up"></i>
     </a>
     <!--Back To End-->

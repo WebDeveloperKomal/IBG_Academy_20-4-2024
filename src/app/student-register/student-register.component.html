@@ -88,47 +88,55 @@
                             <h3 class="title">Student <span>Now</span></h3>
 
                             <div class="form-wrapper">
-                                <form action="#" (ngSubmit)="onSubmit()">
-
-                                    <!-- Single Form Start -->
-                                    <div class="single-form">
-                                        <input type="text" placeholder="userName" id="name" [(ngModel)]="register.name"
-                                            required>
-                                    </div>
-                                    <!-- Single Form End -->
+                                <form action="#">
 
 
                                     <!-- Single Form Start -->
                                     <div class="single-form">
-                                        <input type="email" placeholder="Email" id="email" [(ngModel)]="register.email"
-                                            required>
+                                        <input type="text" placeholder="userName" id="name" [(ngModel)]="student.name"
+                                            [ngModelOptions]="{standalone: true}" required>
                                     </div>
                                     <!-- Single Form End -->
+
+
+
+                                    <!-- Single Form Start -->
+                                    <div class="single-form">
+                                        <input type="email" placeholder="Email" id="email" [(ngModel)]="student.email"
+                                            [ngModelOptions]="{standalone: true}" required>
+                                    </div>
+                                    <!-- Single Form End -->
+
 
 
                                     <!-- Single Form Start -->
                                     <div class="single-form">
                                         <input type="password" placeholder="Password" id="password"
-                                            [(ngModel)]="register.password" required>
+                                            [(ngModel)]="student.password" [ngModelOptions]="{standalone: true}"
+                                            required>
                                     </div>
                                     <!-- Single Form End -->
+
 
 
                                     <!-- Single Form Start -->
                                     <div class="single-form">
                                         <input type="password" placeholder="Confirm Password" id="confirmPassword"
-                                            [(ngModel)]="register.confirmPassword" required>
+                                            [(ngModel)]="student.confirmPassword" [ngModelOptions]="{standalone: true}"
+                                            required>
                                     </div>
                                     <!-- Single Form End -->
 
+
                                     <!-- (change)="onSubmit($event)"  -->
+
 
                                     <!-- Single Form Start -->
                                     <div class="single-form">
                                         <div class="dropdown">
-                                            <select class="userRoles" name="userRoles" id="userRoles">
-                                                <option value="User Roles" selected disabled
-                                                    [(ngModel)]="register.userRoles" required>User Roles</option>
+                                            <select class="userRoles" name="userRoles" id="userRoles"
+                                                [(ngModel)]="selectedRole" [(ngModel)]="student.userRoles" required>
+                                                <option value="" selected disabled>User Roles</option>
                                                 <option value="INSTRUCTOR">INSTRUCTOR</option>
                                                 <option value="STUDENT">STUDENT</option>
                                             </select>
@@ -140,8 +148,9 @@
 
                                     <!-- Single Form Start -->
                                     <div class="single-form">
-                                        <input type="text" placeholder="additional Intrest" id="additionalInterest"
-                                            [(ngModel)]="register.additionalInterest" required>
+                                        <input type="text" placeholder="additional Interest" id="additionalInterest"
+                                            [(ngModel)]="student.additionalInterest"
+                                            [ngModelOptions]="{standalone: true}" required>
                                     </div>
                                     <!-- Single Form End -->
 
@@ -150,7 +159,8 @@
                                     <!-- Single Form Start -->
                                     <div class="single-form">
                                         <input type="text" placeholder="country Name" id="countryName"
-                                            [(ngModel)]="register.countryName" required>
+                                            [(ngModel)]="student.countryName" [ngModelOptions]="{standalone: true}"
+                                            required>
                                     </div>
                                     <!-- Single Form End -->
 
@@ -159,11 +169,21 @@
 
                                     <!-- Single Form Start -->
                                     <div class="single-form">
-                                        <a class="btn btn-primary btn-hover-dark w-100" routerLink="/login">
+                                        <a class="btn btn-primary btn-hover-dark w-100" (click)="onSubmitstudent()">
                                             Create an account
                                         </a>
                                     </div>
+                                    <!-- Single Form end -->
 
+
+                                    <!-- Submitted Successfully Message -->
+                                    <!-- <div *ngIf="submissionStatus === 'success'" class="submitted-successfully">
+                                        <p>Submitted Successfully! <span (click)="closeMessage()">✕</span></p>
+                                    </div> -->
+
+
+
+                                    <!-- routerLink="/login" -->
 
                                     <!-- <a class="btn btn-secondary btn-outline w-100"
                                                 href="https://accounts.google.com/signup/v2/createaccount?theme=glif&flowName=GlifWebSignIn&flowEntry=SignUp"
@@ -214,8 +234,8 @@
                 <!-- Download App Button End -->
                 <div class="download-app-btn">
                     <ul class="app-btn">
-                        <li><a href="#"><img src="../assets/images/google-play.png" alt="Google Play"></a></li>
-                        <li><a href="#"><img src="../assets/images/app-store.png" alt="App Store"></a></li>
+                        <li><a><img src="../assets/images/google-play.png" alt="Google Play"></a></li>
+                        <li><a><img src="../assets/images/app-store.png" alt="App Store"></a></li>
                     </ul>
                 </div>
                 <!-- Download App Button End -->
@@ -229,7 +249,7 @@
     <!-- Download App End -->
 
     <!--Back To Start-->
-    <a href="#" class="back-to-top">
+    <a class="back-to-top">
         <i class="icofont-simple-up"></i>
     </a>
     <!--Back To End-->

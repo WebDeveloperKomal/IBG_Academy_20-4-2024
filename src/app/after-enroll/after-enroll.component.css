@@ -1,0 +1,15 @@
+.accordion-collapse {
+    display: none;
+}
+
+.accordion-collapse.show {
+    display: block;
+}
+
+#drop {
+    margin-left: -120px;
+}
+
+#drop1 {
+    margin-left: -150px;
+}
