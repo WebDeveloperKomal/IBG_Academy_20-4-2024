@@ -207,6 +207,8 @@ getmodule(){
     
   }
 
+  // need to work on this
+
   getjoiningnwherefrom(){
     return this.http.get(`${this.baseUrl}/user_name_joining_from_details`,{withCredentials:true})
     
@@ -214,8 +216,36 @@ getmodule(){
 
   getinstratingpicname(){
     return this.http.get(`${this.baseUrl}/instructor_ratings_pic_name`,{withCredentials:true})
-    
   }
   
+  total_courserating_enrollment_earn_bycourse(){
+    const courseId = localStorage.getItem("cidforrate");
+    console.log("courseIdsssss" , courseId)
+    return this.http.get(`${this.baseUrl}/total_courserating_enrollment_earn_bycourse/${courseId}`,{withCredentials:true}) ;
+  } 
+  // courseid
+
+  ins_revenew_enrollment_ratings(){
+    return this.http.get(`${this.baseUrl}/ins_revenew_enrollment_ratings`,{withCredentials:true}) ;
+  }
+
+  user_ins_course_mins_active_studs(){
+    return this.http.get(`${this.baseUrl}/user_ins_course_mins_active_studs`,{withCredentials:true}) ;
+
+  }
+
+  // user_questions_answers_name_imag/{c_id}
+
+  user_questions_answers_name_imag(){
+     return this.http.get(`${this.baseUrl}/user_questions_answers_name_imag/1`,{withCredentials:true}) ;
+  }
+
+
+
+  
+
+
+
+
   
 }

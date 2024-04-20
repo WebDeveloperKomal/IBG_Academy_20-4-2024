@@ -35,6 +35,7 @@ allStudentcourses(){
     this.courses = resp.data;
 // this.array = resp.data ;
 console.log("data***", this.courses);
+console.log("data***233", resp);
 // console.log("price***", resp.data.course_Purchased[0].price);
 
 // this.originalCourseList = this.courses ;

@@ -252,12 +252,12 @@
 
                             <!-- Courses Item Start -->
                             <!--  -->
-                            <div class="courses-item" *ngFor="let course of courses" (click)="Saveidfordet(course.courseId)">
+                            <div class="courses-item" *ngFor="let course of courses" (click)="Saveidfordet(course[0].courseId)">
                              <!-- <h1>{{course.name}}</h1> -->
                                 <div class="item-thumb">
                                     <a>
                                         <!-- src="https://clientportal.promunim.com/send/getFile/{{data.photo}}" -->
-                                        <img src="http://localhost:8080/AcademyBackend/getImage/{{course.fileName}}" alt="Courses">
+                                        <img src="http://localhost:8080/AcademyBackend/getImage/{{course[0].fileName}}" alt="Courses">
                                     </a>
                                 </div>
 
@@ -265,32 +265,32 @@
 
                                     <div class="meta">
                                         <!--  -->
-                                        <a class="action">{{course.tag}}</a>
+                                        <a class="action">{{course[0].tag}}</a>
                                         <!-- <a class="action">Free</a>
                                         <a class="action">Public</a> -->
                                     </div>
                                     <!-- {{ course.name }} -->
                                     <h3 class="title">
                                         <!--  -->
-                                        <a>{{course.name}}</a>
+                                        <a>{{course[0].name}}</a>
                                         </h3>
-                                        <p>{{course.description}}</p>
+                                        <p>{{course[0].description}}</p>
                                 </div>
 
 
                                 <div class="content-wrapper">
 
-                                    <!-- <div class="content-box">
-                                        <p>Earned</p> -->
+                                    <div class="content-box">
+                                        <p>Earned</p>
                                         <!--  -->
-                                        <!-- <span class="count">₹{{ course.course_Purchased[0].price}}</span> -->
-                                    <!-- </div> -->
+                                        <span class="count">₹{{ course[1].earned}}</span>
+                                    </div>
 
 
                                     <div class="content-box">
                                         <p>Enrollment’s</p>
                                         <!--  we want lenght-->
-                                        <span class="count">{{course.enrolment.length}}</span>
+                                        <span class="count">{{course[1].enrollments}}</span>
                                     </div>
 
 
@@ -298,10 +298,9 @@
                                         <p>Course Rating</p>
                                         <span class="count">
                                             <!-- 4.5 -->
-                                            <!-- {{courses.courseRatings}} -->
+                                            {{courses[1].rating}}
                                             <span class="rating-star">
-                                                
-                                                <span class="rating-bar" [style.width.%]="course.courseRatings[0].rating"></span>
+                                                 <span class="rating-bar" [style.width.%]="course[1].rating*20"></span>
                                             </span>
                                         </span>
                                     </div>

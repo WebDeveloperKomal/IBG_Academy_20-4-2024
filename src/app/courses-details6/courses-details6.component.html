@@ -86,9 +86,10 @@
                                   <b>Course Type :</b>  {{courses.tag}}
                             </div>
                             <div class="admin-rating">
-                                <span class="rating-count">4.9</span>
+                                <span class="rating-count">{{courses.rating}}</span>
                                 <span class="rating-star">
-                                    <span class="rating-bar" style="width: 80%;"></span>
+                                    <span class="rating-bar" [style.width.%]="extradata.course_rating
+                                    *20"></span>
                                 </span>
                                 <!-- <span class="rating-text"> {{courses.courseRatings[0]}} Rating</span> -->
                             </div>
@@ -225,15 +226,17 @@
                                                     <!-- Single Team Start -->
                                                     <div class="single-team">
                                                         <div class="team-thumb">
-                                                            <img src="../assets/Courses-19.png" alt="Author">
+                                                            <img src="http://localhost:8080/AcademyBackend/getImage/{{extradata.ins_pic}}" alt="Author">
+                                                            
+                                                            <!-- <img src="../assets/Courses-19.png" alt="Author"> -->
                                                         </div>
                                                         <div class="team-content">
                                                             <div class="rating">
-                                                                <span class="count">4.9</span>
+                                                                <span class="count">{{extradata.instructor_rating}}</span>
                                                                 <i class="icofont-star"></i>
                                                                 <span class="text">(rating)</span>
                                                             </div>
-                                                            <h4 class="name">Mr. Vikramraj Acharya</h4>
+                                                            <h4 class="name">{{extradata.instructor_name}}</h4>
                                                             <span class="designation">Instructor</span>
                                                         </div>
                                                     </div>
@@ -580,7 +583,8 @@
                             <div class="info-list">
                             <ul>
                             <li><i class="icofont-man-in-glasses"></i> <strong>Instructor</strong>
-                                <span>Mr. Vikramraj Acharya</span>
+                                <!-- <span>{{extradata.ins_pic}}</span> -->
+                                <span>{{extradata.instructor_name}}</span>
                             </li>
                             
                             <li><i class="icofont-clock-time"></i> <strong>Duration</strong> <span>{{ courses.duration }} days</span></li>

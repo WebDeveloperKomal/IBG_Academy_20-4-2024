@@ -221,9 +221,9 @@
                                     <!-- Single Student Start -->
                                     <div class="single-student" *ngFor="let stud of joinfrom">
 
-                                        <!-- <div class="student-images">
-                                            <img src="../assets/images/author/author-01.jpg" alt="Author">
-                                        </div> -->
+                                        <div class="student-images">
+                                            <img src="http://localhost:8080/AcademyBackend/getImage/{{stud[0].studimage}}" alt="Author">
+                                        </div>
 
                                         <div class="student-content" *ngFor="let st of stud[1]">
                                             <h5 class="name">{{st[0]}}</h5>
@@ -233,7 +233,7 @@
 
                                                 <span class="date"><i class="icofont-ui-calendar"></i> {{stud[0]["date_time "]}}</span>
 
-                                            <!-- <p>Data Science and Machine learning</p> -->
+                                            <p>{{stud[0]["course_name"]}}</p>
                                         </div>
                                         <!-- <span class="date"><i class="icofont-ui-calendar"></i> {{ stud[0][0]["date_time "] }}</span> -->
                                     </div>
@@ -242,8 +242,8 @@
 
 
 
-                                <div class="swiper-slide">
-                                    <!-- Single Student Start -->
+                                <!-- <div class="swiper-slide">
+                                
                                     <div class="single-student">
                                         <div class="student-images">
                                             <img src="../assets/images/author/author-02.jpg" alt="Author">
@@ -259,13 +259,13 @@
                                             <span class="date"><i class="icofont-ui-calendar"></i> 28.03.2021</span>
                                         </div>
                                     </div>
-                                    <!-- Single Student End -->
-                                </div>
+                                    
+                                </div> -->
 
 
-
+<!-- 
                                 <div class="swiper-slide">
-                                    <!-- Single Student Start -->
+                                 
                                     <div class="single-student">
                                         <div class="student-images">
                                             <img src="../assets/images/author/author-07.jpg" alt="Author">
@@ -281,13 +281,13 @@
                                             <span class="date"><i class="icofont-ui-calendar"></i> 28.03.2021</span>
                                         </div>
                                     </div>
-                                    <!-- Single Student End -->
-                                </div>
+                                   
+                                </div> -->
 
 
 
-                                <div class="swiper-slide">
-                                    <!-- Single Student Start -->
+                                <!-- <div class="swiper-slide">
+                                  
                                     <div class="single-student">
                                         <div class="student-images">
                                             <img src="../assets/images/author/author-08.jpg" alt="Author">
@@ -303,13 +303,13 @@
                                             <span class="date"><i class="icofont-ui-calendar"></i> 28.03.2021</span>
                                         </div>
                                     </div>
-                                    <!-- Single Student End -->
-                                </div>
+                                  
+                                </div> -->
 
 
-
+<!-- 
                                 <div class="swiper-slide">
-                                    <!-- Single Student Start -->
+                                    
                                     <div class="single-student">
                                         <div class="student-images">
                                             <img src="../assets/images/author/author-09.jpg" alt="Author">
@@ -325,15 +325,14 @@
                                             <span class="date"><i class="icofont-ui-calendar"></i> 28.03.2021</span>
                                         </div>
                                     </div>
-                                    <!-- Single Student End -->
+                                    
                                 </div>
 
 
-                            </div>
+                            </div> -->
 
 
                             <div class="students-arrow">
-                                <!-- Add Pagination -->
                                 <div class="swiper-button-prev"><i class="icofont-rounded-left"></i></div>
                                 <div class="swiper-button-next"><i class="icofont-rounded-right"></i></div>
                             </div>

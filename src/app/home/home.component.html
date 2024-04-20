@@ -226,16 +226,16 @@
                                     <div class="courses-meta">
                                         <span> <i class="icofont-clock-time"></i> {{ course[0].duration}}hrs</span>
                                         <span> <i class="icofont-read-book"></i> {{ course[0].noOfLectures}} Lectures  </span>
+                                
                                     </div>
                                  <div class="courses-price-review">
                                             <div class="courses-price">
-                                                <span class="sale-price" *ngIf="course.course_Purchased && course.course_Purchased.length > 0">₹{{ course.course_Purchased[0].price }}</span>
+                                                <span class="sale-price" *ngIf="course[0].course_Purchased && course[0].course_Purchased.length > 0">₹{{ course[0].course_Purchased[0].price }}</span>
                                             </div>
                                             <div class="courses-review">
-                                                <!-- <span class="rating-count">4.9</span> -->
+                                                <!-- <span class="rating-count">{{course[0].courserating}}</span> -->
                                                 <span class="rating-star">
-                                                    <span class="rating-bar" [style.width.%]="course[0].courseRatings.rating
-                                                    "></span>
+                                                    <span class="rating-bar" [style.width.%]="course[1].course_rating*20"></span>
                                                 </span>
                                             </div>
                                         </div>

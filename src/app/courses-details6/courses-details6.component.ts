@@ -23,6 +23,7 @@ export class CoursesDetails6Component {
   }
   // courses: any[] = [];
   courses : any ;
+  extradata : any ;
   Courseid : any ;
   reviewsofCourse : any[] = [] ;
   id =localStorage.getItem("idforque") ;
@@ -71,10 +72,12 @@ ngOnInit(){
   console.log("id*****" , this.Courseid)
   this.apiservice.getcoursebyid(this.Courseid).subscribe((resp: any)=>{
     this.courses = resp.data;
+    this.extradata = resp ;
+
 
 // this.reviewsofCourse = 
 console.log("d*ata***", this.courses) ;
-console.log("data**l", this.reviewsofCourse) ;
+console.log("data**l", resp) ;
 // let objectURL = 'data:image/jpeg;base64,' + resp.image;
 
 // this.thumbnail = this.sanitizer.bypassSecurityTrustUrl(objectURL);

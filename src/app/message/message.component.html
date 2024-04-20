@@ -158,7 +158,7 @@
 
             <!-- Admin Tab Menu Start -->
             <div class="nav flex-column nav-pills admin-tab-menu">
-                <a class="active">Question & Answer <span>3</span></a>
+                <a class="active">Question & Answer </a>
                 <!-- <a>Featured Question</a>
                 <a>Message <span>4</span></a>
                 <a>Assigment’s</a>
@@ -228,9 +228,9 @@
                                 <div class="answer-user-list">
 
                                     <!-- Single User Start -->
-                                    <div class="single-user active" *ngFor="let que of courses.questions">
+                                    <div class="single-user active" *ngFor="let que of courses">
                                         <div class="user-author">
-                                            <img src="../assets/images/author/author-12.jpg" alt="Author">
+                                            <img src="http://localhost:8080/AcademyBackend/getImage/{{que.image}}" alt="Author">
                                         </div>
                                         <div class="user-content">
                                             <h6 class="name">{{que.question}}</h6>
@@ -288,16 +288,18 @@
                                 <div class="answer-message-wrapper">
 
                                     <ul>
-                                        <li *ngFor="let que of courses.questions">
+                                        <li *ngFor="let que of courses">
                                             <!-- Single Message Start -->
                                             <div class="single-message">
                                                 <div class="message-author">
                                                     <div class="author-images">
-                                                        <img src="../assets/images/author/author-12.jpg" alt="Author">
+                                                        <!-- image -->
+                                                        <img src="http://localhost:8080/AcademyBackend/getImage/{{que.image}}" alt="Author">
                                                     </div>
                                                     <div class="author-content">
-                                                        <h6 class="name"><strong>Natosha Sibley</strong> <span
-                                                                class="time">Asked Date: {{que.createdDate}}</span></h6>
+                                                        <h6 class="name"><strong>{{que.user_name}}</strong>
+                                                             <!-- <span class="time">Asked Date: {{que.createdDate}}</span> -->
+                                                            </h6>
                                                         <h4 class="title">{{que.question}}</h4>
                                                     </div>
                                                     <div class="meta">

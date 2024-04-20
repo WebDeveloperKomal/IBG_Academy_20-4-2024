@@ -318,7 +318,7 @@
                                                     <tbody>
                                                         <tr>
                                                             <th>Instructor <span>:</span></th>
-                                                            <td>Vikramraj Aachrya</td>
+                                                            <td>{{instnamearr.instructor_name}}</td>
                                                         </tr>
                                                         <tr>
                                                             <th>Duration <span>:</span></th>
@@ -467,10 +467,11 @@
                                                             <div class="author-thumb">
                                                                 <img src="http://localhost:8080/AcademyBackend/getImage/{{instr[0][2]}}" alt="Author">
                                                             </div>
+                                                            <!-- <h4 class="name">{{instr[0][2]}}</h4> -->
                                                             <h4 class="name">{{instr[0][1]}}</h4>
                                                             <!-- <span class="designation">Product Designer, USA</span> -->
                                                             <span class="rating-star">
-                                                                <span class="rating-bar" [style.width.%]="instr[0][0]"></span>
+                                                                <span class="rating-bar" [style.width.%]="instr[1]"></span>
                                                             </span>
                                                         </div>
                                                     </div>
@@ -586,11 +587,20 @@
 
                                                     <!-- [(ngModel)]="rating.studentRating" -->
                                                     <div class="single-form">
-                                                        <label for="studentRating">Student Rating:</label>
-                                                        <input type="text" id="studentRating" name="studentRating"
+                                                        <label for="studentRating">Course Rating:</label>
+                                                        <!-- <input type="text" id="studentRating" name="studentRating"
                                                             placeholder="Enter Student Rating"
                                                             [(ngModel)]="courserating.rating"
+                                                            [ngModelOptions]="{standalone: true}" required> -->
+                                                            <select id="studentRating" style="margin-left: 10px;" name="studentRating" [(ngModel)]="courserating.rating"
                                                             [ngModelOptions]="{standalone: true}" required>
+                                                                <option value="" >Enter Course Rating</option>
+                                                                <option value="1" >1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                <option value="5">5</option>
+                                                            </select>
                                                     </div>
 
 
@@ -643,8 +653,18 @@
 
                                                     <div class="single-form">
                                                         <label for="instructorRating">Instructor Rating:</label>
-                                                        <input type="text" id="instructorRating" name="instructorRating" [(ngModel)] ="instructorrating.rating"
-                                                            placeholder="Enter Instructor Rating">
+                                                        <!-- <input type="text" id="instructorRating" name="instructorRating" [(ngModel)] ="instructorrating.rating"
+                                                            placeholder="Enter Instructor Rating"> -->
+
+                                                            <select  id="instructorRating" style="margin-left: 10px;" name="instructorRating" [(ngModel)] ="instructorrating.rating"
+                                                            >
+                                                                <option value="" >Enter Instructor Rating</option>
+                                                                <option value="1" >1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                                <option value="4">4</option>
+                                                                <option value="5">5</option>
+                                                            </select>
                                                     </div>
 
                                                     <div class="single-form">
@@ -1570,5 +1590,5 @@
 
 </div>
 <!-- (click)="getallStudentCourses()" -->
-<button  (click)="getallStudentCourses()">hi</button>
+<!-- <button  (click)="getallStudentCourses()">hi</button> -->
 <app-footer></app-footer>

@@ -192,9 +192,9 @@
                         </div> -->
 
                         <div class="engagement-meta">
-                            <p class="meta"><img src="../assets/images/icon/icon-1.png" alt="Icon"> 11,001 Minutes
+                            <p class="meta"><img src="../assets/images/icon/icon-1.png" alt="Icon"> {{total.mincount}} Minutes
                                 Taught</p>
-                            <p class="meta"><img src="../assets/images/icon/icon-2.png" alt="Icon"> 520 Active Students
+                            <p class="meta"><img src="../assets/images/icon/icon-2.png" alt="Icon"> {{total.activeStudents}} Active Students
                             </p>
                         </div>
                     </div>
@@ -228,45 +228,67 @@
 
                         <div class="courses-top">
                             <ul>
-                                <li>All Course’s</li>
+                                <!-- <li>Course Image</li> -->
+                                <li >Course’s Image and Name</li>
+                                <!-- style="margin-left: 100px;" -->
                                 <li >Minutes Taught</li>
                                 <li >Active Student’s</li>
-                                <!-- <li>Button</li> -->
+                                <li>Button</li>
                             </ul>
                         </div>
 
                         
                         <div class="courses-list">
                             <ul>
-                                <li *ngFor="let data of getmintaughtStudentactive">
-                                    <!-- <div class="thumb">
-                                        <img src="../assets/images/courses/admin-courses-01.jpg" alt="Courses">
-                                    </div> -->
-                                    <div *ngFor="let item of data">
-                                    <div class="courses" >
-                                        
-                                        <div class="content">
-                                            <h4 class="title"><a>{{item[1]}}</a></h4>
-                                        </div>
-                                        <!-- <div> -->
-                                        <div class="taught">
-                                            <span >{{item[2]}}</span>
-                                        </div>
-                                    <!-- </div> -->
-                                        <!--  -->
+                                <!-- <li *ngFor="let data of getmintaughtStudentactive">
+                                    <div class="thumb">
+                                        <img style="height: 150px; width : 150px" src="http://localhost:8080/AcademyBackend/getImage/{{data[0]}}" alt="Courses">
                                     </div>
-                                    
+                                 
+                                    <div >
+                                    <div class="courses"  >
+                                       
+                                        <div class="content" >
+                                       
+                                            <h4 class="title"><a>{{data[1][1]}}</a></h4> 
+                                             
+                                        </div>
+                                        <div class="content">
+                                            
+                                            <h4 class="title"><a>{{data[1][2]}}</a></h4> 
+                                        </div>
+                                       
+                                        <div class="taught">
+                                            <span >{{data[2]}}</span>
+                                        </div>
                                   
-                                    <!--  -->
+                                    </div>
                                 </div>
 
-                                <div class="student">
-                                    <span>{{data[1]}}</span>
-                                </div>
-                                <!-- <div class="button">
-                                    <a class="btn">View Details</a>
-                                </div> -->
+                               
+                                </li> -->
+
+                                <li *ngFor="let data of getmintaughtStudentactive">
+                                    <div class="courses">
+                                        <div class="thumb">
+                                            <img src="http://localhost:8080/AcademyBackend/getImage/{{data[0]}}" alt="Courses">
+                                        </div>
+                                        <div class="content">
+                                            <h4 class="title"><a>{{data[1][1]}}</a></h4>
+                                        </div>
+                                    </div>
+                                    <div class="taught">
+                                        <span>{{data[1][2]}}</span>
+                                    </div>
+                                    <div class="student">
+                                        <span>{{data[2]}}</span>
+                                    </div>
+                                    <div class="button">
+                                        <a class="btn" >View Details</a>
+                                    </div>
                                 </li>
+
+
                                 <li>
                                     <div class="courses">
                                         <div class="thumb">

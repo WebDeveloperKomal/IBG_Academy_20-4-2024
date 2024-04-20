@@ -92,7 +92,8 @@ export class HomeComponent {
 
     
     console.log("data***", this.courses);
-    console.log("name***", resp.data);
+    console.log("name***", resp);
+    // console.log("name***", resp.data[0].courserating);
     let objectURL = 'data:image/jpeg;base64,' + resp.image;
  })
   }

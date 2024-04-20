@@ -19,15 +19,15 @@ export class MessageComponent {
 
   ngOnInit(){ 
     
-    
+    this.nameimage() ;
     // console.log("id*****" , this.Courseid)
-    this.apiservice.getcoursebyid(this.Courseid).subscribe((resp: any)=>{
-      this.courses = resp.data;
+    // this.apiservice.getcoursebyid(this.Courseid).subscribe((resp: any)=>{
+    //   this.courses = resp.data;
   
-  console.log("data***", this.courses) ;
+  // console.log("data***", this.courses) ;
   // console.log("data***l", this.courses.level) ;
   
-    })
+    // })
   
   }
   
@@ -55,4 +55,15 @@ export class MessageComponent {
     localStorage.setItem("questionid", id)
 console.log("iiiiiiiiii", id)
   }
+
+
+  nameimage(){
+    // console.log('added question', this.give);
+    this.apiservice.user_questions_answers_name_imag().subscribe((resp: any)=>{
+      console.log('added question', resp);
+      this.courses = resp.data;
+    })
+  }
+  
+
 }

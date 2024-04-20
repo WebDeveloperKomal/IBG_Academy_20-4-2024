@@ -252,7 +252,7 @@
                         <div class="courses-list">
                             <ul>
 
-                                <li *ngFor="let data of getmintaughtStudentactive">
+                                <!-- <li *ngFor="let data of getmintaughtStudentactive">
                                     <div class="courses"  *ngFor="let item of data">
                                         
                                         <div class="content">
@@ -262,13 +262,31 @@
                                             <span>{{item[2]}}</span>
                                         </div>
                                     </div>
-                                        <!--  -->
+                                     
                                     <div class="student">
                                         <span>{{data[1]}}</span>
                                     </div>
-                                    <!-- <div class="button">
-                                        <a class="btn">View Details</a>
-                                    </div> -->
+                                   
+                                </li> -->
+
+                                <li *ngFor="let data of getmintaughtStudentactive">
+                                    <div class="courses">
+                                        <div class="thumb">
+                                            <img src="http://localhost:8080/AcademyBackend/getImage/{{data[0]}}" alt="Courses">
+                                        </div>
+                                        <div class="content">
+                                            <h4 class="title"><a>{{data[1][1]}}</a></h4>
+                                        </div>
+                                    </div>
+                                    <div class="taught">
+                                        <span>{{data[1][2]}}</span>
+                                    </div>
+                                    <div class="student">
+                                        <span>{{data[2]}}</span>
+                                    </div>
+                                    <div class="button">
+                                        <a class="btn" >View Details</a>
+                                    </div>
                                 </li>
 
 

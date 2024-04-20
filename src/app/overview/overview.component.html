@@ -189,27 +189,27 @@
                         <div class="overview-box">
                             <div class="single-box">
                                 <h5 class="title">Total Revenue</h5>
-                                <div class="count">₹568.00</div>
-                                <p><span>₹235.00</span> This months</p>
+                                <div class="count">₹ {{dataarr.revenew}}</div>
+                                <p><span></span> of Courses</p>
                             </div>
 
 
                             <div class="single-box">
                                 <h5 class="title">Total Enrollment’s</h5>
-                                <div class="count">2,570</div>
-                                <p><span>345</span> This months</p>
+                                <div class="count">{{dataarr.enrollments}}</div>
+                                <p><span></span> of Courses</p>
                             </div>
 
 
                             <div class="single-box">
                                 <h5 class="title">Instructor Rating</h5>
                                 <div class="count">
-                                    4.5
+                                    {{dataarr.instructor_ratings}}
                                     <span class="rating-star">
-                                        <span class="rating-bar" style="width: 80%;"></span>
+                                        <span class="rating-bar" [style.width.%]="dataarr.instructor_ratings*20" ></span>
                                     </span>
                                 </div>
-                                <p><span>58</span> This months</p>
+                                <p><span></span> of Courses</p>
                             </div>
 
                         </div>

@@ -14,7 +14,7 @@ export class TrafficConversionComponent {
   constructor(private router: Router, private http: HttpClient , private apiservice : ApiService,  private route : ActivatedRoute) { }
 
   ngOnInit(){
-this.getminnactivestudent() ;
+   this.getminnactivestudent() ;
   }
   
   getminnactivestudent( ){

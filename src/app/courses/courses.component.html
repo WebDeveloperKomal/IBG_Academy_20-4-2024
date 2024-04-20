@@ -181,11 +181,12 @@
                             <div class="col-lg-4 col-md-6" *ngFor="let course of filteredCourses" >
                                 <!-- Single Courses Start -->
                                 <div class="single-courses"> 
-                                    <div (click)="Saveid(course.courseId)" >
+                                    <div (click)="Saveid(course.course.
+                                    courseId)" >
                                     <!-- <a routerLink="/after-enroll">  -->
                                     <div class="courses-images">
                                         <!-- <a routerLink="/after-enroll"> -->
-                                            <img style="border-radius: 15px;" src="http://localhost:8080/AcademyBackend/getImage/{{course.fileName}}" alt="Courses">
+                                            <img style="border-radius: 15px;" src="http://localhost:8080/AcademyBackend/getImage/{{course.course.fileName}}" alt="Courses">
                                         <!-- </a> -->
                                     </div>
                     
@@ -195,9 +196,9 @@
                                         <div style="font-size: small;"><b>Price:</b> {{ course.course_Purchased[0].price }}</div> -->
                                       
                                         <h4 >{{course.name}}</h4>
-                                        <div style="font-size: small;"><b>Duration:</b>{{course.duration}}</div>
-                                        <div  style="font-size: small;"  *ngIf="course.course_Purchased && course.course_Purchased.length > 0">
-                                           <b> Price:</b> {{ course.course_Purchased[0].price }}
+                                        <div style="font-size: small;"><b>Duration:</b>{{course.course.duration}}</div>
+                                        <div  style="font-size: small;"  *ngIf="course.course.course_Purchased && course.course.course_Purchased.length > 0">
+                                           <b> Price:</b> {{ course.course.course_Purchased[0].price }}
                                         </div>
                                         <div class="courses-rating">
                                             <!-- <p>{{ course.completion }}% Complete</p>
@@ -208,7 +209,7 @@
                     
                                             <div class="rating-meta">
                                                 <span class="rating-star">
-                                                    <span class="rating-bar" [style.width.%]="course.courseRatings"></span>
+                                                    <span class="rating-bar" [style.width.%]="course.course_rating*20"></span>
                                                 </span>
                                                 <p><a>Leave a rating</a></p>
                                             </div>

@@ -25,6 +25,7 @@ export class AfterEnrollComponent {
     studentRating: '',
   };
   courses : any ;
+  instnamearr : any ;
   Courseid : any ;
   Courseno : any ;
   module : any[] = [] ;
@@ -51,9 +52,10 @@ ngOnInit(){
   // console.log("no*****" , this.Courseno);
   this.apiservice.getcoursebyid(this.Courseid).subscribe((resp: any)=>{
     this.courses = resp.data;
+    this.instnamearr = resp ;
 this.module = resp.data.module
 console.log("data***", this.courses) ;
-console.log("data***l", this.courses.level) ;
+console.log("data***l", this.instnamearr) ;
 // let objectURL = 'data:image/jpeg;base64,' + resp.image;
 
 // this.thumbnail = this.sanitizer.bypassSecurityTrustUrl(objectURL);
@@ -70,7 +72,7 @@ console.log("data***l", this.courses.level) ;
 
 
   this.apiservice.getinstratingpicname().subscribe((resp: any)=>{
-    console.log("getinstratingpicname**",resp.data)
+    console.log("getinstratingpicname**",resp)
     this.alldatareview = resp.data ;
   })
   
